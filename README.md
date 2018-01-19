@@ -1,2 +1,2 @@
 # contrail-specs
-Repository for docs and specs
+Repository for docs and specs.
