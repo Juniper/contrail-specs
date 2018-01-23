@@ -1,5 +1,6 @@
 # 1. Introduction
 Contrail support for Inter AS Option C (3 Label)
+(https://github.com/Juniper/contrail-specs/blob/master/5.0/inter_as_opt_c.md)
 
 # 2. Problem statement
 The larger use case is to virtualize the CPE and offer services in the DC. The
@@ -20,7 +21,7 @@ The following diagram shows the network connections and roles of different
 components in the solution.
 <img src="images/inter_as_option_c_solution.png">
 The controller maintains an eBGP(L3VPN AFI/SAFI enabled) session with the SDN-GW
-router and iBGP(Ipv4 LU AFI/SAFI enabled) session with the ASBR router.
+router and iBGP(IPv4 LU AFI/SAFI enabled) session with the ASBR router.
 Additionally, in order to avoid introducing MPLS
 in the fabric and supporting MPLS tunnels on the vRouter we will continue to use
 IP(UDP/GRE) tunnels between the vRouters and the ASBR(s).
@@ -100,12 +101,12 @@ specified in the VPN route received from the SDN-GW. For VPN routes
 advertised by the vRouter the same knob will be used to set the encapsulation to
 MPLS when advertising the route.
 The vRouter agents will be responsible for resolution of the VPN routes over
-the ipv4 Labeled unicast routes. the ipv4 labeled unicast routes in turn
+the IPv4 Labeled unicast routes. the IPv4 labeled unicast routes in turn
 would need to have been resolved over the IP tunnels in the fabric.
-Local vRouters' agents will learn each other's vhost routes in the new ipv4
+Local vRouters' agents will learn each other's vhost routes in the new IPv4
 labeled unicast address family. However, since the VPN route encapsulation
 learnt over these will continue to have the default encapsulation they should be
-directly resolved over the IP tunnels, the ipv4 labeled unicast routes will not
+directly resolved over the IP tunnels, the IPv4 labeled unicast routes will not
 be used.
 The controller will encode/decode the new address family/ sub address family to
 and from BGP peers and Agents (XMPP).
@@ -133,7 +134,7 @@ redundancy. All regular Controller HA requirements are also supported.
 # 9. Testing
 ## 9.1 Unit tests
 ### 9.1.1 Controller
-End to end integration test for ipv4 labeled unicast routes.
+End to end integration test for IPv4 labeled unicast routes.
 
 ## 9.2 Dev tests
 ## 9.3 System tests
