@@ -213,7 +213,21 @@ On the API server side, few tasks are added:
 See introduction in 3.
 
 ## 3.4 UI changes
-#### Describe any UI changes
+
+* Add configuration knob for enable_security_policy_draft
+    * For global scope, add a new tab  ‘Security Policy Options’ under
+      Configure—>Infrastructure—>Global Config
+    * For project scope, add checkbox ‘Security Policy Draft’ in
+      Configure—>Infrastructure—>Project Settings—>Other Settings
+* Changes in screens for authorized security persons to see and review modified security resource
+    * In Existing  Security section (config—>security)
+        * Add Firewall Rules tab to landing page
+        * Add Commit/Draft toggle to list committed or drafted security resources
+          in both global and project views
+        * In Commited Security Resource view, highlight the drafted Security resources
+        * Add Review button to see JSON diff of modified security resources in
+          both global and project views
+        * Add Commit/Revert options in JSON diff popup
 
 ## 3.5 Notification impact
 N/A
