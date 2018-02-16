@@ -138,16 +138,20 @@ resources and to commit or revert them:
 3. List pending modified security resources per scope
 
   ```
-  GET /policy-management/<DRAFT_POLICY_MANAGEMENT_UUID>?details=True&fields=application-policy-set,firewall-policy,firewall-rule,service-group,address-group
+  GET /policy-management/<DRAFT_POLICY_MANAGEMENT_UUID>?fields=application_policy_sets,firewall_policys,firewall_rules,service_groups,address_groups
   ```
   That returns, the scoped and dedicated policy management resource with
-  references to all pending security reousrces. The security resource types
+  references to all pending security resources. The security resource types
   filter can be adjusted with the `fields` filter.
 
 2. Commit or revert modified security resources per scope
 
   ```
-  POST /security-policy-draft/[commit|revert]/<SCOPE_UUID>
+  POST /security-policy-draft
+  {
+    'scope_uuid': <SCOPE_UUID>,
+    'action': [commit|revert]
+  }
   ```
 
 Also, a new filter (boolean named `draft`) for detailed list and show API calls
