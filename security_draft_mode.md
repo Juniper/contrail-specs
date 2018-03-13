@@ -154,24 +154,6 @@ resources and to commit or revert them:
   }
   ```
 
-Also, a new filter (boolean named `draft`) for detailed list and show API calls
-will be added to get the committed version or the draft version of a resource.
-That permits to easily determine pending modifications:
-
-  ```
-  GET /firewall-rules?detail=True&daft=True
-  GET /firewall-rule/5f34cc7f-5133-4d9e-bb38-a511f70c32c6?daft=True
-  ```
-
-* `False`: show committed version of the security resource,
-* `True`: show draft version of the security resource,
-* if the security resource does not have any pending modifications, the list or
-  get API calls return the same result regardless of the `draft` filter value,
-* if the resource type is not one of the five security resource, the `draft`
-  filter does not have any effect,
-* finally, if the `draft` filter is not defined in the API GET request, it is
-  considered as `False`.
-
 On the API server side, few tasks are added:
 
 * Commit modifications:
