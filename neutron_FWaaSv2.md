@@ -76,7 +76,7 @@ protocol | CRUD | null
 source_port | CRUD | null
 destination_port | CRUD | null
 position | R | null
-action | CRU | deny [allow &#124; deny &#124; reject]
+action | CRU | deny [allow\|deny\|reject]
 
 * Firewall policy:
 
@@ -125,7 +125,7 @@ That Neutron resource will be map to the Contrail `firewall-rule` resource like
 this:
 
 Attribute Name | Contrail `firewall-rule` attribute
---------------| ------------------------------
+---------------| ----------------------------------
 id | `id_perms.uuid`
 tenant_id | `project` parent reference
 name | `display_name`
@@ -136,7 +136,7 @@ firewall_policy_id | `firewall-policy` back-reference
 ip_version | IP version determined by `source_ip_address` and `destination_ip_address`
 source_ip_address | `endpoint-1.subnet`
 destination_ip_address | `endpoint-2.subnet`
-protocol | `service.protocol[-id]`
+protocol | `service.protocol`
 source_port | `service.src-ports`
 destination_port | `service.dst-ports`
 position | Sequence of reference between `firewall-policy` and `firewall-rule`
@@ -171,8 +171,8 @@ But two differences persist between the two models:
     firewall policies per firewall group.
 - On which direction firewall policy are applied:
   - **Contrail** defines if firewall rules are applied on endpoint 1 or
-    2 or both with the  firewall rule `direction` attribut
-  - **Neutron** definies if a firewall policy is applied on ingress or egress
+    2 or both with the  firewall rule `direction` property
+  - **Neutron** defines if a firewall policy is applied on ingress or egress
     port traffic when a policy is applied to a firewall group.
 
 To leverage that two differences, we proposed to not rely on the Contrail `tag`
@@ -198,7 +198,7 @@ share | Contrail RBAC mechanism
 ports | `virtual-machine-interface` references
 ingress_firewall_policy_id | `firewall-policy` reference with direction property set to `TrafficDirectionType.ingress`
 egress_firewall_policy_id | `firewall-policy` reference with direction property set to `TrafficDirectionType.egress`
-TrafficDirectionType
+
 Some use cases are not address yet. The Neutron FWaaS v2 model permits to set
 `firewall-group` on Neutron router ports but in Contrail that ports does not
 realy exist. `virtual-machine-interface` are created for that but are purely
@@ -227,8 +227,8 @@ Add the `firewall-group` resources to the Contrail data model.
 Add sanity check on firewall resources modifications.
 
 ### Vrouter agent
-Enforce filtering on interfaces.
-Add support to send ICMP reject message when the firewall rule action is
+* Enforce filtering on interfaces.
+* Add support to send ICMP reject message when the firewall rule action is
 `reject`
 
 # 5. Performance and scaling impact
@@ -256,7 +256,7 @@ N/A
 ## 9.3 System tests
 * End to end tests
 * Regression tests
-* Check performance impact, that vrouter througput is maintained with this
+* Check performance impact, that vrouter throughput is maintained with this
   firewall rules
 
 # 10. Documentation Impact
