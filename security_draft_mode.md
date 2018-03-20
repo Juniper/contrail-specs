@@ -37,7 +37,7 @@ If security policies need to be modified, three cases can happen:
 
    Then if the user modifies that security resource again, Contrail continues to
    append modifications on the same cloned resource and modification still not
-   enforced on the the data path.
+   enforced on the data path.
 
 3. Modifications remove security resources
 
@@ -115,17 +115,21 @@ The Contrail model will be modify accordingly:
    not be enforce until an authorized person/team approve and commit it, if it's
    false, all modifications will be enforce directly.
 
-3. add `pending_delete` flag to the five security resources,
+3. add `draft_mode_state` property to the five security resources,
 
-   That flag determines which security resources will be deleted on a commit and
-   also permits to not authorize anymore modifications to a resource in pending
-   delete state.
+   That property determines which security resources are a draft resource and
+   if that draft resource is a creation, modification or a deletion. If a draft
+   security resource was deleted, that permits to not allow anymore
+   modifications on it. Possible value are `created`, `updated` or `deleted`.
+   If that property is not set, that means that security resource not is a
+   draft version but an original version. This property is only writable by the
+   system only and can only be read by users.
 
 For users no much changes, they will continue to use API to work with enforced
 security resources. New API calls will permit to identify modified security
 resources and to commit or revert them:
 
-1. List pending modified security resources per scope and resource type
+1. List all draft security resources per scope and resource type:
 
   ```
   GET /<RESOURCE_TYPE>s?parent_id=<DRAFT_POLICY_MANAGEMENT_UUID>
@@ -135,7 +139,7 @@ resources and to commit or revert them:
   GET /<RESOURCE_TYPE>s?parent_type=policy-management&parent_fq_name_str=<DRAFT_POLICY_MANAGEMENT_FQ_NAME_STRING>
   ```
 
-3. List pending modified security resources per scope
+2. List pending modified security resources per scope
 
   ```
   GET /policy-management/<DRAFT_POLICY_MANAGEMENT_UUID>?fields=application_policy_sets,firewall_policys,firewall_rules,service_groups,address_groups
@@ -144,7 +148,25 @@ resources and to commit or revert them:
   references to all pending security resources. The security resource types
   filter can be adjusted with the `fields` filter.
 
-2. Commit or revert modified security resources per scope
+3. List pending created security resources per scope and resource type:
+
+  ```
+  GET /<RESOURCE_TYPE>s?parent_id=<DRAFT_POLICY_MANAGEMENT_UUID>&filters=draft_mode_state=="created"
+  ```
+
+4. List pending updated security resources per scope and resource type:
+
+  ```
+  GET /<RESOURCE_TYPE>s?parent_id=<DRAFT_POLICY_MANAGEMENT_UUID>&filters=draft_mode_state=="updated"
+  ```
+
+5. List pending deleted security resources per scope and resource type:
+
+  ```
+  GET /<RESOURCE_TYPE>s?parent_id=<DRAFT_POLICY_MANAGEMENT_UUID>&filters=draft_mode_state=="deleted"
+  ```
+
+7. Commit or revert modified security resources per scope
 
   ```
   POST /security-policy-draft
@@ -171,9 +193,8 @@ On the API server side, few tasks are added:
     `vnc_cfg_api_server.vnc_db.VncDbClient.dbe_update` method with all draft
     resource version attributes on the original resource version.
 
-  * For delete security resource, Contrail finds committed resources
-    corresponding to the draft resource with the flag `pending_delete` and
-    calls the `vnc_cfg_api_server.vnc_db.VncDbClient.dbe_delete` on it.
+  * For delete security resource, Contrail calls the
+  `vnc_cfg_api_server.vnc_db.VncDbClient.dbe_delete` on it.
 
   Finally, when all modifications where applied on the committed resources and
   enforced on the data path, the scoped and dedicated policy management resource
