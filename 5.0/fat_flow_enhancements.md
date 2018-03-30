@@ -37,6 +37,56 @@ will be defined. This will allow fat-flow to be configured at VN level.
 User is expected to create fat-flow-protocol object and associate it at VMI or
 VN level.
 
+### 3.3.1 Ignore address interpretation
+Each fat-flow configuration record will have a field named ignore-address which
+can value of "none", "source" or "destination"
+
+#### Source
+For packets from local VM, “source” indicates the source-IP of the packet. For
+packets from physical interface "source" indicates destination-IP of the packet.
+
+#### Destination
+For packets from local VM, “destination” indicates the destination-IP of the
+packet. For packets from physical interface "destination" indicates source-IP of
+the packet.
+
+#### None
+Neither source nor destination IP is ignored in this case.
+
+### 3.3.2 Port
+Each fat-flow configuration record already has port field. This field will now
+take 0 as a possible value. Value 0 indicates both source and destination
+ports will be ignored.
+
+### 3.3.3 Configuration for sample use-case
+
+                        -------------
+    VN1 traffic--------|    SI       |-------------Internet
+                        -------------
+
+In the above figure, traffic from different sources of VN1 is going to Internet
+via service instance SI. Since each source in VN1 can visit different sites in
+Internet, the user might want to ignore all the Internet addresses in the flows.
+
+To achieve this, we need the following configuration:
+
+case 1:
+source, SI and destination are in different computes.
+Left Interface of SI -- Ignore source
+Right Interface of SI -- Ignore destination
+
+case 2:
+source and SI are in same compute but destination is in different compute
+source interface -- Ignore destination
+Left Interface of SI -- Ignore source
+Right Interface of SI -- Ignore destination
+
+case 3:
+source is in different compute but  SI and destination are in same compute
+Left Interface of SI -- Ignore source
+Right Interface of SI -- Ignore destination
+destination interface -- Ignore source
+
 ## 3.4 UI changes
 In Configure->Networking->Ports, when we edit any of the ports, a window for
 that port opens. Here under Fat-Flow(s) section we can create and edit fat-flow
@@ -76,6 +126,8 @@ of hold state.
 ## 4.2 Limitations
 1. Fat-flow configuration to ignore source or destination address will not be
 applied for NAT flows.
+2. ECMP between VMIs of same compute and fat-flow configuration on these VMIs is
+not a supported configuration. This may lead to some unexpected behavior.
 
 # 5. Performance and scaling impact
 ## 5.1 API and control plane
