@@ -70,21 +70,18 @@ Internet, the user might want to ignore all the Internet addresses in the flows.
 
 To achieve this, we need the following configuration:
 
-case 1:
-source, SI and destination are in different computes.
-Left Interface of SI -- Ignore source
+case 1: source, SI and destination are in different computes  
+Left Interface of SI -- Ignore source  
 Right Interface of SI -- Ignore destination
 
-case 2:
-source and SI are in same compute but destination is in different compute
-source interface -- Ignore destination
-Left Interface of SI -- Ignore source
+case 2: source and SI are in same compute but destination is in different compute  
+source interface -- Ignore destination  
+Left Interface of SI -- Ignore source  
 Right Interface of SI -- Ignore destination
 
-case 3:
-source is in different compute but  SI and destination are in same compute
-Left Interface of SI -- Ignore source
-Right Interface of SI -- Ignore destination
+case 3: source is in different compute but SI and destination are in same compute  
+Left Interface of SI -- Ignore source  
+Right Interface of SI -- Ignore destination  
 destination interface -- Ignore source
 
 ## 3.4 UI changes
@@ -124,8 +121,8 @@ of hold state.
 
 
 ## 4.2 Limitations
-1. Fat-flow configuration to ignore source or destination address will not be
-applied for NAT flows.
+1. Fat-flow configuration to ignore source or destination address is not 
+supported for NAT flows. This will result in short flows.
 2. ECMP between VMIs of same compute and fat-flow configuration on these VMIs is
 not a supported configuration. This may lead to some unexpected behavior.
 
