@@ -1,7 +1,12 @@
 
 # 1. Introduction
-Enhance routing policy options to match on interface routes, interface static
-routes and service interface routes.
+Contrail allows Routing Policies (import only) to be applied to Service
+Instances, futhermore the policies apply only to non-replicated routes in
+the service routing instance.
+The only granularity currently available for non-replicated routes is either,
+Service Chain (re-originated) or Aggregate.
+The enhancements introduced address the lack of sufficient granularity,
+flexibility and Export Policies.
 
 # 2. Problem statement
 The explosion of leaked routes in the routing table of the SDN Gateway
@@ -19,6 +24,7 @@ granularity to prevent service interface and static routes from proliferating.
      to distinguish routes and take further action.
    * Setting different LocalPref for all other reoriginated routes to
      distinguish routes and take further action.
+   * Setting different ASPATHs to control routing decisions.
 
 ## 2.1.3 Use-case3
    * Contrail sets Local Pref based on Community on imported routes, instead
@@ -27,16 +33,20 @@ granularity to prevent service interface and static routes from proliferating.
 
 # 3. Proposed solution
 
-Routing policies will be further enhanced to add
- * Additional Term Match condition to distinguish interface routes,
-   service interface routes and static routes under protocol options.
- * New Action Attribute ASPATH append with configurable AS-List.
- * All existing action attributes Add/Set/Remove Community, SetLocal-Pref
-   and Set Med supported with new protocol Match condition along with
-   new ASPATH list append action.
+Routing policies will be further enhanced to:
+ * Allow Import Routing Policies to be applied to networks.
+ * Add more granularity to routes by introducing a Sub-Protocol that will appear
+   as additional Term Match conditions.
+   Following is a list of additions:
+    a) XMPP: interface, interface-static, service interface.
+    b) BGP: bgpaas.
+    c) Static: static (to allow filtering in the SI when the Protocol is
+       Service Chain).
+    <img src="images/protocol-match.png">
+ * Add policy action to expand AsPath using the given ASN list.
 
 ## 3.1 Alternatives considered
-None, this is a feature enchancement providing more granular policies.
+None, this is a feature enchancement providing more flexibility and granularity.
 
 ## 3.2 API schema changes
 
@@ -76,6 +86,7 @@ None, this is a feature enchancement providing more granular policies.
 +        <xsd:enumeration value="interface"/>
 +        <xsd:enumeration value="interface-static"/>
 +        <xsd:enumeration value="service-interface"/>
++        <xsd:enumeration value="bgpaas"/>
      </xsd:restriction>
  </xsd:simpleType>
 
@@ -84,16 +95,16 @@ None, this is a feature enchancement providing more granular policies.
 ## 3.3 User workflow impact
 
 Users will be able to configure new Term Match and
-and Action attributes.
+and Action attributes stated earlier.
 
 ## 3.4 UI changes
 
+ * UI to add ability to associate a routing policy with a Network.
  * UI to add additional protocol Term Match under
    Configure > Networking > Routing > Routing Policies
    while adding a new Route Policy for interface-route,
    interface-static and service interface outes.
- * UI to add additional ASPATH list attribute to
-   Route action Policy.
+ * UI add ability to update the ASPATH list attribute as an action.
 
 ## 3.5 Notification impact
 None.
@@ -101,21 +112,18 @@ None.
 # 4. Implementation
 
 ### 4.1.1 Control-Node
-Control-Node will need to parse the configured routing
-policies and program the community, local-pref and med
-attributes on the routes being delivered to Compute Node.
-
-Control-Node will need to decide to export the
-routes to the L3-VPN table based on the action
-configured.
-
+The Control-Node will need to add the sub-protocol attributes for static
+(network) and Bgpaas routes. Enhance introspect to display the sub-protocol for
+routes, if present, incuding sub-protocol added by the Agent for routes received
+over XMPP.
+The Control-Node will need to process the new match conditions, and ASPATH list
+modifications.
 
 ### 4.1.2 Compute Node
 
-All routes advertised from Compute Node are bundled
-under protocol XMPP, need to further distinguish these
-routes as interface, service interface and static routes
-before being advertised to control-node.
+All routes advertised from Compute Node are bundled under protocol XMPP, need to
+further distinguish these routes as interface, service interface and interface
+static routes before advertising to control-node.
 
 # 5. Performance and scaling impact
 None.
