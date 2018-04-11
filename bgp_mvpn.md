@@ -18,7 +18,7 @@ as well, as mentioned before.
 
 ## 3.2 API schema changes
 
-Mvpn can be enabled/disabled in bgp afis and in virtual-networks.
+Mvpn can be enabled/disabled in bgp afis.
 
 ```
 diff --git a/src/schema/bgp_schema.xsd b/src/schema/bgp_schema.xsd
@@ -32,20 +32,12 @@ diff --git a/src/schema/bgp_schema.xsd b/src/schema/bgp_schema.xsd
          <xsd:enumeration value="route-target"/>
          <xsd:enumeration value="inet6"/>
          <xsd:enumeration value="inet6-vpn"/>
-diff --git a/src/schema/vnc_cfg.xsd b/src/schema/vnc_cfg.xsd
-index 2804d8b..732282b 100644
---- a/src/schema/vnc_cfg.xsd
-+++ b/src/schema/vnc_cfg.xsd
-@@ -1363,6 +1363,8 @@ targetNamespace="http://www.contrailsystems.com/2012/VNC-CONFIG/0">
-          <!-- Enable or disable Mirroring for virtual-network -->
-          <xsd:element name='mirror-destination' type="xsd:boolean" default="false" required='optional'
-              description='Flag to mark the virtual network as mirror destination network'/>
-+         <!-- Enable or disable ipv4-multicast for virtual-network -->
-+         <xsd:element name='ipv4-multicast' type="xsd:boolean" default="false" required='optional' description='Flag to enable ipv4 multicast service'/>
-     </xsd:all>
- </xsd:complexType>
 
 ```
+
+Also, in order to use this feature, MVPN must be enabled in configuration files
+of all contrail-control nodes /etc/contrail/contrail-control.conf). One can do
+so by setting mvpn_ipv4_enable boolean flag in [contrail-control.conf](https://github.com/Juniper/contrail-controller/blob/master/src/control-node/contrail-control.conf).
 
 ## 3.3 User workflow impact
 In order to use Mvpn feature, users shall enable mvpn in bgp and in the virtual
