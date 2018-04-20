@@ -39,6 +39,33 @@ Also, in order to use this feature, MVPN must be enabled in configuration files
 of all contrail-control nodes /etc/contrail/contrail-control.conf). One can do
 so by setting mvpn_ipv4_enable boolean flag in [contrail-control.conf](https://github.com/Juniper/contrail-controller/blob/master/src/control-node/contrail-control.conf).
 
+```
++<xsd:element name="igmp-enable" type="xsd:boolean" default="false" description="Enable IGMP."/>
++<xsd:annotation>
++    <xsd:documentation>
++        IGMP config parameteres.
++    </xsd:documentation>
++</xsd:annotation>
++<!--#IFMAP-SEMANTICS-IDL
++     Property('igmp-enable', 'global-system-config', 'optional', 'CRUD',
++              'IGMP mode at Global level.') -->
++<!--#IFMAP-SEMANTICS-IDL
++     Property('igmp-enable', 'virtual-network', 'optional', 'CRUD',
++              'IGMP mode at VN level.') -->
++<!--#IFMAP-SEMANTICS-IDL
++     Property('igmp-enable', 'virtual-machine-interface', 'optional', 'CRUD',
++              'IGMP mode at VMI level.') -->
++
+```
+
+Along with the mvpn_ipv4_enable flag, the igmp-enable field in the schema is
+required for Mvpn functionality to work. The flag is available at
+virtual-machine-interface, virtual-network and global-system-config level and
+the igmp-enable configuration is chosen in the same order of precedence.
+
+Enable igmp-enable at any of the available levels for VMI/VN/Contrail to
+participate in the Mvpn at that level.
+
 ## 3.3 User workflow impact
 In order to use Mvpn feature, users shall enable mvpn in bgp and in the virtual
 networks as desired. In a peering SDN gateway such as MX (JUNOS) also, users
@@ -52,6 +79,9 @@ Specifically, mvpn for ipv4 (and later for ipv6) would be one of the families to
 enable under bgp address families configuration. There shall be a knob under
 each virtual-network as well, in order to selectively enable/disable mvpn
 functionality.
+
+UI shall provide a way to enable/disable IGMP for participation in Mvpn bgp
+at virtual-machine-interface, virtual-network or global-system-config level.
 
 ## 3.5 Notification impact
 ####Describe any log, UVE, alarm changes
@@ -520,6 +550,45 @@ network. This routing-instance is created based on the configuration. No
 assumption shall be made in the order of processing of this configuration
 processing. Instead, MvpnManager module shall handle the scenario in which
 <project>.mvpn.0 may not be present at certain time and may come in later.
+
+## 4.15 Agent Implementation
+
+Agent implements the IGMP router functionality. Even though IGMP implementation
+in 'services/grpmgmt' handles IGMPv1, v2, and v3, only IGMPv3 is of interest
+in contrail. More specifically, IGMPv3 which can derive <S,G> in include mode
+is handled. <*,G> is not supported in this phase.
+
+IGMP packets and <S,G> notification from IGMP router implementation is handled
+in the same task and instance context. Reports are also sent in the same
+task and instance context.
+
+Every IPAM per VN is registered with the IGMP module using the gateway
+or the dns server address for handling of IGMP packets on the compute.
+IGMP packets from Agent do not get sent out of the compute/vrouter when IGMP
+is enabled on the VMI.
+
+The Agent expects IGMP packets from the local VMIs only and such IGMP packets
+should be sourced from valid IP address belonging to an active VN-IPAM.
+
+The <S,G> join and leaves per VMI basis is tracked. First <S,G> join by any VMI
+on compute will result in a multicast route addition in VMIs vrf. The route is
+also added to the ip-fabric vrf IPv4 multicast table if it does not already
+exist. A Mvpn subscription notification is sent to the contrail-control for
+participation of compute in Mvpn for the <S,G>. Also, notification to
+contrail-control is sent when route is added to the ip-fabric vrf for
+pariticipation in the ermvpn tree.
+
+Last <S,G> leave from any VMI will result in delete of route from both VMIs vrf.
+It may also result in delete of <S,G> route from the ip-fabric vrf IPv4
+multicast table if no other VNs are interested in the <S,G>. Unsubscribe
+notifications to contrail-control is sent for both Mvpn and ermvpn as needed.
+
+Even though, route is created in the Agent for the <S,G> they are not
+downloaded to the vrouter, since the source is not expected to be in the
+contrail in this phase. Only a composite nexthop entry is updated in the
+vrouter. The nexthop in the ip-fabric per <S,G> contains list of local VMs
+which had shown interest via IGMP and also list of tunnel nexthops dervied
+using ermvpn on the contrail control.
 
 # 5. Performance and scaling impact
 
