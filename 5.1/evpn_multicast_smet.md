@@ -22,6 +22,26 @@ None
 ## 3.2 API schema changes
 TBD: Allowed IGMP groups on a per VMI/VN/Global configuration
 
+There is a change needed in xmpp schema which is used for communication between
+Control node and compute node.
+
+```
+diff --git a/schema/xmpp_enet.xsd b/schema/xmpp_enet.xsd
+index c05e06e..3b01474 100644
+--- a/schema/xmpp_enet.xsd
++++ b/schema/xmpp_enet.xsd
+@@ -47,6 +47,9 @@ xsd:targetNamespace="http://www.contrailsystems.com/xmpp-enet-cfg.xsd">
+     <xsd:element name="ethernet-tag" type="xsd:integer"/>
+     <xsd:element name="mac" type="xsd:string"/>
+     <xsd:element name="address" type="xsd:string"/>
++    <xsd:element name="group" type="xsd:string"/>
++    <xsd:element name="source" type="xsd:string"/>
++    <xsd:element name="flags" type="xsd:integer"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="EnetSecurityGroupListType">
+```
+
 ## 3.3 User workflow impact
 Support for SMET Routes is automatically enabled. As a fall-back mechanism, we
 could implement a flag in contrail-control.conf to disable advertising and/or
@@ -146,7 +166,42 @@ created corresponding to the new SMET route received (which is specific to a
 <S,G> or <*,G> multicast group. This is how IMET routes are processed today.
 
 In EvpnLocalMcastNode::GetUpdateInfo(), remote_mcast_node_list is walked to
-form the bgp olist. For SMET routes, logic can be similar, except that we now
+form the bgp olist. With SMET route support, we’ll change the data strucuture so
+that there is separate list per <S/*,G>. Following changes will be made:
+
+```
+diff --git a/src/bgp/bgp_evpn.h b/src/bgp/bgp_evpn.h
+index b2bd52f..1d75709 100644
+--- a/src/bgp/bgp_evpn.h
++++ b/src/bgp/bgp_evpn.h
+@@ -269,7 +375,8 @@ private:
+ //
+ class EvpnManagerPartition {
+ public:
+-    typedef std::set<EvpnMcastNode *> EvpnMcastNodeList;
++    typedef EvpnState::SG SG;
++    typedef std::map<SG, std::set<EvpnMcastNode *> > EvpnMcastNodeList;
+```
+
+```
+diff --git a/src/bgp/bgp_evpn.cc b/src/bgp/bgp_evpn.cc
+index 2c63919..3a7e1bd 100644
+--- a/src/bgp/bgp_evpn.cc
++++ b/src/bgp/bgp_evpn.cc
+@@ -248,37 +377,45 @@ UpdateInfo *EvpnLocalMcastNode::GetUpdateInfo() {
+
+     // Go through list of EvpnRemoteMcastNodes and build the BgpOList.
+     BgpOListSpec olist_spec(BgpAttribute::OList);
+-    BOOST_FOREACH(EvpnMcastNode *node, partition_->remote_mcast_node_list()) {
+-        uint32_t remote_ethernet_tag = node->route()->GetPrefix().tag();
++    EvpnManagerPartition::EvpnMcastNodeList::const_iterator it =
++                      partition_->remote_mcast_node_list().begin();
++    for (; it != partition_->remote_mcast_node_list().end(); it++) {
++        BOOST_FOREACH(EvpnMcastNode *node, it->second) {
++            uint32_t remote_ethernet_tag = node->route()->GetPrefix().tag();
+```
+
+ For SMET routes, logic can be similar, except that we now
 need one remote_mcast_node_list per group basis. IOW, IMET routes was specific
 to broad-cast address, where as SMET routes is for a specific multicast group
 address.
