@@ -130,7 +130,17 @@ The controller will encode/decode the new address family/ sub address family to
 and from BGP peers and Agents (XMPP).
 
 ### 4.1.2 Agent
+Agent exports vhost route with label 3 ( implicit NULL) so that processing received
+packet from ASBR is similar to current tunnelled packets as ASBR sends single
+tagged packet.
+Agent receives VPN routes in regular VN with nexthop as ASBR and label sent by SDN-GW.
+Agent also receives IPv4 labeled route for ASBR in fabric VRF
+(default-domain:default-project:ip-fabric:__default__).
+Agent resolves VPN routes so that outer label is ipv4 label for ASBR and inner label
+is for VPN route.
+
 ### 4.1.3 vRouter
+vRouter should support stack of MPLS labels for sending tunnelled packets.
 ### 4.1.4 UI
 ### 4.1.5 Analytics
 
