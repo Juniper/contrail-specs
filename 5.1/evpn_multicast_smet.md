@@ -20,7 +20,66 @@ the reach-ability of interested multicast receivers.
 None
 
 ## 3.2 API schema changes
-TBD: Allowed IGMP groups on a per VMI/VN/Global configuration
+
+A change needed in xmpp schema which is used for communication between
+Control node and compute node for relaying route information.
+
+```
+diff --git a/schema/xmpp_enet.xsd b/schema/xmpp_enet.xsd
+index c05e06e..3b01474 100644
+--- a/schema/xmpp_enet.xsd
++++ b/schema/xmpp_enet.xsd
+@@ -47,6 +47,9 @@ xsd:targetNamespace="http://www.contrailsystems.com/xmpp-enet-cfg.xsd">
+     <xsd:element name="ethernet-tag" type="xsd:integer"/>
+     <xsd:element name="mac" type="xsd:string"/>
+     <xsd:element name="address" type="xsd:string"/>
++    <xsd:element name="group" type="xsd:string"/>
++    <xsd:element name="source" type="xsd:string"/>
++    <xsd:element name="flags" type="xsd:integer"/>
+ </xsd:complexType>
+
+ <xsd:complexType name="EnetSecurityGroupListType">
+```
+
+Additional change in schema that is relevant for IGMP and EVPN multicast
+is described as below.
+
+Schema will have fields to configure IGMP mode at the Global System
+Configuration level, at Virtual Network level and at VMI level.
+
+Schema will also have list of <S,G>/<*,G> that will be allowed by IGMP. This
+list is available at the Virtual Network level. The schema changes is along
+the following lines:
+
+<xsd:element name="multicast-policy" type="ifmap:IdentityType"/>
+<!--Identifier "multicast-policy" is a node to which list of multicast (S,G)
+    will hang from. Currently this will be linked to virtual-network. -->
+
+<xsd:complexType name="MulticastSourceGroup">
+    <xsd:all>
+        <xsd:element name="source-address" type="IpAddressType" required='true' description='Multicast Source Address'/>
+        <xsd:element name="group-address" type="IpAddressType" required='true' description='Multicast Group Address'/>
+        <xsd:element name="action" type="SimpleActionType" required='true' description='Pass or deny action for (S,G) matching this rule'/>
+    </xsd:all>
+</xsd:complexType>
+
+<xsd:complexType name="MulticastSourceGroups">
+    <xsd:element name="multicast-source-group" type="MulticastSourceGroup" maxOccurs="unbounded"/>
+</xsd:complexType>
+
+<xsd:element name="multicast-source-groups" type="MulticastSourceGroups"/>
+<!--#IFMAP-SEMANTICS-IDL
+     ListProperty('multicast-source-groups', 'multicast-policy', 'optional',
+                  'CRUD', 'List of Multicast (S,G) Addresses.') -->
+
+<xsd:element name="virtual-network-multicast-policy"/>
+<!--#IFMAP-SEMANTICS-IDL
+     Link('virtual-network-multicast-policy',
+          'virtual-network', 'multicast-policy', ['ref'], 'optional', 'CRUD',
+          'Reference to multicast policy. Each multicast policy has a list of
+           (S,G) Addresses.') -->
+
+TBD: Could the above schema changes be extended to VMI level?
 
 ## 3.3 User workflow impact
 Support for SMET Routes is automatically enabled. As a fall-back mechanism, we
@@ -32,7 +91,7 @@ UI shall provide a way to enable/disable IGMP at virtual-machine-interface,
 virtual-network or global-system-config level.
 
 In addition, we should be able to accept a list of <S,G>/<*,G> and allow joins
-for only those, on a per VMI/VN/Global level. (TBD)
+for only those on a per VN level.
 
 ## 3.5 Notification impact
 ####Describe any log, UVE, alarm changes
@@ -146,8 +205,11 @@ created corresponding to the new SMET route received (which is specific to a
 <S,G> or <*,G> multicast group. This is how IMET routes are processed today.
 
 In EvpnLocalMcastNode::GetUpdateInfo(), remote_mcast_node_list is walked to
-form the bgp olist. For SMET routes, logic can be similar, except that we now
-need one remote_mcast_node_list per group basis. IOW, IMET routes was specific
+form the bgp olist. With SMET route support, we’ll change the data strucuture so
+that there is separate list per <S/*,G>.
+
+For SMET routes, logic can be similar, except that we now need one
+remote_mcast_node_list per group basis. IOW, IMET routes was specific
 to broad-cast address, where as SMET routes is for a specific multicast group
 address.
 
@@ -174,14 +236,46 @@ sender inside the contrail-cluster (Not targeted for R5.1)
 
 ## 4.9 Agent Implementation
 
-In addition to what is already supported as part of MVPN feature, agent should
-o Configurable IGMP groups ?
+In addition to what is already supported as part of MVPN feature, Agent should:
 
-o Accept ethernet multicast traffic from remote SDN gateway and send them to
-  the neighboring nodes in the tree (in addition to local VMIs as applicable)
+o Have configurable IGMP <S,G>/<*,G> list at the VN level.
 
-o Accept ethernet multicast traffic from local VMIs and send it to the olist
-  associated with the specific group address.
+o Accept multicast traffic from remote SDN gateway and send them to the
+  neighboring nodes in the tree in addition to local VMIs, if any.
+
+o Accept multicast traffic from local VMIs and send it to the olist
+  associated with the specific <*,G> group.
+
+Note: Future contrail release might have a per-VMI <S,G>/<*,G> list.
+
+Agent should also send SMET equivalent XMPP messages to the control BGP
+for each of the <*,G> multicast groups learnt through IGMP.
+
+Agent should also handle XMPP route updates from the control BGP and update
+the vrouter accordingly.
+
+## 4.10 vRouter Implementation
+IGMP packets in vRouter are trapped at the per-VMI level if IGMP gets
+enabled at the VMI. This can happen when IGMP is enabled specifically
+at the VMI or at the VN or at the global system configurationn.
+
+If IGMP is not enabled at the VMI, IGMP packets are forwarded using
+the broadcast MAC entry to flood the packet in the VN. This also means
+that care should taken while enabling IGMP at the VMI level.
+
+vRouter also has to handle forwarding multicast data packets. For
+release 5.1, MFIB table that is indexed by <S,G> is not implemented. Instead
+multicast data packets are forwarded in the contrail by doing a lookup in
+bridge table using multicast in the destination field of the packet.
+
+Note: Future contrail releases might support a MFIB lookup in native VRF or
+in the multicast VRF.
+
+vRouter, in release 5.1, will receive packets from outside the contrail
+on the fabric interface. The packets are encapsulated using VxLan. These
+packets will be decapsulated and a bridge lookup is done using the inner
+header multicast MAC. The resulting bridge entry will be used to forward
+the packets appropriately.
 
 # 5. Performance and scaling impact
 
