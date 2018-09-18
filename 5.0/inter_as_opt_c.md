@@ -130,7 +130,34 @@ The controller will encode/decode the new address family/ sub address family to
 and from BGP peers and Agents (XMPP).
 
 ### 4.1.2 Agent
+Agent exports vhost route with label 3 (implicit NULL) so that received
+packets processing is similar to current tunnelled packets as ASBR sends single
+labelled packet.
+Agent receives VPN routes in regular VN with nexthop as ASBR and label sent by
+SDN-GW. Agent also receives IPv4 labeled route for ASBR in fabric VRF
+(default-domain:default-project:ip-fabric:__default__).
+A new inet.3 table is added to maintain labelled unicast routes in farbic VRF.
+This table is used for resolving L3VPN routes with encapsulation type set to
+MPLS and table entries are not programmed on vrouter.
+A new nexthop class Labelled Tunnel NH is derived from Tunnel NH nexthop class
+to maintain label information.
+when agent receives L3VPN route with encapuslation type as MPLS, it creates 
+labelled tunnel nexthop for non ECMP or composite nexthop having labelled 
+tunnel nexthops as component nexthops for ECMP cases. Labelled tunnel
+nexthop is resolved by inet.3 route which in turn depends on inet.0 route lookup
+for its resolution.
+If Agent receives ECMP nexthop for L3VPN routes, it creates composite nexthop
+with component nexthops as labelled tunnel nexthops. 
+A new configuration knob is added to enable agent to advertise vhost adddress
+in IPv4 labelled unicast address family.
+MPLS tunnel connectivity verification is not supported.
+inet.3 routes do not impact flows.
+new introspect command is added to dump inet.3 routes.
+
+
 ### 4.1.3 vRouter
+vRouter should support stack of MPLS labels for sending tunnelled packets.
+it retrieves inner label from route entry and outer lable from next hop entry.
 ### 4.1.4 UI
 ### 4.1.5 Analytics
 
