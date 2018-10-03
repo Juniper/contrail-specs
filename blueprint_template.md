@@ -1,9 +1,9 @@
-
 # 1. Introduction
-#### Purpose of the document
+#### Purpose of this document
 
 # 2. Problem statement
-#### Describe the problem being solved for a new or existing features.
+#### Describe the problem being solved for a new or existing feature.
+
 #### Use cases
 
 # 3. Proposed solution
@@ -19,16 +19,20 @@
 #### Describe how users will use the feature.
 
 ## 3.4 UI changes
-#### Describe any UI changes
+#### Describe any UI change
 
 ## 3.5 Notification impact
 #### Describe any log, UVE, alarm changes
 
+## 3.5 Provisioning changes
+#### Describe how this feature will be automatically provisioned
 
 # 4. Implementation
-## 4.1 Work items
-#### Describe changes needed for different components such as Controller, Analytics, Agent, UI. 
-#### Add subsections as needed.
+#### Describe changes in all affected components such as controller, agent, etc.
+#### Describe changes to key data structures
+#### Describe synchronous/asynchronous nature of any API calls being made if any
+#### Describe the impact on the feature during process restart if any
+#### Describe all logs and debug messages associated with this feature
 
 # 5. Performance and scaling impact
 ## 5.1 API and control plane
@@ -38,7 +42,7 @@
 #### Scaling and performance for API and forwarding
 
 # 6. Upgrade
-#### Describe upgrade impact of the feature
+#### Describe upgrade impact of the feature, including ISSU
 #### Schema migration/transition
 
 # 7. Deprecations
