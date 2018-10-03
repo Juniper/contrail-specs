@@ -1,0 +1,63 @@
+# 1. Introduction
+#### Purpose of this document
+
+# 2. Problem statement
+#### Provide a brief description of the problem being solved.
+#### Use cases
+
+# 3. Proposed solution
+#### Describe the proposed solution.
+
+# 4. Alternatives considered
+#### Describe pros and cons of alternatives considered.
+
+# 5. API schema changes
+#### Describe api schema changes and impact to the REST APIs.
+
+# 6. User workflow impact
+#### Describe how users will use the feature.
+#### Ensure that work flow directly addresses all use cases targeted.
+
+# 7. UI changes
+#### Describe any UI change applicable to this feature.
+#### Modifications to existing UI work flow with appropriate justification.
+
+# 8. Notification impact
+#### Describe any log, UVE, alarm changes
+
+# 9. Provisioning changes
+#### Describe how this feature will be automatically provisioned
+#### Describe any change to notifications provided to client systems
+
+# 10. Implementation
+#### Describe changes in all affected components such as controller, agent, etc.
+#### Describe all data model schema schanges applicable to this feature
+#### Describe changes to key data structures
+#### Describe synchronous/asynchronous nature of any API calls being made if any
+#### Describe the impact on the feature during process restart if any
+#### Describe all logs and debug messages associated with this feature
+
+# 11. Performance and scaling impact
+#### API and control plane
+#### Scaling and performance for API and control plane
+#### Scaling and performance for API and forwarding
+
+# 12. Upgrade
+#### Describe upgrade impact of the feature, including ISSU
+#### Schema migration/transition
+
+# 13. Deprecations
+#### If this feature deprecates any older feature or API then list it here.
+
+# 14. Dependencies
+#### Describe dependent features or components.
+#### Describe any new infrastructure component required.
+
+# 15. Testing
+#### Unit tests
+#### Dev tests
+#### System tests
+
+# 16. Documentation Impact
+
+# 17. References
