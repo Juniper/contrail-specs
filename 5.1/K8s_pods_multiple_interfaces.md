@@ -355,6 +355,27 @@ name. In the above illustration, net-a and net-b belong to the same
 namespace are pod (i.e my-namespace). net-c belongs to the namespace
 "other-ns" and hence its name needs to be fully qualified.
 
+**Contrail network fqname Illustration**
+
+User might want to use the existing network(s) without creating
+kubernetes CRD object(s). Pod Api understands contrail network fqname
+as well.
+
+```
+kind: Pod
+metadata:
+  name: my-pod
+  namespace: my-namespace
+  annotations:
+    'opencontrail.org/network': '[
+      {"domain": "default-domain", "project": "project-a", "name": "network-a"},
+      {"domain": "default-domain", "project": "project-b", "name": "network-b"}
+    ]'
+spec:
+  containers:
+
+```
+
 **Workflow / Illustration**
 ===========================
 
@@ -451,6 +472,9 @@ network.
 **Kubernetes Illustration:**
 
 Create Pod referencing the networks.
+
+***with k8s-semantics:***
+
 ```
 apiVersion: v1
 kind: Pod
@@ -460,6 +484,32 @@ metadata:
     k8s.v1.cni.cncf.io/networks: '[
       { "name": "network-a" },
       { "name": "network-b" }
+    ]'
+spec:
+  containers:
+  - image: busybox
+    command:
+      - sleep
+      - "3600"
+    imagePullPolicy: IfNotPresent
+    name: busybox
+    stdin: true
+    tty: true
+  restartPolicy: Always
+
+```
+
+***with contrail-semantics:***
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multiNetworkPod
+  annotations:
+    'opencontrail.org/network': '[
+        {"domain": "default-domain", "project": "project-a", "name": "network-a"},
+        {"domain": "default-domain", "project": "project-b", "name": "network-b"}
     ]'
 spec:
   containers:
@@ -499,6 +549,10 @@ Contrail Vrouter Agent
 
 A config/data plane component that holds network and interface
 configuration required for a Pod.
+
+Work flow is illustarted in the below picture.
+<img src="images/k8s_pod_creation_work_flow.png">
+
 
 ### **Contrail Kube Manager (KM)**
 
@@ -604,8 +658,78 @@ For multi interface support, this API should be extended to support the
 following:
 
 1.  Return a list of all VMI's associated with a Pod.
-
 2.  Return all annotations that are attached on each VMI.
+
+Sample configuration query for a pod:
+
+    [{
+        "id": "b86ac068-cf0e-11e8-b196-002590aaa964",
+        "instance-id": "40936d96-cf0e-11e8-9892-002590aaa964",
+        "vn-id": "f95af4cc-e4ba-44c8-9936-269d891e0ee9",
+        "mac-address": "02:b8:6a:c0:68:cf",
+        "sub-interface": false,
+        "vlan-id": 65535,
+        "annotations": {
+             ...
+        }
+    },{
+        "id": "b86ac068-cf0e-11e8-b196-002590aaa965",
+        "instance-id": "40936d96-cf0e-11e8-9892-002590aaa965",
+        "vn-id": "f95af4cc-e4ba-44c8-9936-269d891e0eee",
+        "mac-address": "02:d8:da:c0:68:aa",
+        "sub-interface": false,
+        "vlan-id": 65535,
+        "annotations": {
+             ...
+        }
+    }]
+
+Api Endpoint for operational info should be extended to publish
+all vmi's info of a pod.
+
+Sample operational query for a pod:
+
+    [{
+        "id": "b86ac068-cf0e-11e8-b196-002590aaa964",
+        "instance-id": "40936d96-cf0e-11e8-9892-002590aaa964",
+        "vhostuser-mode": 0,
+        "vn-id": "f95af4cc-e4ba-44c8-9936-269d891e0ee9",
+        "vm-project-id": "00000000-0000-0000-0000-000000000000",
+        "system-name": "tapeth0fe3edca",
+        "mac-address": "02:b8:6a:c0:68:cf",
+        "rx-vlan-id": 65535,
+        "tx-vlan-id": 65535,
+        "ip-address": " 10.47.255.250",
+        "plen": "12",
+        "dns-server": "10.47.255.253",
+        "gateway": "10.47.255.254",
+        "v6-ip-address": "::",
+        "v6-plen": ,
+        "v6-dns-server": "::",
+        "v6-gateway": "::",
+        "author": "/usr/bin/contrail-vrouter-agent",
+        "time": "426404:56:19.863169"
+    },{
+        "id": "b86ac068-cf0e-11e8-b196-002590aaa965",
+        "instance-id": "40936d96-cf0e-11e8-9892-002590aaa965",
+        "vhostuser-mode": 0,
+        "vn-id": "f95af4cc-e4ba-44c8-9936-269d891e0eee",
+        "vm-project-id": "00000000-0000-0000-0000-000000000000",
+        "system-name": "tapeth1fe3edca",
+        "mac-address": "02:d8:da:c0:68:aa",
+        "rx-vlan-id": 65535,
+        "tx-vlan-id": 65535,
+        "ip-address": "30.1.1.252",
+        "plen": 24,
+        "dns-server": "30.1.1.253",
+        "gateway": "30.1.1.254",
+        "v6-ip-address": "::",
+        "v6-plen": ,
+        "v6-dns-server": "::",
+        "v6-gateway": "::",
+        "author": "/usr/bin/contrail-vrouter-agent",
+        "time": "426404:56:19.863380"
+    }]
 
 ### **Contrail CNI**
 
