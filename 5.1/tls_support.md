@@ -7,28 +7,32 @@ contrail-ansible-deployer provisioning scripts.
 
 # 2. Problem statement
 
-In previous versions of Contrail (<= 4.x), the following services supported 
-TLS 1.2:
+Customers require the ability to configure and use TLS 1.3 for contrail services.
+
+# 3. Proposed solution
+
+In previous versions of Contrail (<= 4.x), the following services supported TLS 1.0:
 
 		VNC API (using haproxy)
 		XMPP
 		Introspect
 		Sandesh
 		WebUI
-		Keystone
 	
-While moving the above packages to support the newer version of TLS (1.3), it 
-is also required to add TLS support to the following external services in 
+The above packages need to be upgraded to support the newer version of TLS (1.3). It 
+is also planned to add TLS support to the following external services in 
 Contrail 5.1:
 	
 		Cassandra
 		Zookeeper
 		Kafka
 		RabbitMQ
+		Redis
 	
-# 3. Proposed solution
 
 ## 3.1 VNC API
+Native support for TLS needs to be enabled for the VNC API.
+
 The VNC API in previous versions of Contrail did not support TLS natively. The
 VNC API traffic was encrypted by having the client talk to the backend through 
 a haproxy server and enabling SSL encryptions for the conversation between the 
@@ -38,45 +42,31 @@ benchmarking exercise needs to be done to study the performance when TLS is
 enabled natively.
 
 The other option is to use the haproxy server that comes as part of Openstack, 
-but again, this may not be possible for non-openstack configurations. So it 
-is proposed to add the native TLS support to VNC API as mentioned above.
-
+but again, this may not be possible for non-openstack configurations.
 
 
 ## 3.2 XMPP
-Support for TLS is available and there is code in contrail-ansible-deployer 
+Support for TLS 1.0 is available and there is code in contrail-ansible-deployer 
 that configures required knobs when `contrail\_configuration.SSL\_ENABLE` is 
-set to `True`. No testing has been done yet for this setting.
+set to `True`. Packages need to be upgraded to versions that support TLS 1.3.
 
 ## 3.3 Introspect Service
-Support for TLS is available and there is code in contrail-ansible-deployer 
+Support for TLS 1.0 is available and there is code in contrail-ansible-deployer 
 that configures required knobs when `contrail\_configuration.SSL\_ENABLE` is 
-set to `True`. No testing has been done yet for this setting.
+set to `True`. Packages need to be upgraded to versions that support TLS 1.3.
 
 ## 3.3 Sandesh
-Support for TLS is available and there is code in contrail-ansible-deployer 
+Support for TLS 1.0 is available and there is code in contrail-ansible-deployer 
 that configures required knobs when `contrail\_configuration.SSL\_ENABLE` is 
-set to `True`. No testing has been done yet for this setting.
+set to `True`. Packages need to be upgraded to versions that support TLS 1.3.
 
 ## 3.3 WebUI Service
-Support for TLS is available and there is code in contrail-ansible-deployer 
+Support for TLS 1.0 is available and there is code in contrail-ansible-deployer 
 that configures required knobs when `contrail\_configuration.SSL\_ENABLE` is 
-set to `True`. No testing has been done yet for this setting.
+set to `True`. Packages need to be upgraded to versions that support TLS 1.3.
 
-## 3.4 Keystone
-Support for TLS is available for openstack services by setting the 
-`kolla\_enable\_tls\_external` and `kolla\_external\_fqdn\_cert` kolla variables 
-appropriately. Enabling TLS in openstack requires that haproxy be enabled 
-(even if it is an all-in-one openstack setup) and the 
-`kolla\_internal\_vip\_address` and `kolla\_external\_vip\_address` are configured 
-to be different IP addresses to enable TLS on the external VIP.
 
-Whether the TLS version supported is 1.3 or 1.2 is not known at this point. 
-This needs to be confirmed.
-
-No testing has been done yet for this setting.
-
-## 3.5 External services (RabbitMQ, Zookeeper, Kafka, Cassandra)
+## 3.5 External services (RabbitMQ, Zookeeper, Kafka, Cassandra, Redis)
 All these external services that Contrail uses can support TLS and can be 
 enabled except for Zookeeper. Even though Zookeeper has TLS support the client 
 software that Contrail utilizes to access the service (python-kazoo 2.5.0-0) 
@@ -128,8 +118,11 @@ N/A
 
 # 9. Testing
 
-For Contrail 5.x, no testing has been done for TLS configurations. 
-This exercise needs to be done after support is added.
+Individual apps will be brought up and tested for ssl support on 
+corresponding API endpoints. Some negative test cases will also be 
+added to make sure that page access fails if wrong certificate is 
+specified by the client.
+
 
 # 10. Documentation Impact
 
