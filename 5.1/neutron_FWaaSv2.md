@@ -116,8 +116,8 @@ except when explicitly provisioned otherwise.
 The idea here is to map that FWaaS v2 model to the new firewall policy model
 recently
 [introduced in Contrail](../blob/master/specs/fw_security_enhancements.md). As
-describe above, the FWaaS v2 model introduced **three** new resources and
-**two** can be map directly to the Contrail firewall security mode:
+describe above, the FWaaS v2 model introduced **three** new resources we can
+map to the Contrail firewall security mode:
 
 * Firewall rule:
 
@@ -157,57 +157,64 @@ name | `display_name`
 description | `id_perms.description`
 share | Contrail RBAC mechanism
 firewall_rules | `firewall-rule` references with a sequence number for ordering
-audited | `audited`*
-
-\* Need to be added to the Contrail model
+audited | `id_perms.enable`
 
 But two differences persist between the two models:
-- How firewall polices are applied on resources:
+1. How firewall polices are applied on resources:
   - **Contrail** uses the `tag` resources regular expressions in the source and
-    destination fields of policy rules. These tag regular expressions will give
-    cross sections of tag dimensions. Tag resource can be applied to all
+    destination fields of firewall rules. These tag regular expressions will
+    give cross sections of tag dimensions. Tag resource can be applied to all
     contrail resources (`virtual-machine-interface`, `virtual-network`, ...)
-  - **Neutron** FWaaS v2 only permits to define one ingress and one egress
-    firewall policies per firewall group.
-- On which direction firewall policy are applied:
-  - **Contrail** defines if firewall rules are applied on endpoint 1 or
-    2 or both with the  firewall rule `direction` property
+  - **Neutron** FWaaS v2 permits to define one firewall group per port but a
+    firewall group can be used by multiple port at a time.
+2. On which direction firewall policy are applied:
+  - **Contrail** does not permits to define if a policy is applied on ingress
+    or egress traffic.
   - **Neutron** defines if a firewall policy is applied on ingress or egress
-    port traffic when a policy is applied to a firewall group.
+    port traffic when a policy is applied to the firewall group.
 
-To leverage that two differences, we proposed to not rely on the Contrail `tag`
-resources. We introduce a new Contrail resource named `firewall-group` which
-maps to the Neutron FWaaS v2 resource `firewall-group`. That resource have two
-reference types, one to `firewall-policy` with a property to define the
-direction where policies are applied and a second one to
-`virtual-machine-interface` to specify which ports the firewall be applied.
+To leverage first difference, we proposed to create a **Contrail**
+`application-policy-set` and a dedicated application `tag` for each **Neutron**
+firewall group and when a user add a `port` to a `firewall group,` **Contrail**
+adds the dedicated application `tag` to the corresponding
+`virtual-machine-interface`. The dedicated application `tag` is owned by the
+`project` which own the `application-policy-set` and its name is construct like
+this:
+
+> \<project FQ name\>:application=openstack_neutron_fwaasv2_tag_\<APS UUID\>
+
+For the second difference, we propose to not support the possibility to define
+ingress or egress policies for that first implementation and see later if users
+really need that for their use cases. That means, the `firewall group`
+ingress and egress policy attributes is always the same.
 
 * Firewall group:
 
-New resource introduced for that blueprint and mapped like this:
+Mapping between **Neutron** `firewall group` and **Contrail**
+`application-policy-set`
 
-Attribute Name | Contrail `firewall-group` attribute
--------------- | -----------------------------------
-id | `id_perms.uuid`
+Attribute Name | Contrail `application-policy-set` attribute
+-------------- | -------------------------------------------
+id | `uuid`
 tenant_id | `project` parent reference
 name | `display_name`
 description | `id_perms.description`
 admin_state_up | `id_perms.enable`
-status | Set by the FWaaS v2 Contrail driver
-share | Contrail RBAC mechanism
-ports | `virtual-machine-interface` references
-ingress_firewall_policy_id | `firewall-policy` reference with direction property set to `TrafficDirectionType.ingress`
-egress_firewall_policy_id | `firewall-policy` reference with direction property set to `TrafficDirectionType.egress`
+status | computed from `id_perms.enable` and policy and port associated
+share | `perms2`
+ports | `virtual-machine-interface` references obtain with application dedicated `tag`
+ingress_firewall_policy_id | `firewall-policy` reference
+egress_firewall_policy_id | equals to `ingress_firewall_policy_id`, Contrail does not distinguish ingress or  egress flow for network policy and firewall policy (only for security group)
 
 Some use cases are not address yet. The Neutron FWaaS v2 model permits to set
 `firewall-group` on Neutron router ports but in Contrail that ports does not
-realy exist. `virtual-machine-interface` are created for that but are purely
+really exist. `virtual-machine-interface` are created for that but are purely
 virtual. We still need to find a way to filter north/south traffic (floating IP
 and SNAT) and inter-`virtual-network` traffic.
 
 ## 3.3 User workflow impact
-User could use the OpenStack Neutron FWaaS v2 API extension with Contrail as SDN
-controller.
+User could use the OpenStack Neutron FWaaS v2 API extension with Contrail as
+SDN controller.
 
 ## 3.4 UI changes
 No change for the Contrail WebUI. OpenStack dashboard proposes new views to
