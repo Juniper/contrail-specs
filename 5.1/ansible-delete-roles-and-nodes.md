@@ -244,4 +244,9 @@ action it is expected to achieve (add/delete).
 
 New documentation has to be added for add and delete of roles.
 
-# 11. References
+# 11. Scope
+
+For release R5.1 only addition and deletion of Compute nodes via Ansible
+Deployer will be supported.
+
+# 12. References
