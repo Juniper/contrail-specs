@@ -1,13 +1,13 @@
 # 1. Introduction
 
-There is currently no way to use TLS when deploying Contrail 5.x using 
+There is currently no way to use TLS 1.2 when deploying Contrail 5.x using 
 contrail-ansible-deployer. This document describes the feature to enable the 
-ability to configure TLS for Openstack and Contrail services using the
+ability to configure TLS 1.2 for Openstack and Contrail services using the
 contrail-ansible-deployer provisioning scripts.
 
 # 2. Problem statement
 
-Customers require the ability to configure and use TLS 1.3 for contrail services.
+Customers require the ability to configure and use TLS 1.2 for contrail services.
 
 # 3. Proposed solution
 
@@ -16,22 +16,19 @@ In previous versions of Contrail (<= 4.x), the following services supported TLS 
 		VNC API (using haproxy)
 		XMPP
 		Introspect
-		Sandesh
 		WebUI
 	
-The above packages need to be upgraded to support the newer version of TLS (1.3). It 
-is also planned to add TLS support to the following external services in 
-Contrail 5.1:
+Wherever possible TLS support will be upgraded to TLS 1.2. It 
+is also planned to add TLS support to the following external services in Contrail 5.1 and later where possible:
 	
 		Cassandra
-		Zookeeper
 		Kafka
 		RabbitMQ
+		Zookeeper
 		Redis
 	
 
 ## 3.1 VNC API
-Native support for TLS needs to be enabled for the VNC API.
 
 The VNC API in previous versions of Contrail did not support TLS natively. The
 VNC API traffic was encrypted by having the client talk to the backend through 
@@ -41,35 +38,59 @@ degradation that would be seen if encryption was enabled natively. A
 benchmarking exercise needs to be done to study the performance when TLS is 
 enabled natively.
 
-The other option is to use the haproxy server that comes as part of Openstack, 
-but again, this may not be possible for non-openstack configurations.
+For Contrail 5.1, haproxy will be used to support TLS encryptions for the VNC 
+API service. Note that this encryption is only between clients to the haproxy 
+service. The backend communication between haproxy and the VNC API service 
+will still be unencrypted. The haproxy can be configured to run on the same 
+node if unencrypted traffic is not desired on the wire. Native VNC API 
+encryption will be enabled in a future release.
 
 
 ## 3.2 XMPP
-Support for TLS 1.0 is available and there is code in contrail-ansible-deployer 
-that configures required knobs when `contrail\_configuration.SSL\_ENABLE` is 
-set to `True`. Packages need to be upgraded to versions that support TLS 1.3.
+The libboost library is used to provide SSL encryption services to the XMPP 
+server. The version of libboost that comes in Centos 7.5 (which is the 
+contrail base container) does not support TLS 1.2. 
+
+Because of the above limitation, XMPP services will support only TLS 1.0 for 
+contrail 5.1. TLS 1.2 will be supported once support for it is available in 
+boost library versions in Centos repositories.
 
 ## 3.3 Introspect Service
-Support for TLS 1.0 is available and there is code in contrail-ansible-deployer 
-that configures required knobs when `contrail\_configuration.SSL\_ENABLE` is 
-set to `True`. Packages need to be upgraded to versions that support TLS 1.3.
+Support for TLS 1.2 is available and there is code in contrail-ansible-deployer 
+that configures required knobs when `contrail_configuration.SSL_ENABLE` is 
+set to `True`. 
 
 ## 3.3 Sandesh
-Support for TLS 1.0 is available and there is code in contrail-ansible-deployer 
-that configures required knobs when `contrail\_configuration.SSL\_ENABLE` is 
-set to `True`. Packages need to be upgraded to versions that support TLS 1.3.
+Support for TLS 1.2 is available and there is code in contrail-ansible-deployer 
+that configures required knobs when `contrail_configuration.SSL_ENABLE` is 
+set to `True`. 
 
 ## 3.3 WebUI Service
-Support for TLS 1.0 is available and there is code in contrail-ansible-deployer 
-that configures required knobs when `contrail\_configuration.SSL\_ENABLE` is 
-set to `True`. Packages need to be upgraded to versions that support TLS 1.3.
+Like the VNC API service, for 5.1, encryption for WebUI will be done through a 
+Haproxy frontend.
 
 
-## 3.5 External services (RabbitMQ, Zookeeper, Kafka, Cassandra, Redis)
-All these external services that Contrail uses can support TLS and can be 
-enabled except for Zookeeper. Even though Zookeeper has TLS support the client 
-software that Contrail utilizes to access the service (python-kazoo 2.5.0-0) 
+## 3.5 External services that support TLS
+
+### Rabbitmq
+Rabbitmq configuration will be enabled in the container as well as in the 
+orchestrator deployers and can be selectively enabled/disabled.
+
+### Kafka
+Kafka configuration for TLS will be enabled in the container as well as in 
+the orchestrator deployers and can be selectively enabled/disabled.
+
+### Cassandra
+Cassandra configuration for TLS will be enabled in the container as well as 
+in the orchestrator deployers and can be selectively enabled/disabled.
+
+## 3.6 External services that do not support TLS 
+
+### Zookeeper
+Zookeeper server TLS support is in Beta phase. Hence support for Zookeeper will
+not be added in 5.1 and will be added when TLS support stabilizes for Zookeeper.
+
+On the client side, the software that Contrail utilizes to access the service (python-kazoo 2.5.0-0) 
 has no support for TLS. Support for TLS has been added to python-kazoo in the 
 latest version according to [this link : (https://github.com/
 python-zk/kazoo/issues/382)](https://github.com/python-zk/kazoo/issues/382) 
@@ -79,25 +100,43 @@ explored as there might be other software dependencies. But since the support
 for TLS in the package is relatively very recent, it is proposed to wait till 
 the support matures before adopting it.
 
-All the other services listed above have support for TLS but whether they 
-support TLS 1.3 needs to be explored.
+### Redis
+Redis server supports TLS only in their enterprise version and not in the 
+opensource version. Hence it is not possible to enable TLS for Redis at this 
+point.
+
+If encryption is required for services which cannot natively enable TLS 
+encryption, then deployers can use a haproxy container to frontend the 
+services and enable encryption on the haproxy endpoints.
+
 
 # 4. Implementation
 
 All possible TLS configuration can be tied down to a single knob for Contrail:
 
-		contrail\_configuraiton:
-			SSL\_ENABLE: True
+		contrail_configuraiton:
+			SSL_ENABLE: True
+			
+with further specific configurations which can be turned off if required. 
+By default the following knobs are set to True if SSL_ENABLE is set to True as 
+above:
+
+		contrail_configuration:
+			RABBITMQ_SSL_ENABLE: False
+			KAFKA_SSL_ENABLE: False
+			CASSANDRA_SSL_ENABLE: False
+			INTROSPECT_SSL_ENABLE: False
+			XMPP_SSL_ENABLE: False
 		
 and the following knobs for Openstack:
 		
-		kolla\_config:
-			kolla\_globals:
-				kolla\_enable\_tls\_external: True
-				kolla\_external\_fqdn\_cert: <path to cert>
-				enable\_haproxy: True
-				kolla\_internal\_vip\_address: <internal VIP>
-				kolla\_external\_vip\_address: <external VIP>
+		kolla_config:
+			kolla_globals:
+				kolla_enable_tls_external: True
+				kolla_external_fqdn_cert: <path to cert>
+				enable_haproxy: True
+				kolla_internal_vip_address: <internal VIP>
+				kolla_external_vip_address: <external VIP>
 
 # 5. Performance and scaling impact
 There is no known documentation, but apparently some study was done about 
