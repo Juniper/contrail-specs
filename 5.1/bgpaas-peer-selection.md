@@ -24,6 +24,7 @@ control-node-zone(s) are configured, existing model would not be followed)
 ## 3.2 API schema changes
 New Ifmap identifier control-node-zone will be added as a child to
 global-system-config.
+
     <xsd:element name="control-node-zone" type="ifmap:IdentityType"/>
     <xsd:element name="global-system-config-bgp-router"/>
     <!--#IFMAP-SEMANTICS-IDL
@@ -32,6 +33,7 @@ global-system-config.
                 'List of references to all bgp routers in systems.') -->
 
 Link will be added between bgp-router and control-node-zone.
+
     <xsd:element name="bgp-router-control-node-zone"/>
     <!--#IFMAP-SEMANTICS-IDL
         Link('bgp-router-control-node-zone',
