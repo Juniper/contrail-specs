@@ -168,5 +168,16 @@ None
 5) Service instances of service chain spread across old and new clusters.
 6) Contrail compute upgrades for zero downtime and kernel upgrades.
 
-# 12. References
+# 12 Upgrade procedure contrail with contrail-k8s-manager
+
+Contrail-k8s-manger in k8s is equivalent of contrail-neutron-plugin in the neutron server in open stack world. It doesn’t maintain any state. It interacts only with contrail-api server in contrail side of communication. So similar to contrail upgrade in open stack, where neutron doesn’t play any role in the upgrade, contrail-k8s-manager doesn’t play any role in the upgrade. It would be shut down in the newer version of contrail cluster, during the upgrade. However the communication between k8-api-server and old version of contrail-k8s-manager will continue, till all the computes are upgraded. As part of final step of upgrade, contrail-k8s-manager will be brought up along with the other services like schema-transformer, device-manager etc… and k8s-api-server communication will switch to newer contrail-k8s-manager.
+
+Note, during the compute upgrade, if the compute is brought out of service, and work loads are redistributed, more down time might be expected, as the computes are shut down and relaunched in the newer systems.
+
+# 13 Upgrade procedure for the contrail-vcenter as a plugin
+Contrail-vcenter-plugin in vcenter environment is similar to contrail-neutron-plugin in the open stack world. It doesn’t maintain any state. However it interacts, with api-server and vrouter-agent for port operations. Upgrade is similar to that of contrail with contrail-k8s-manager upgrade, that is to spawn a parallel controller cluster for v2 and corresponding contrail-vcenter-plugin, which is down. After the initial sync, computes are ready for the upgrade. After the compute upgrade, old contrail-vcenter-plugin would continue to connect to the vrouter-agent, and vrouter-agent would connect to new controller. Once all the computes are upgraded, contrail-vcenter-plugin and vrouter-agent channel is moved newer contrail-vcenter-plugin by shutting down older contrail-vcenter-plugin and bringing up newer contrail-vcenter-plugin. And rest of the upgrade procedure remains the same.
+
+Before ESXI upgrade, it can be marked for maintenance so that workloads can be redistributed for minimal data path down time.
+
+# 14. References
 http://www.opencontrail.org/opencontrail-in-service-software-upgrade/

@@ -76,7 +76,7 @@ protocol | CRUD | null
 source_port | CRUD | null
 destination_port | CRUD | null
 position | R | null
-action | CRU | deny [allow &#124; deny &#124; reject]
+action | CRU | deny [allow\|deny\|reject]
 
 * Firewall policy:
 
@@ -115,9 +115,9 @@ except when explicitly provisioned otherwise.
 ### Contrail VNC model mapping
 The idea here is to map that FWaaS v2 model to the new firewall policy model
 recently
-[introduced in Contrail](../blob/master/specs/fw_security_enhancements.md). As
-describe above, the FWaaS v2 model introduced **three** new resources and
-**two** can be map directly to the Contrail firewall security mode:
+[introduced in Contrail](../master/specs/fw_security_enhancements.md). As
+describe above, the FWaaS v2 model introduced **three** new resources we can
+map to the Contrail firewall security mode:
 
 * Firewall rule:
 
@@ -125,7 +125,7 @@ That Neutron resource will be map to the Contrail `firewall-rule` resource like
 this:
 
 Attribute Name | Contrail `firewall-rule` attribute
---------------| ------------------------------
+---------------| ----------------------------------
 id | `id_perms.uuid`
 tenant_id | `project` parent reference
 name | `display_name`
@@ -136,7 +136,7 @@ firewall_policy_id | `firewall-policy` back-reference
 ip_version | IP version determined by `source_ip_address` and `destination_ip_address`
 source_ip_address | `endpoint-1.subnet`
 destination_ip_address | `endpoint-2.subnet`
-protocol | `service.protocol[-id]`
+protocol | `service.protocol`
 source_port | `service.src-ports`
 destination_port | `service.dst-ports`
 position | Sequence of reference between `firewall-policy` and `firewall-rule`
@@ -157,78 +157,94 @@ name | `display_name`
 description | `id_perms.description`
 share | Contrail RBAC mechanism
 firewall_rules | `firewall-rule` references with a sequence number for ordering
-audited | `audited`*
-
-\* Need to be added to the Contrail model
+audited | `id_perms.enable`
 
 But two differences persist between the two models:
-- How firewall polices are applied on resources:
+1. How firewall polices are applied on resources:
   - **Contrail** uses the `tag` resources regular expressions in the source and
-    destination fields of policy rules. These tag regular expressions will give
-    cross sections of tag dimensions. Tag resource can be applied to all
+    destination fields of firewall rules. These tag regular expressions will
+    give cross sections of tag dimensions. Tag resource can be applied to all
     contrail resources (`virtual-machine-interface`, `virtual-network`, ...)
-  - **Neutron** FWaaS v2 only permits to define one ingress and one egress
-    firewall policies per firewall group.
-- On which direction firewall policy are applied:
-  - **Contrail** defines if firewall rules are applied on endpoint 1 or
-    2 or both with the  firewall rule `direction` attribut
-  - **Neutron** definies if a firewall policy is applied on ingress or egress
-    port traffic when a policy is applied to a firewall group.
+  - **Neutron** FWaaS v2 permits to define firewall groups on port but and a
+    firewall group can be used by multiple port at a time (for the moment the
+    community reference implementation (aka. ML2/OVS) does not support to set
+    more than on firewall group per port, Contrail leverages that limitation).
+2. On which direction firewall policy are applied:
+  - **Contrail** does not permits to define if a policy is applied on ingress
+    or egress traffic.
+  - **Neutron** defines if a firewall policy is applied on ingress or egress
+    port traffic when a policy is applied to the firewall group.
 
-To leverage that two differences, we proposed to not rely on the Contrail `tag`
-resources. We introduce a new Contrail resource named `firewall-group` which
-maps to the Neutron FWaaS v2 resource `firewall-group`. That resource have two
-reference types, one to `firewall-policy` with a property to define the
-direction where policies are applied and a second one to
-`virtual-machine-interface` to specify which ports the firewall be applied.
+To leverage first difference, we proposed to create a **Contrail**
+`application-policy-set` with a dedicated `tag` of new type specially
+introduced for that extension support for each **Neutron** firewall group and
+when a user add a `port` to a `firewall group`, **Contrail** adds that
+dedicated FWaaS `tag` to the corresponding `virtual-machine-interface`. The
+dedicated FWaaS `tag` is owned by the `project` which own the
+`application-policy-set` and its name is construct like this:
+
+> \<project FQ name\>:neutron_fwaas=\<APS UUID\>
+
+For the second difference, we propose to not support the possibility to define
+ingress or egress policies for that first implementation and see later if users
+really need that for their use cases. That means, the `firewall group`
+ingress and egress policy attributes is always the same and we have to prevent
+to be different by raising an not supported exception.
 
 * Firewall group:
 
-New resource introduced for that blueprint and mapped like this:
+Mapping between **Neutron** `firewall group` and **Contrail**
+`application-policy-set`
 
-Attribute Name | Contrail `firewall-group` attribute
--------------- | -----------------------------------
-id | `id_perms.uuid`
+Attribute Name | Contrail `application-policy-set` attribute
+-------------- | -------------------------------------------
+id | `uuid`
 tenant_id | `project` parent reference
 name | `display_name`
 description | `id_perms.description`
 admin_state_up | `id_perms.enable`
-status | Set by the FWaaS v2 Contrail driver
-share | Contrail RBAC mechanism
-ports | `virtual-machine-interface` references
-ingress_firewall_policy_id | `firewall-policy` reference with direction property set to `TrafficDirectionType.ingress`
-egress_firewall_policy_id | `firewall-policy` reference with direction property set to `TrafficDirectionType.egress`
-TrafficDirectionType
+status | computed from `id_perms.enable` and policy and port associated
+share | `perms2`
+ports | `virtual-machine-interface` references obtain with FWaaS dedicated `tag`
+ingress_firewall_policy_id | `firewall-policy` reference
+egress_firewall_policy_id | equals to `ingress_firewall_policy_id`, Contrail does not distinguish ingress or  egress flow for network policy and firewall policy (only for security group)
+
 Some use cases are not address yet. The Neutron FWaaS v2 model permits to set
 `firewall-group` on Neutron router ports but in Contrail that ports does not
-realy exist. `virtual-machine-interface` are created for that but are purely
+really exist. `virtual-machine-interface` are created for that but are purely
 virtual. We still need to find a way to filter north/south traffic (floating IP
 and SNAT) and inter-`virtual-network` traffic.
 
 ## 3.3 User workflow impact
-User could use the OpenStack Neutron FWaaS v2 API extension with Contrail as SDN
-controller.
+User could use the OpenStack Neutron FWaaS v2 API extension with Contrail as
+SDN controller.
 
 ## 3.4 UI changes
-No change for the Contrail WebUI. OpenStack dashboard proposes new views to
-administrate and use the OpenStack Neutron FWaaS v2 API extension.
+WebUI traffic visualization changes will be done in later releases. Traffic
+visualization is open of the key feature of Contrail security, could be
+extended to support FWASSv2 constructs as we mapped to existing contrail
+security constructs.
 
 ## 3.5 Notification impact
-Add new UVEs entries.
+Session endpoints stats should be added with firewall as group tags and capture
+it here for agent to export to collector/analytics.
 When a `firewall_policy` is audited, we need to log it with user details and
 timestamp.
 
 # 4. Implementation
 ## 4.1 Work items
 ### Contrail data model
-Add the `firewall-group` resources to the Contrail data model.
+N/A
 
-### VNC API server
-Add sanity check on firewall resources modifications.
+### VNC OpenStack
+Add code to map Neutron and Contrail models.
 
 ### Vrouter agent
-Enforce filtering on interfaces.
-Add support to send ICMP reject message when the firewall rule action is
+* Add firewalling gate to apply policies defined by FWaaS extension. The new
+  `tag-type` **neutron_fwaas** permits to distinguish that policies from ones
+  defined by Contrail security (where the `tag-type` is **application**)
+* Enforce filtering on interfaces.
+* Add support to send ICMP reject message when the firewall rule action is
 `reject`
 
 # 5. Performance and scaling impact
@@ -256,7 +272,7 @@ N/A
 ## 9.3 System tests
 * End to end tests
 * Regression tests
-* Check performance impact, that vrouter througput is maintained with this
+* Check performance impact, that vrouter throughput is maintained with this
   firewall rules
 
 # 10. Documentation Impact
