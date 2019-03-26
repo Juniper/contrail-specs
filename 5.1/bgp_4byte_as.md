@@ -162,16 +162,33 @@ N/A
 
 ## 8.1
 
-# 9. Testing
-## 9.1 Unit tests
+# 9. Caveats
+
+4 byte ASN support on compute in 5.1.0 will be supported with the following
+caveats:
+
+o 4 byte ASN compute will work with other 2 byte or 4 byte ASN computes.
+o Change from 2 byte to 4 byte ASN (and vice versa) on compute.
+o Fabric with 2 byte ASN will work with 2 byte ASN compute.
+
+4 byte ASN support across compute and Fabric will be supported in 5.1.1, with
+the following:
+
+o Fabric 4 byte support
+o Change from 2 byte to 4 byte ASN on fabric and compute on already provisioned
+  system
+o Interoperate between 2 byte ASN and 4 byte ASN components.
+
+# 10. Testing
+## 10.1 Unit tests
 Unit tests have been added for testing new BGP attribute. AS_PATH is tested
 for the cases when peer does or does not support 4 byte asn.
 
-## 9.2 Dev tests
+## 10.2 Dev tests
 
-## 9.3 System tests
+## 10.3 System tests
 
-# 10. Documentation Impact
+# 11. Documentation Impact
 
-# 11. References
+# 12. References
 [1]: [BGP Support for Four-Octet Autonomous System (AS) Number Space](https://tools.ietf.org/html/rfc6793)
