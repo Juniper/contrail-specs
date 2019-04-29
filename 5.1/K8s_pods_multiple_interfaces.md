@@ -347,6 +347,17 @@ metadata:
 spec:
   containers:
 
+OR
+
+kind: Pod
+metadata:
+  name: my-pod
+  namespace: my-namespace
+  annotations:
+    k8s.v1.cni.cncf.io/networks: 'net-a,net-b,other-ns/net-c'
+spec:
+  containers:
+
 ```
 
 Kubernetes provides the flexibility where pods in a namespace can refer
@@ -354,27 +365,6 @@ to the networks created on other namespaces using their fully scoped
 name. In the above illustration, net-a and net-b belong to the same
 namespace are pod (i.e my-namespace). net-c belongs to the namespace
 "other-ns" and hence its name needs to be fully qualified.
-
-**Contrail network fqname Illustration**
-
-User might want to use the existing network(s) without creating
-kubernetes CRD object(s). Pod Api understands contrail network fqname
-as well.
-
-```
-kind: Pod
-metadata:
-  name: my-pod
-  namespace: my-namespace
-  annotations:
-    'opencontrail.org/network': '[
-      {"domain": "default-domain", "project": "project-a", "name": "network-a"},
-      {"domain": "default-domain", "project": "project-b", "name": "network-b"}
-    ]'
-spec:
-  containers:
-
-```
 
 **Workflow / Illustration**
 ===========================
@@ -497,20 +487,15 @@ spec:
     tty: true
   restartPolicy: Always
 
-```
 
-***with contrail-semantics:***
+OR
 
-```
 apiVersion: v1
 kind: Pod
 metadata:
   name: multiNetworkPod
   annotations:
-    'opencontrail.org/network': '[
-        {"domain": "default-domain", "project": "project-a", "name": "network-a"},
-        {"domain": "default-domain", "project": "project-b", "name": "network-b"}
-    ]'
+    k8s.v1.cni.cncf.io/networks: 'network-a, other-ns/network-b'
 spec:
   containers:
   - image: busybox
@@ -522,7 +507,6 @@ spec:
     stdin: true
     tty: true
   restartPolicy: Always
-
 ```
 
 **Contrail Implementation for Kubernetes**
@@ -857,3 +841,4 @@ Contrail CNI has the following responsibilities in this scenario:
 [Multus Meta Plugin Spec](https://github.com/intel/multus-cni)
 
 [Kubernetes CNI Spec](https://github.com/containernetworking/cni/blob/master/SPEC.md)
+
