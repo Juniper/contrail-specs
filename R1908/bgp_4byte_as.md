@@ -34,10 +34,12 @@ targetNamespace="http://www.contrailsystems.com/2012/VNC-CONFIG/0">
 ```
 
 ## 3.3 User workflow impact
-Contrail will by default support 4 byte ASN.
+When enabled, contrail will support 4 byte ASN.
 
 ## 3.4 UI changes
-UI shall allow 32 bit ASN values to a BGP router.
+There will be a knob added under global system config to enable/disable 4 byte
+asn support. By default, this feature will be disabled. If this knob is
+enabled, UI shall allow 32 bit ASN values to a BGP router. 
 
 ## 3.5 Notification impact
 
@@ -58,24 +60,24 @@ struct As4PathSpec : public BgpAttribute {
 ```
 
 ## 4.1 Interaction between NEW BGP Speakers
-A BGP speaker that supports four-octet AS numbers SHALL advertise
+A BGP speaker that supports four-octet AS numbers will advertise
 this to its peers using BGP Capabilities Advertisements.  The AS
 number of the BGP speaker MUST be carried in the Capability Value
 field of the "AS4Support capability".
 
-When a NEW BGP speaker processes an OPEN message from another NEW BGP
-speaker, it MUST use the AS number encoded in the Capability Value
+When a new BGP speaker processes an OPEN message from another new BGP
+speaker, it must use the AS number encoded in the Capability Value
 field of the "AS4Support capability" in lieu of the "My Autonomous
 System" field of the OPEN message.
 
 A BGP speaker that advertises such a capability to a particular peer,
 and receives from that peer the advertisement of such a capability,
-MUST encode AS numbers as four-octet entities in both the AS_PATH
-attribute in the updates it sends to the peer and MUST assume that this
+must encode AS numbers as four-octet entities in both the AS_PATH
+attribute in the updates it sends to the peer and must assume that this
 attribute in the updates received from the peer encode AS numbers as
 four-octet entities.
 
-The new attribute, AS4_PATH, MUST NOT be carried in an UPDATE message
+The new attribute, AS4_PATH, must not be carried in an UPDATE message
 between NEW BGP speakers. A NEW BGP speaker that receives the AS4_PATH
 attribute in an UPDATE message from another NEW BGP speaker MUST discard the
 path attribute and continue processing the UPDATE message.
@@ -88,25 +90,19 @@ used when the NEW BGP speaker does not have a two-octet AS number (even
 if multiple Autonomous Systems would use it).
 
 ### 4.2.2 Generating Updates
-When communicating with an OLD BGP speaker, a NEW BGP speaker MUST send
+When communicating with an OLD BGP speaker, a NEW BGP speaker sends
 the AS path information in the AS_PATH attribute encoded with two-octet
-AS numbers. The NEW BGP speaker MUST also send the AS path information
+AS numbers. The NEW BGP speaker also sends the AS path information
 in the AS4_PATH attribute (encoded with four-octet AS numbers), except
 for the case where all of the AS path information is composed of
 mappable four-octet AS numbers only.  In this case, the NEW BGP speaker
-MUST NOT send the AS4_PATH attribute.
+does not send the AS4_PATH attribute.
 
 In the AS_PATH attribute encoded with two-octet AS numbers, non-mappable
 four-octet AS numbers are represented by the well-known two-octet AS
 number, AS_TRANS. This will preserve the path length property of the AS
 path information and also help in updating the AS path information
 received on a NEW BGP speaker from an OLD BGP speaker.
-
-The NEW BGP speaker constructs the AS4_PATH attribute from the AS path
-information. Whenever the AS path information contains the
-AS_CONFED_SEQUENCE or AS_CONFED_SET path segment, the NEW BGP speaker
-MUST exclude such path segments from the AS4_PATH attribute being
-constructed.
 
 The AS4_PATH attribute, being optional transitive, will be carried
 across a series of OLD BGP speakers without modification and will help
@@ -115,11 +111,22 @@ information.
 
 ### 4.2.2 Processing Received Updates
 When a NEW BGP speaker receives an update from an OLD BGP speaker, it
-MUST be prepared to receive the AS4_PATH attribute along with the
+may also receive the AS4_PATH attribute along with the
 existing AS_PATH attribute. If the AS4_PATH attribute is also received,
 both of the attributes will be used to construct the exact AS path
 information, and therefore the information carried by both of the
 attributes will be considered for AS path loop detection.
+
+While reconstructing AS_PATH information, If the number of AS numbers in the
+AS_PATH attribute is less than the number of AS numbers in the AS4_PATH
+attribute, then the AS4_PATH attribute is ignored, and the AS_PATH attribute
+is taken as the AS path information. If the number of AS numbers in the
+AS_PATH attribute is larger than or equal to the number of AS numbers in the
+AS4_PATH attribute, then the AS path information is constructed by taking as
+many AS numbers and path segments as necessary from the leading part of the
+AS_PATH attribute, and then prepending them to the AS4_PATH attribute so that
+the AS path information has an identical number of AS numbers as the AS_PATH
+attribute.
 
 ### 4.3 Handling AS-OVERRIDE
 When as-override feature is enabled, bgp router is supposed to delete latest
@@ -137,7 +144,15 @@ work for a NEW BGP speaker with a non-mappable four-octet AS number.
 Such BGP speakers should use four-octet AS specific extended communities
 instead.
 
-## 4.5 Transition
+## 4.5 Fabric Support for 4 Byte ASN
+CFM Ansible plugins support configuration of 4 byte AS number to Juniper
+devices. To configure a “target” extended community, which includes a 4-byte
+AS number in the plain-number format, the plugins append the letter “L” to the
+end of the number. Example: Consider a target community with the 4-byte AS
+number 334324 and an assigned number of 132. In this case, CFM pushes the Route
+target as “target:334324L:132” to the Juniper device.
+
+## 4.6 Transition
 When an Autonomous System is using a two-octet AS number, then the BGP
 speakers within that Autonomous System MAY be upgraded to support the
 four-octet AS number extensions on a piecemeal basis. There is no
@@ -145,6 +160,15 @@ requirement for a coordinated upgrade of the four-octet AS number
 capability in this case. An Autonomous System can use a four-octet AS
 number only after all the BGP speakers within that Autonomous System
 have been upgraded to support four-octet AS numbers.
+
+### 4.6.1 Route Target Update
+Contrail Schema automatically generates a route target for every VN whenever
+it is created. These route targets have 4 byte index field, whereby, assuming
+that AS number field is 2 bytes. In case of transition from 2 byte ASN to 4
+byte ASN, these route targets need to be updated by changing the index field
+so that its value fits in 2 bytes. In addition, if ASN value is bigger than 2
+bytes, then all new route targets generated should have index field that
+should be 2 byte only.
 
 # 5. Performance and scaling impact
 
@@ -162,33 +186,16 @@ N/A
 
 ## 8.1
 
-# 9. Caveats
-
-4 byte ASN support on compute in 5.1.0 will be supported with the following
-caveats:
-
-o 4 byte ASN compute will work with other 2 byte or 4 byte ASN computes.
-o Change from 2 byte to 4 byte ASN (and vice versa) on compute.
-o Fabric with 2 byte ASN will work with 2 byte ASN compute.
-
-4 byte ASN support across compute and Fabric will be supported in 5.1.1, with
-the following:
-
-o Fabric 4 byte support
-o Change from 2 byte to 4 byte ASN on fabric and compute on already provisioned
-  system
-o Interoperate between 2 byte ASN and 4 byte ASN components.
-
-# 10. Testing
-## 10.1 Unit tests
+# 9. Testing
+## 9.1 Unit tests
 Unit tests have been added for testing new BGP attribute. AS_PATH is tested
 for the cases when peer does or does not support 4 byte asn.
 
-## 10.2 Dev tests
+## 9.2 Dev tests
 
-## 10.3 System tests
+## 9.3 System tests
 
-# 11. Documentation Impact
+# 10. Documentation Impact
 
-# 12. References
+# 11. References
 [1]: [BGP Support for Four-Octet Autonomous System (AS) Number Space](https://tools.ietf.org/html/rfc6793)
