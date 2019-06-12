@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f5c4f37_9f2bd02e",
+        "filename": "5.1/charms_k8s.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 175
+      },
+      "writtenOn": "2019-06-12T17:02:08Z",
+      "side": 1,
+      "message": "1. are we going to support nested-mode as well?\n2. is there any use case where contrail-controller and kube-master would be running in diffrent nodes? if it is so, where kube-manager would be launched and would it be configurable?\n\nThanks,\nYuvaraja",
+      "revId": "a98cdf5237660421cc9b2ddb3457e5e3a679695f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    }
+  ]
+}
