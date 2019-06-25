@@ -36,6 +36,8 @@ The user can enter the serial number either by editing the device directly or
 after selecting the device to be reactivated. Once this is done, Contrail
 will internally push the backed up configurations (in case of brownfield
 usecase) and also automatically apply the same roles as the earlier device.
+4) For greenfield workflow, the new plugged in device will also be upgraded to the 
+the os version if specified by the user during fabric creation.
 
 #### Notes:
 1) When the device is being replaced with the new one the management IP address,
@@ -176,6 +178,7 @@ See section 4 "User Flow Impact".
 
 ## 10.1 Data model changes
 - New physical_router.physical_router_managed_state field with these values: "rma", "activating", "active"
+- New optional fabric_os_version field that includes string value of os-version specified during green field workflow.
 
 
 ## 10.2 Save brownfield configuration during device import
@@ -200,7 +203,7 @@ If the serial number is not set here, it can optionally be set in the next step.
    - Update serial_number if provided with input
    - Change physical_router managed state to "activating"
    - If brownfield device, fetch underlay_config and push to device
-   - If greenfield device, invoke IP assignment task
+   - If greenfield device, invoke IP assignment task, upgrade device to fabric_os_version if specified.
    - Change physical_router managed_state to "active"
 3. Device Manager senses this state change, clears the do-not-push flag, and pushes the overlay config to the device
 
