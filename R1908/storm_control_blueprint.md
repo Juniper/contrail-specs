@@ -42,9 +42,24 @@ added to the schema. The schema changes is captured below:
      </xsd:restriction>
 </xsd:simpleType>
 
-<xsd:complexType name="StormControlActionListType">
+<xsd:complexType name="StormControlParameters">
     <xsd:all>
-        <xsd:element name="storm-control-action" type="StormControlActionType" maxOccurs="unbounded"/>
+        <xsd:element name="storm-control-actions" type="StormControlActionType" maxOccurs="unbounded"
+                     description= "Default action (Discard) is implicit. In addition, other list of actions can be specified here" />
+        <xsd:element name="recovery-timeout" type="xsd:integer" required="optional"
+                     description= "Timeout in seconds. This enables the affected interface to recover automatically from the error condition after the specified period of time" />
+        <xsd:element name="no-unregistered-multicast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable unregistered multicast traffic storm control" />
+        <xsd:element name="no-registered-multicast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable registered multicast traffic storm control" />
+        <xsd:element name="no-unknown-unicast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable unknown unicast traffic storm control" />
+        <xsd:element name="no-multicast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable muticast traffic storm control" />
+        <xsd:element name="no-broadcast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable broadcast traffic storm control" />
+        <xsd:element name="bandwidth-percent" type="xsd:integer" required="true"
+                     description= "Configure storm control bandwidth level as percentage" />
     </xsd:all>
 </xsd:complexType>
 
@@ -56,38 +71,10 @@ added to the schema. The schema changes is captured below:
      Link('project-storm-control-profile',
           'project', 'storm-control-profile', ['has'], 'optional', 'CRUD',
           'list of storm control profiles supported.') -->
-<xsd:element name="storm-control-bandwidth" type="xsd:integer"/>
+<xsd:element name="storm-control-parameters" type="StormControlParameters"/>
 <!--#IFMAP-SEMANTICS-IDL
-         Property('storm-control-bandwidth', 'storm-control-profile', 'required', 'CRUD',
-             'Configure storm control bandwidth level as percentage.') -->
-<xsd:element name="no-broadcast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-broadcast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable broadcast traffic storm control.') -->
-<xsd:element name="no-multicast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-multicast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable multicast traffic storm control.') -->
-<xsd:element name="no-unknown-unicast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-unknown-unicast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable unknown unicast traffic storm control.') -->
-<xsd:element name="no-registered-multicast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-registered-multicast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable registered multicast traffic storm control.') -->
-<xsd:element name="no-unregistered-multicast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-unregistered-multicast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable unregistered multicast traffic storm control.') -->
-<xsd:element name="recovery-timeout" type="xsd:integer"/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('recovery-timeout', 'storm-control-profile', 'optional', 'CRUD',
-             'Timeout in seconds. This enables the affected interface to recover automatically from the error condition after the specified period of time.') -->
-<xsd:element name="storm-control-actions" type="StormControlActionListType"/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('storm-control-actions', 'storm-control-profile', 'optional', 'CRUD',
-             'Default action (Discard) is implicit. In addition, other list of actions can be specified here.') -->
+         Property('storm-control-parameters', 'storm-control-profile', 'optional', 'CRUD',
+             'Parameters for the storm control profile, such as bandwidth percentage, actions, traffic type, receovery timeout etc.') -->
 
 <xsd:element name="port-profile" type="ifmap:IdentityType"
     description="Encapsulates port configurations like storm control, QoS etc"/>
@@ -157,7 +144,7 @@ interface (VMI) object.
 
 2) Device manager changes to cache these new objects
 
-3) Device manager changes to generate abstract config changes upon creation 
+3) Device manager changes to generate abstract config changes upon creation,
 updation and deletion of the storm control objects
 
 4) Jinja templates to generate the storm control configuration
@@ -165,21 +152,22 @@ updation and deletion of the storm control objects
 The configurations for QFX10K and QFX5K vary slightly and the sample configs
 are captured below:
 
-####QFX10K
-######Attaching profile:
-set interfaces ae11 unit 0 family ethernet-switching storm-control stm-ctrl
-set interfaces ae11 unit 0 family ethernet-switching recovery-timeout 600
-######Configuring Profile:
-set forwarding-options storm-control-profiles stm-ctrl all bandwidth-percentage 2
+#### Applicable for QFX10K - To attch the storm control profile
+set interfaces xe-0/0/0 unit 0 family ethernet-switching storm-control stm-ctrl
+set interfaces xe-0/0/0 unit 0 family ethernet-switching recovery-timeout 600
+###### Configuring Profile:
+set forwarding-options storm-control-profiles stm-ctrl all bandwidth-percentage 20
+set forwarding-options storm-control-profiles stm-ctrl all bandwidth-percentage no-broadcast
+set forwarding-options storm-control-profiles stm-ctrl all bandwidth-percentage no-multicast
 set forwarding-options storm-control-profiles stm-ctrl action-shutdown
 
-####QFX5K:
-######Attaching profile:
-set interfaces ae11 unit 0 family ethernet-switching storm-control stm-ctrl
+#### Applicable for QFX5K - To attach the storm control profile:
+set interfaces xe-0/0/0 unit 0 family ethernet-switching storm-control stm-ctrl
 
-######Configuring Profile:
-set forwarding-options storm-control-profiles stm-ctrl all bandwidth-percentage 2
-
+###### Configuring Profile:
+set forwarding-options storm-control-profiles stm-ctrl all bandwidth-percentage 20
+set forwarding-options storm-control-profiles stm-ctrl all bandwidth-percentage no-broadcast
+set forwarding-options storm-control-profiles stm-ctrl all bandwidth-percentage no-multicast
 
 # 10. Performance and scaling impact
 N/A
