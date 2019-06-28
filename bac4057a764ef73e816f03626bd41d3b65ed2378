@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f485f77_a34efabe",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-06-28T20:40:20Z",
+      "side": 1,
+      "message": "Can you please wrap each line before 81st column",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f485f77_63c6c219",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-06-28T20:40:20Z",
+      "side": 1,
+      "message": "What about DHCP server parameters such as lease renewal time, static ips, etc. ? Aren\u0027t they required as well ?",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f485f77_834bfeae",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-06-28T20:40:20Z",
+      "side": 1,
+      "message": "aka Internet",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f485f77_43cbc61d",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-06-28T20:40:20Z",
+      "side": 1,
+      "message": "It is recommended to provide exact changes (diff) to the schema in this section for better clarity",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f485f77_23d0cac9",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-06-28T20:40:20Z",
+      "side": 1,
+      "message": "Can you add tests to toggle between TSN and Non TSN modes",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    }
+  ]
+}
