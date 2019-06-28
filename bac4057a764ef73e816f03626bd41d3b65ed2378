@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1f485f77_e3b0728e",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-06-28T22:05:14Z",
+      "side": 1,
+      "message": "s/TSN/CSN",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f485f77_63c6c219",
         "filename": "R1908/dhcp_relay_blueprint.md",
         "patchSetId": 5
