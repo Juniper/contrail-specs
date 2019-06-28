@@ -42,9 +42,24 @@ added to the schema. The schema changes is captured below:
      </xsd:restriction>
 </xsd:simpleType>
 
-<xsd:complexType name="StormControlActionListType">
+<xsd:complexType name="StormControlParameters">
     <xsd:all>
-        <xsd:element name="storm-control-action" type="StormControlActionType" maxOccurs="unbounded"/>
+        <xsd:element name="storm-control-actions" type="StormControlActionType" maxOccurs="unbounded"
+                     description= "Default action (Discard) is implicit. In addition, other list of actions can be specified here" />
+        <xsd:element name="recovery-timeout" type="xsd:integer" required="optional"
+                     description= "Timeout in seconds. This enables the affected interface to recover automatically from the error condition after the specified period of time" />
+        <xsd:element name="no-unregistered-multicast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable unregistered multicast traffic storm control" />
+        <xsd:element name="no-registered-multicast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable registered multicast traffic storm control" />
+        <xsd:element name="no-unknown-unicast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable unknown unicast traffic storm control" />
+        <xsd:element name="no-multicast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable muticast traffic storm control" />
+        <xsd:element name="no-broadcast" type="xsd:boolean" default="false"
+                     description= "if set to true, disable broadcast traffic storm control" />
+        <xsd:element name="bandwidth-percent" type="xsd:integer" required="true"
+                     description= "Configure storm control bandwidth level as percentage" />
     </xsd:all>
 </xsd:complexType>
 
@@ -56,38 +71,10 @@ added to the schema. The schema changes is captured below:
      Link('project-storm-control-profile',
           'project', 'storm-control-profile', ['has'], 'optional', 'CRUD',
           'list of storm control profiles supported.') -->
-<xsd:element name="storm-control-bandwidth" type="xsd:integer"/>
+<xsd:element name="storm-control-parameters" type="StormControlParameters"/>
 <!--#IFMAP-SEMANTICS-IDL
-         Property('storm-control-bandwidth', 'storm-control-profile', 'required', 'CRUD',
-             'Configure storm control bandwidth level as percentage.') -->
-<xsd:element name="no-broadcast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-broadcast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable broadcast traffic storm control.') -->
-<xsd:element name="no-multicast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-multicast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable multicast traffic storm control.') -->
-<xsd:element name="no-unknown-unicast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-unknown-unicast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable unknown unicast traffic storm control.') -->
-<xsd:element name="no-registered-multicast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-registered-multicast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable registered multicast traffic storm control.') -->
-<xsd:element name="no-unregistered-multicast" type="xsd:boolean" default='false'/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('no-unregistered-multicast', 'storm-control-profile', 'optional', 'CRUD',
-             'if set to true, disable unregistered multicast traffic storm control.') -->
-<xsd:element name="recovery-timeout" type="xsd:integer"/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('recovery-timeout', 'storm-control-profile', 'optional', 'CRUD',
-             'Timeout in seconds. This enables the affected interface to recover automatically from the error condition after the specified period of time.') -->
-<xsd:element name="storm-control-actions" type="StormControlActionListType"/>
-<!--#IFMAP-SEMANTICS-IDL
-         Property('storm-control-actions', 'storm-control-profile', 'optional', 'CRUD',
-             'Default action (Discard) is implicit. In addition, other list of actions can be specified here.') -->
+         Property('storm-control-parameters', 'storm-control-profile', 'optional', 'CRUD',
+             'Parameters for the storm control profile, such as bandwidth percentage, actions, traffic type, receovery timeout etc.') -->
 
 <xsd:element name="port-profile" type="ifmap:IdentityType"
     description="Encapsulates port configurations like storm control, QoS etc"/>
