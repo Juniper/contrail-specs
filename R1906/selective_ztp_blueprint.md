@@ -30,6 +30,7 @@ from 0 to 9, and the hyphen (-).  A hostname may not start with a hyphen.
 
 The YAML file snippet is provided below:
 
+```yaml
 supplemental_day_0_cfg:
   - name: 'cfg1'
     cfg: |
@@ -40,6 +41,7 @@ device_to_ztp:
     hostname: '5a12-qfx5'
   - serial_number: 'VF3717350117'
     hostname: '5a12-qfx9'
+```
 
 # 4. User workflow impact
 The user workflow is not impacted apart from the fact that the user can now
