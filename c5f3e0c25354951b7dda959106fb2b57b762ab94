@@ -16,6 +16,24 @@
       "revId": "c5f3e0c25354951b7dda959106fb2b57b762ab94",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6ade5bb0_3cbd298a",
+        "filename": "enterprise_style_crb_configs.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 510
+      },
+      "writtenOn": "2019-07-02T17:52:04Z",
+      "side": 1,
+      "message": "No, per Ankur\u0027s comments. Added to the blueprint.",
+      "parentUuid": "316ca2bc_1cba3a7d",
+      "revId": "c5f3e0c25354951b7dda959106fb2b57b762ab94",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     }
   ]
 }
