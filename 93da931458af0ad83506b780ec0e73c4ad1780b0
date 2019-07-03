@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a36397d2_70981612",
+        "filename": "contrail-vcenter-fabric-manager.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2019-07-03T17:06:41Z",
+      "side": 1,
+      "message": "This assumption was removed. Please remove it from sample instances.yaml.",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 53,
+        "endChar": 28
+      },
+      "revId": "93da931458af0ad83506b780ec0e73c4ad1780b0",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
