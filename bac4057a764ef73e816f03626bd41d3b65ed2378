@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7811f19f_25c4234e",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 512
+      },
+      "writtenOn": "2019-07-08T20:56:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f485f77_a34efabe",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f485f77_e3b0728e",
         "filename": "R1908/dhcp_relay_blueprint.md",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2019-06-28T22:05:14Z",
       "side": 1,
       "message": "s/TSN/CSN",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f0b477d7_87959a14",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 512
+      },
+      "writtenOn": "2019-07-08T20:56:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f485f77_e3b0728e",
       "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "8f7f160a_e948f59c",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 512
+      },
+      "writtenOn": "2019-07-08T20:56:54Z",
+      "side": 1,
+      "message": "DHCP server configuration is not managed by CEM. The user needs to make sure he configures the required parameters on the server.",
+      "parentUuid": "1f485f77_63c6c219",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f485f77_834bfeae",
         "filename": "R1908/dhcp_relay_blueprint.md",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2019-06-28T20:40:20Z",
       "side": 1,
       "message": "aka Internet",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e41dd822_542e3423",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 512
+      },
+      "writtenOn": "2019-07-08T20:56:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f485f77_834bfeae",
       "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "d69ab0da_95253208",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 512
+      },
+      "writtenOn": "2019-07-08T20:56:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f485f77_43cbc61d",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f485f77_23d0cac9",
         "filename": "R1908/dhcp_relay_blueprint.md",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2019-06-28T20:40:20Z",
       "side": 1,
       "message": "Can you add tests to toggle between TSN and Non TSN modes",
+      "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1bfa9178_01c66f38",
+        "filename": "R1908/dhcp_relay_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 512
+      },
+      "writtenOn": "2019-07-08T20:56:54Z",
+      "side": 1,
+      "message": "We are not going to support this scenerio.",
+      "parentUuid": "1f485f77_23d0cac9",
       "revId": "bac4057a764ef73e816f03626bd41d3b65ed2378",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": false
