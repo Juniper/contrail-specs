@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ea8d551a_99b7e1b3",
+        "filename": "contrail-vcenter-fabric-manager.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2019-07-09T10:19:15Z",
+      "side": 1,
+      "message": "s/type/node_type/",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 10
+      },
+      "revId": "8500ff642d71556501dc2340736ea7569cd86e27",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d60047e3_f151592f",
+        "filename": "contrail-vcenter-fabric-manager.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2019-07-09T10:19:15Z",
+      "side": 1,
+      "message": "s/type/node_type/\nAlso make name key as first key in node description",
+      "range": {
+        "startLine": 111,
+        "startChar": 2,
+        "endLine": 111,
+        "endChar": 12
+      },
+      "revId": "8500ff642d71556501dc2340736ea7569cd86e27",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
