@@ -3,6 +3,7 @@ This blue print describes the requirements, design and implementation of REDIS T
 
 
 
+
 # 2. Problem statement
 The requests from contrail-analytics clients to Redis server are not encrypted and can pose a
 security request.
