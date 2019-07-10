@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "553696d5_b74cda03",
+        "filename": "5.1/charms_k8s.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 175
+      },
+      "writtenOn": "2019-07-10T15:25:20Z",
+      "side": 1,
+      "message": "It seems based on the defined charms, kube-manager always runs in the kubernetes-master even though the contrail controller can run in diffrent kubernetes-node. we always prefer to run kube-manager where contrail controller runs. kube-manager is not tightly coupled with contrail-controller or kubernetes-master when contrail-ansible-deployer is used. It can be launched anywhere. It should be taken care if contrail-controller and kubernetes-master can run in diffrent nodes with charms.",
+      "range": {
+        "startLine": 28,
+        "startChar": 19,
+        "endLine": 28,
+        "endChar": 31
+      },
+      "revId": "6f2871187dfbd8e5fed8e524df857edca9f3d93e",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
