@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a2dea928_f3d438eb",
+        "filename": "fabric_abort_job.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 512
+      },
+      "writtenOn": "2019-07-11T21:04:03Z",
+      "side": 1,
+      "message": "This can move to implementation details. Here we can just mention that we are providing a new API for abort to either gracefully or forcefully shut down.",
+      "revId": "96e939d55f3a0cbeac6ef534f268439f9813537c",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
