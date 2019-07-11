@@ -22,6 +22,30 @@
       "revId": "6f2871187dfbd8e5fed8e524df857edca9f3d93e",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72dbd197_3756a1ed",
+        "filename": "5.1/charms_k8s.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 728
+      },
+      "writtenOn": "2019-07-11T14:33:25Z",
+      "side": 1,
+      "message": "The Contrail cluster work properly when contrail-kubernetes-master and contrail-controller deployed on different nodes. This case tested in acceptance test (https://contrail-jws.atlassian.net/browse/CEM-4924).",
+      "parentUuid": "553696d5_b74cda03",
+      "range": {
+        "startLine": 28,
+        "startChar": 19,
+        "endLine": 28,
+        "endChar": 31
+      },
+      "revId": "6f2871187dfbd8e5fed8e524df857edca9f3d93e",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
     }
   ]
 }
