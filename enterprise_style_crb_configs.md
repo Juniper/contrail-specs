@@ -43,11 +43,31 @@ The following screenshots capture the user-visible changes
 # 6. API schema changes
 The fabric object will have the following schema additions:
 
-- New fabric.fabric_enterprise_style boolean field with these values: 
+- New 'enterprise_style' boolean field added to fabric_onboard_template and existing_fabric_onboard_template
+ with these values:
   
   a) True: Uniform vlan mapping (Enterprise-style) (default)
 
   b) False: Flexible per-port vlan mapping (SP-style)  
+
+```
+{
+  "input_schema": {
+    "title": "fabric info",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        ...
+      "enterprise_style": {
+        "type": "boolean",
+        "default": true,
+        "description": "True if enterprise style, false if sp-style configuration"
+      }
+    }
+  },
+```
+
 
 # 7. UI changes
 See section 4 "User Flow Impact".
