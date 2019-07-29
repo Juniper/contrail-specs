@@ -38,9 +38,13 @@ There will be a new action URL with the following input format:
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "job_execution_id": {
-        "type": "string",
-        "description": "Job execution ID of job to abort"
+      "job_execution_ids": {
+        "description": "List of job IDs to abort",
+        "type": "array",
+        "items": {
+          "description": "Job execution ID of job to abort",
+          "type": "string"
+        }
       },
       "abort_mode": {
         "type": "string",
@@ -60,9 +64,11 @@ POST http://{controller-ip}:8082/abort-job
 
 with json input {'input': {...}} and the input schema defined above.
 
+Note that the 'job_execution_ids' attribute is optional. If not specified, or an empty list, all active fabric jobs will be aborted.
+
 For example:
 
-POST http://{controller-ip}:8082/abort-job -d {'input': {'job_execution_id': 'cf369d42-a1c4-11e9-be52-c4544444d663', 'abort_mode': 'force'}}
+POST http://{controller-ip}:8082/abort-job -d {'input': {'job_execution_id': ['cf369d42-a1c4-11e9-be52-c4544444d663'], 'abort_mode': 'force'}}
 
 Note that the new abort-job format is similar to execute-job, except abort-job
 does not require 'job_template_fq_name' since there is no job template in this case.
