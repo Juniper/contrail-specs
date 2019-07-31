@@ -1,0 +1,163 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab3f3bc_c22ca3d6",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "Is this spec for the whole feature or only from vrouter perspective? Please clarify accordingly in the document.",
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49e23f9e_0a71eac1",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "This looks cryptic. Can we put the actual physical interface name instead? If this nic info is required, maybe we can display it additionally.",
+      "range": {
+        "startLine": 26,
+        "startChar": 32,
+        "endLine": 26,
+        "endChar": 44
+      },
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d1d41c1_f89f4dc9",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "Is there any requirement to also show the pkt stats for the slave interfaces? Is it already visible in the vif list output?",
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4eade670_a4facd1c",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "What are the agent changes needed? If none then can you specify it?\nIf yes, then can you add the details.",
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65c1ed35_003b552e",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "can you add link status as well for completeness sake?",
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1848a146_517ea7bc",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "VR_DPDK_BOND_SLAVE",
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa45d154_e0b142c3",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "Is this a new change or something which is already there?",
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84fe87e7_e7a7ab46",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "Maybe you can add some details about how you are planning to test this with vtest_py - python netlink socket creation etc..\nAlso list of test cases.",
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5a73a9d_5a7fa5ba",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-07-31T08:38:05Z",
+      "side": 1,
+      "message": "Please fill this section",
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
