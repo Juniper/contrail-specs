@@ -20,16 +20,36 @@ Port profile will currently compose of the storm control profile
 configuration. Later on port profile can be leveraged as the docking
 point for configurations like port mirroring etc
 
-The port profile can be attached to a VPG. The options to create
-port profiles, view existing ones will be provided.
+The port profile can be attached to a VPG. There can be only one port
+profile that can be attached to a VPG. There can also be only one port
+profile per interface of an instance. The options to create port
+profiles, view existing ones will be provided.
 
 The port profile will include a side panel to create the storm
-control profile.
+control profile. There can be only one storm control profile attached
+to a port profile as associating multiple storm control profiles will
+cause them to be overwritten in the device.
 
 The storm control profile will contain the following configuration params - 
-profile name, action, bandwidth (percentage), options to disable
-storm control for unicast, multicast, unknown unicast, registered multicast and 
-unregistered multicast. 
+profile name, action, bandwidth (percentage), recovery timeout (if selected
+action is inteface-shutdown), options to disable storm control for unicast,
+multicast, unknown unicast, registered multicast and unregistered multicast.
+
+Note: The storm control profile is not qualified for service provider style.
+
+The following are the accepted values for some of the storm control parameters:
+1. bandwidth (percentage): Accepted Range: 1-100 (in %), default: 20%
+2. recovery-timeout: Accepted Range: 10-3600 (in sec), default: 600 sec
+
+Also note the following rules regarding the traffic options
+(Traffic Types To Exclude):
+
+1. The multicast options (No multicast, No registered multicast and No
+unregistered multicast) are mutually exclusive. This means a user can
+only specify one of these multicast options at any given time.
+2. The multicast options are not supported on 5k lean profiles. If the
+user specifies multicast options for a 5k lean device, then those will be ignored.
+
 
 # 4. API schema changes
 
