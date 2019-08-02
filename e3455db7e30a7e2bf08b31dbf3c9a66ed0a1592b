@@ -70,6 +70,30 @@
       "revId": "e3455db7e30a7e2bf08b31dbf3c9a66ed0a1592b",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3d65937_ac9e0ae3",
+        "filename": "vrouter_agent_debugging_tool.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-02T16:19:34Z",
+      "side": 1,
+      "message": "In that case we will have have to run the container manually, collect logs and then stop/remove the container.",
+      "parentUuid": "5c69a99c_f3ff9784",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 0
+      },
+      "revId": "e3455db7e30a7e2bf08b31dbf3c9a66ed0a1592b",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
     }
   ]
 }
