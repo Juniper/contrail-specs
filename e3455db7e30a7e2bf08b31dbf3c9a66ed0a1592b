@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "870000bf_7b8aad1b",
+        "filename": "vrouter_agent_debugging_tool.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 437
+      },
+      "writtenOn": "2019-08-02T07:26:31Z",
+      "side": 1,
+      "message": "1) Do understood the idea correctly that it is a kind of ‘sos-tool’ that helps people to collect all the required data from cluster for reporting bugs/issues and troubleshooting?\n \n2) Am I correct that it is to be run outside of cluster – somewhere on an orchestrating node.\ne.g. in RHOSP it is undercloud node, in case of ansible – it is a node where ansible playbooks are run.. etc?\n(At least in tripleo it can be run only on undercloud because only undercloud has ssh key for that.  And in other cases orchestrating nodes always have ssh access to the contrail nodes because they do deploy).\n\n3) What do you think of the following idea about user-workflow with this tools:\nWe can make easy to use for end-user with avoiding creation of new yaml input file and running it from the same orchestrating node where deloy was done from: \n- in case of ansible we may provide a helping playbook that will run the tool via docker run on localhost on orchestrator.  It may use the same instances.yaml as was used for deploy (or a modified copy of that if not all nodes are to be processed)\n- in tripleo we may provide helping bash script (that can be put in ~/tripleo-heat-templates/tools/contrail folder as usually this folder is used for deploy). It may use openstack commands to discover nodes for processing by default (an may take a parameter to filter ndoes if not all to be processed)\n - for openshift I suppose there would be  something similar to ansible",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 0
+      },
+      "revId": "e3455db7e30a7e2bf08b31dbf3c9a66ed0a1592b",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
