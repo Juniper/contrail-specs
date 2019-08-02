@@ -22,6 +22,30 @@
       "revId": "e3455db7e30a7e2bf08b31dbf3c9a66ed0a1592b",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba17481e_7ee962a2",
+        "filename": "vrouter_agent_debugging_tool.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-02T10:35:52Z",
+      "side": 1,
+      "message": "Hi Alex,\nRight now we are targeting this for below deployment:\n1. rhosp deployed using rhosp_director.\n2. openstack deployed using ansible.\n3. kubernetes deployed using ansible.\n\nYes the tools container needs to be run from undercloud in rhosp setup and in case of ansible it is a node where ansible playbooks are run. But we can\u0027t use the exiting yaml file as it doesn\u0027t have some below field:\n\u0027gcore_needed\u0027 which is needed to decide if we want to collect gcore\n\u0027deployment_method\u0027and \u0027vim\u0027 which are needed to decide the vrouter_agent container name and log file location and they may very depending on the orchestrator.\nHence we have separate yaml file. Also I am not sure whether we use any yaml file in rhosp kind of deployement. \nFor now we are making sure that is works for ansible and rhosp and will add support so that it works on openshift and tripleo.",
+      "parentUuid": "870000bf_7b8aad1b",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 0
+      },
+      "revId": "e3455db7e30a7e2bf08b31dbf3c9a66ed0a1592b",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
     }
   ]
 }
