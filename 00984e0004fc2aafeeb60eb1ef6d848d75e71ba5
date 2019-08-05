@@ -143,6 +143,30 @@
     },
     {
       "key": {
+        "uuid": "a9dca597_03c0b250",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2019-08-05T17:44:22Z",
+      "side": 1,
+      "message": "We are exploring how to do this.",
+      "parentUuid": "4f38ae87_28b14642",
+      "range": {
+        "startLine": 26,
+        "startChar": 32,
+        "endLine": 26,
+        "endChar": 44
+      },
+      "revId": "00984e0004fc2aafeeb60eb1ef6d848d75e71ba5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4eade670_a4facd1c",
         "filename": "Monitoring_bond_members_blueprint.md",
         "patchSetId": 1
