@@ -1,0 +1,187 @@
+# 1. Introduction
+Junos devices display a list of all Flexible PIC Concentrators (FPCs) and 
+PICs installed in the router or switch chassis, including the hardware version
+level and serial number. This story involves providing this information for the 
+Physical Routers in Contrail Command UI.
+
+# 2. Problem statement
+Currently user cannot view the hardware inventory information in the UI.
+User should be able to view the details of the 'show chassis hardware' command
+in the UI and also be able to pull these latest hardware details from the device
+on demand.
+
+# 3. Proposed solution
+During the on-boarding of the fabric, hardware inventory for the device will
+be fetched and saved in the DB. The User will be able to view this detail for 
+the Physical router in the UI. Also User will be able to click a button to 
+pull this information from the device in real time.
+
+# 4. API schema changes
+A new hardware-inventory will be added as a child to the existing
+ physical-router object.
+
+<xsd:element name="hardware-inventory" type="ifmap:IdentityType"/>
+<xsd:element name="physical-router-hardware-inventory"/>
+<!--#IFMAP-SEMANTICS-IDL
+          Link('physical-router-hardware-inventory',
+          'physical-router', 'hardware-inventory', ['has'], 'optional', 'CRUD',
+          'Hardware Inventory on a physical router.') -->
+<xsd:element name="hardware-inventory-inventory-info" type="xsd:string"/>
+<!--#IFMAP-SEMANTICS-IDL
+          Property('hardware-inventory-inventory-info', 'hardware-inventory', 'optional', 'CRUD',
+              'chassis inventory info of the physical router. Stored as json string. Will be used to render chassis hardware details in UI') -->
+              
+A new job template hardware_inventory_template will be added for getting the
+ hardware inventory from device. The input and output schema for the hardware 
+ inventory data is as follows:
+
+{
+  "input_schema": {
+    "title": "Hardware Inventory Information",
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "type": "object",
+    "required": [
+      "hw_info_devices"
+    ],
+    "properties": {
+      "hw_info_devices": {
+        "$id": "#/properties/hw_info_devices",
+        "type": "array",
+        "title": "List of device UUIDs",
+        "items": {
+          "type": "string",
+          "format": "uuid"
+        }
+      }
+    }
+  },
+  "output_schema": {
+    "type": "array",
+    "title": "Hardware Inventory Output",
+    "items": {
+      "$id": "#/items",
+      "type": "object",
+      "title": "List of hardware inventory info",
+      "required": [
+        "module",
+        "model",
+        "model_number",
+        "part_number",
+        "version",
+        "serial_number",
+        "description",
+        "parent_module"
+      ],
+      "properties": {
+        "module": {
+          "type": "string",
+          "title": "The Module Name",
+          "default": "",
+          "examples": [
+            "chassis"
+          ],
+        },
+        "model": {
+          "type": "string",
+          "title": "The Model Name",
+          "default": ""
+        },
+        "model_number": {
+          "type": "string",
+          "title": "The Model Number",
+          "default": ""
+        },
+        "part_number": {
+          "type": "string",
+          "title": "The Part Number ",
+          "default": ""
+        },
+        "version": {
+          "type": "string",
+          "title": "Module Version",
+          "default": ""
+        },
+        "serial_number": {
+          "type": "string",
+          "title": "The Module Serial Number",
+          "default": "",
+          "examples": [
+            "VF3717350288"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "title": "Module Description",
+          "default": "",
+          "examples": [
+            "QFX5100-48S-6Q"
+          ]
+        },
+        "parent_module": {
+          "$id": "#/items/properties/parent",
+          "type": "string",
+          "title": "If the current Module is a subset of another Module",
+          "default": "",
+          "examples": [
+            "FPC 0"
+          ]
+        }
+      }
+    }
+  }
+}
+
+ 
+ 
+
+             
+# 5. Alternatives considered
+N/A
+
+# 6. UI changes / User workflow impact
+The User will be able to view the hardware/chassis details in a tabular format
+in a newly added tab in the page where the Physical interface and Logical
+interfaces are currently displayed. The page will also have a action button 
+to update the hardware data in realtime
+
+![Overlay features list](images/hardware_inventory.png)
+
+# 7. Notification impact
+N/A
+
+# 8. Provisioning changes
+N/A
+
+# 9. Implementation
+The major implementation modules include:
+1) Playbook to read the hardware details from the device using the 
+'show chassis hardware' command. This playbook will fetch the data from the 
+device in json format and process it to meet the defined schema and 
+save the JSON in DB.
+2)A new job template hardware_inventory_template will be added for getting the
+ hardware inventory from device
+3) Upon request from user to fetch the hardware information in real time,
+the same playbook will be used to update the chassis data in DB
+
+
+# 10. Performance and scaling impact
+N/A
+
+# 11. Upgrade
+N/A
+
+# 12. Deprecations
+N/A
+
+# 13. Dependencies
+N/A
+
+# 14. Testing
+Will capture the testing plan in a separate document.
+
+# 15. Documentation Impact
+The feature will have to be documented
+
+# 16. References
+JIRA story : https://contrail-jws.atlassian.net/browse/CEM-37
+JUNOS documentation: https://www.juniper.net/documentation/en_US/junos/topics/reference/command-summary/show-chassis-hardware.html
