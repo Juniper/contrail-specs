@@ -1,9 +1,16 @@
+# [Design Document Template](https://contrail-jws.atlassian.net/browse/JCB-172803)
+
+| Version |     Date       | Development |  Test    |   PLM    |  Status   |
+|:-------:|:--------------:|:-----------:|:--------:|:--------:|:---------:|
+| 1.0     |  Oct 3rd 2018  |   anantha   |   N/A    |   N/A    |  Review   |
+| 1.1     |  Aug 16th 2019 |   anantha   |   N/A    |   N/A    |  Approved |
+
 # 1. Introduction
 #### Purpose of this document
 
 # 2. Problem statement
-#### Provide registered blueprint URL for this feature
-#### Blueprint must provide a brief description of the problem being solved
+#### Provide link to associated jira story/task
+#### Clearly describe the problem being addressed
 
 # 3. Proposed solution
 #### Describe the proposed solution
@@ -24,7 +31,7 @@
 
 # 8. Provisioning changes
 #### Describe how this feature will be automatically provisioned
-#### Describe all applicable envs like Kubernetes, RHOSP, JuJu, openshift, etc.
+#### Describe all applicable environments like Kubernetes, RHOSP, JuJu, openshift, etc.
 #### Describe any change to notifications provided to client systems
 
 # 9. Implementation
@@ -52,11 +59,15 @@
 #### Describe dependent features or components
 #### Describe any new infrastructure component required
 
-# 14. Testing
+# 14. Security Considerations
+#### Describe all security aspects applicable.
+#### Describe all impact to new/existing third-party code including licensing
+
+# 15. Testing
 #### Unit tests
 #### Dev tests
 #### System tests
 
-# 15. Documentation Impact
+# 16. Documentation Impact
 
-# 16. References
+# 17. References
