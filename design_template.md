@@ -1,3 +1,11 @@
+
+# [Title - Design Document Template](https://contrail-jws.atlassian.net/browse/JCB-172803)
+
+| Version |     Date       | Development |  Test    |   PLM    |
+|:-------:|:--------------:|:-----------:|:--------:|:--------:|
+| 1.0     |  Oct 3rd 2018  |   anantha   |   N/A    |   N/A    |
+| 1.1     |  Aug 13th 2019 |   anantha   |   N/A    |   N/A    |
+
 # 1. Introduction
 #### Purpose of this document
 
@@ -24,7 +32,7 @@
 
 # 8. Provisioning changes
 #### Describe how this feature will be automatically provisioned
-#### Describe all applicable envs like Kubernetes, RHOSP, JuJu, openshift, etc.
+#### Describe all applicable environments like Kubernetes, RHOSP, JuJu, openshift, etc.
 #### Describe any change to notifications provided to client systems
 
 # 9. Implementation
@@ -52,11 +60,15 @@
 #### Describe dependent features or components
 #### Describe any new infrastructure component required
 
-# 14. Testing
+# 14. Security Considerations
+#### Describe all security aspects applicable.
+#### Describe all impact to new/existing third-party code including licensing
+
+# 15. Testing
 #### Unit tests
 #### Dev tests
 #### System tests
 
-# 15. Documentation Impact
+# 16. Documentation Impact
 
-# 16. References
+# 17. References
