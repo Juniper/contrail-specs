@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f964ab1d_896b9ed5",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-08-14T05:11:51Z",
+      "side": 1,
+      "message": "This is implementation or solution, we should add something about the requirements here.",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 50
+      },
+      "revId": "db801b7d3a370f7c9fb44946c5f85ccca0e65008",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64deba59_493521b2",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-08-14T05:11:51Z",
+      "side": 1,
+      "message": "This is implementation detail so should come under corresponding section. I feel what you put in previous section can come here.",
+      "range": {
+        "startLine": 21,
+        "startChar": 3,
+        "endLine": 22,
+        "endChar": 3
+      },
+      "revId": "db801b7d3a370f7c9fb44946c5f85ccca0e65008",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "054fb866_02377b06",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-08-14T05:11:51Z",
+      "side": 1,
+      "message": "Nit: typo, extra the",
+      "range": {
+        "startLine": 22,
+        "startChar": 32,
+        "endLine": 22,
+        "endChar": 36
+      },
+      "revId": "db801b7d3a370f7c9fb44946c5f85ccca0e65008",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ae2f802_8a48c4ba",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-08-14T05:11:51Z",
+      "side": 1,
+      "message": "Nit: extra \u0027we\u0027",
+      "range": {
+        "startLine": 107,
+        "startChar": 78,
+        "endLine": 107,
+        "endChar": 80
+      },
+      "revId": "db801b7d3a370f7c9fb44946c5f85ccca0e65008",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df6faefd_4f847b45",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-08-14T05:11:51Z",
+      "side": 1,
+      "message": "There is a change in behaviour of applying routing policies so we should mention the impact to customer somewhere in case there are some policies in place before upgrade.",
+      "range": {
+        "startLine": 113,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 4
+      },
+      "revId": "db801b7d3a370f7c9fb44946c5f85ccca0e65008",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7abfc913_bd598ac6",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-08-14T05:11:51Z",
+      "side": 1,
+      "message": "Please add some details about UTs. what all UTs you plan to add there.",
+      "range": {
+        "startLine": 123,
+        "startChar": 16,
+        "endLine": 124,
+        "endChar": 16
+      },
+      "revId": "db801b7d3a370f7c9fb44946c5f85ccca0e65008",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
