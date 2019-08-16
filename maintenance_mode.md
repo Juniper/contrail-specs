@@ -26,6 +26,7 @@ traffic away.
 - Device status changes to "Maintenance Mode"
 
 2) Deactivate-Maintenance-Mode Workflow
+- Input: fabric_uuid, device_uuid, advanced_parameters.
 - Remove maintenance-mode configuration from device, allowing traffic to once again flow through.
 - Run another health check
 - Device status changes back to "Active"
@@ -38,11 +39,9 @@ of the hitless image upgrade feature to easily navigate maintenance mode.
 
 Hitless image upgrade uses a wizard to guide the user through the health check phase.
 This is important because the user may need to go back and forth between the 
-advanced_parameters page and the test run itself. Since activating
+advanced_parameters page and the test run itself. Since activating/deactivating
 maintenance mode also runs these same health checks, it is important to
-provide this same capability, at least for activate maintenance mode.
-Deactivating maintenance mode may not need a wizard, but it would be useful
-to display the job logs in progress.
+provide this same capability.
 
 1) Activate-Maintenance-Mode
 
@@ -97,6 +96,9 @@ should change from "Active" to "Maintenance Mode" (or a short version like "MM")
 2) Deactivate-Maintenance-Mode
 
 - Select device and initiate "deactivate maintenance mode" action.
+- Screen1: Parameters page. Show advanced_parameters just like with hitless image upgrade
+and allow the user to modify these parameters if desired. "Next" button at the bottom
+will trigger UI to call deactivate-maintenance-mode workflow.
 - Screen4: Job progress page. Show job progress of deactivate workflow.
 This page is similar to Screen3 of the activate workflow.
 This will show the results of the last health check. In this case, however,
