@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a96a6fe8_e96d85a4",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-08-23T17:12:50Z",
+      "side": 1,
+      "message": "I am not sure about this part any more. Imagine the case when there is no sub-cluster configured at all (or routes from an older version of code which does not add any sub-cluster extended community) or when routes come from MX (from MP-BGP), then we should be able to apply the policy. Let us confirm this part with Richard Roberts and Nick Davey as well",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "052eb38a_ca3b746b",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-08-23T17:12:50Z",
+      "side": 1,
+      "message": "s/and apply/but still/",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8cec14e_1965b5c3",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-08-23T17:12:50Z",
+      "side": 1,
+      "message": "Great to see that logic converged into this small little snippet..",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4c831dc_d8c4d31c",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-08-23T17:12:50Z",
+      "side": 1,
+      "message": "Yes, this I like. Isn\u0027t this opposite of what you mentioned above at line 23 ?",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4c4648f_e8d861e2",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-08-23T17:12:50Z",
+      "side": 1,
+      "message": "s/use/user/",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c1b5d93_f392f13e",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-08-23T17:12:50Z",
+      "side": 1,
+      "message": "s/route-policy/routing-policy/g",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08fb616b_0d8b4ada",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-08-23T17:12:50Z",
+      "side": 1,
+      "message": "s/primary path/only for primary path/",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95320cfa_7b0badfc",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-08-23T17:12:50Z",
+      "side": 1,
+      "message": "s/undate/update/",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
