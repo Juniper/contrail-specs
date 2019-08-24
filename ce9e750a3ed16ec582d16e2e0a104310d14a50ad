@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5b53d6b8_3a5492a6",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-24T16:24:23Z",
+      "side": 1,
+      "message": "Sorry for the type here. It should be \"If there is no sub-cluster extended-community associated with the route, then we have to apply the policy for secondary routes.\"",
+      "parentUuid": "a96a6fe8_e96d85a4",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "052eb38a_ca3b746b",
         "filename": "R1910/vn_policy_execution_changes.md",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa5730ce_5b5a350b",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-24T16:24:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "052eb38a_ca3b746b",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ef47dd92_44cd2700",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-24T16:24:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c8cec14e_1965b5c3",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b4c831dc_d8c4d31c",
         "filename": "R1910/vn_policy_execution_changes.md",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2019-08-23T17:12:50Z",
       "side": 1,
       "message": "Yes, this I like. Isn\u0027t this opposite of what you mentioned above at line 23 ?",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5839d0f_53417406",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-24T16:24:23Z",
+      "side": 1,
+      "message": "Sorry for the type in line 23.",
+      "parentUuid": "b4c831dc_d8c4d31c",
       "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "f14bb63c_9f7326e2",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-24T16:24:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4c4648f_e8d861e2",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c1b5d93_f392f13e",
         "filename": "R1910/vn_policy_execution_changes.md",
         "patchSetId": 2
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "da55dc17_fbe1e937",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-24T16:24:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1c1b5d93_f392f13e",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08fb616b_0d8b4ada",
         "filename": "R1910/vn_policy_execution_changes.md",
         "patchSetId": 2
@@ -118,6 +226,24 @@
       "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "955e4609_53202182",
+        "filename": "R1910/vn_policy_execution_changes.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2019-08-24T16:24:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08fb616b_0d8b4ada",
+      "revId": "ce9e750a3ed16ec582d16e2e0a104310d14a50ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
