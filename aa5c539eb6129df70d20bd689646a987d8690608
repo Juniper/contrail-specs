@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "459619f8_2b305d86",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-09-09T08:36:22Z",
+      "side": 1,
+      "message": "Pankaj/Haji, as we discussed, can you call this as kstate interface instead of kstate flow, since flow has a different meaning in the context of vrouter. And we are storing this information as part of kstate interface.",
+      "revId": "aa5c539eb6129df70d20bd689646a987d8690608",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfe4cc21_69caf3db",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-09-09T08:36:22Z",
+      "side": 1,
+      "message": "Can you add a pointer to the kstate interface request introspect page?",
+      "revId": "aa5c539eb6129df70d20bd689646a987d8690608",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
