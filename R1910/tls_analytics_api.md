@@ -53,6 +53,10 @@ else
     analytics_api_certs_config=''
 fi
 
+# 9.1 Caveats
+Integration with Appformix is not supported in R1910.
+So, we would not be making any changes for Appformix.
+
 
 # 10. Performance and scaling impact
 None
