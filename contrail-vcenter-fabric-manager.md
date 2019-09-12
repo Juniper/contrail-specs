@@ -15,6 +15,27 @@ vSphere API can be used to obtain events regarding any Distributed Virtual Portg
 # 5. API schema changes
 
 # 6. UI changes
+The following screenshots capture the use visible changes
+
+#### - CVFM deployment during cluster provisioning setup
+
+![Case 1 - Provisioning](images/cvfm-case-1.png)
+
+#### - CVFM deployment during cluster provisioning setup (HA mode)
+
+![Case 1 - Provisioning with HA](images/cvfm-case-1-ha.png)
+
+#### - CVFM deployment on brought up cluster
+
+![Case 2 - vCenter deployment](images/cvfm-case-2-deploy.png)
+
+#### - CVFM update
+
+![Case 2 - vCenter update](images/cvfm-case-2-update.png)
+
+#### - Servers Discovery - ESXi hosts
+
+![Case 3 - Servers Discovery](images/cvfm-case-3.png)
 
 # 7. Notification impact
 
