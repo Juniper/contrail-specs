@@ -22,3 +22,25 @@ As part of Contrail's VMware fabric installation Contrail vCenter Fabric Manager
 # 4. User workflow impact
 
 # 5. References
+
+# 6. UI changes
+
+## Case 1 - cluster provisioning
+The user can deploy CVFM on selected control nodes during cluster provisioning. 
+Manage vCenter checkbox in the enabled state shows a form where the user needs to put
+ vCenter credentials.
+
+## Case 2.a - vCenter deployment on brought up cluster
+If the user has not decided to deploy CVFM during cluster provisioning, 
+he still can do it by clicking Manage vCenter button in Cluster Overview page. 
+Control nodes list and inputs for credentials are available.
+
+## Case 2.b - vCenter update on brought up cluster
+An update of vCenter credentials is possible on a brought up cluster.
+ Clicking Manage vCenter button in Cluster Overview page shows a modal with 
+ vCenter credentials form. What is more, user can select existing control nodes 
+ and deploy on them CVFM plugin.
+
+## Case 3 - ESXi hosts discovery
+Navigate to Servers tab and click on Servers Discovery. ESXi hosts discovering can be 
+achieved by selecting ESXi type option and executing a job.
