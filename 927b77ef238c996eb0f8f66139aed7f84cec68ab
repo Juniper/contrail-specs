@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8fb14da1_f63d65ca",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "ovsdb will be deprecated... Not sure if needs to be described in the intro.",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13d97603_afb43549",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "The type-5 evpn routing mode of LR is more relevant here than SNAT.",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "456866d4_be5884f0",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "s/VN-int/InternalVirtualNetwork/g",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dde7e0fd_ecf4b0e7",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Not sure if this is required in the intro part of this service-chaining feature per se.",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe9fbac0_0d7b6fa3",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Can you please note that mix of VNF and PNF is not supported today and in the near future",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad1e5680_cb413d86",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Should this be ServiceChainAddress instead ?",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a228572b_ec2db7fe",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Can you please clearly outline what is supported in the targeted release.. (LR to LR only...)",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b979a4e_b254ecb3",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Note: OVSDB is deprecated feature for a while now (except for one customer in R5.x)",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e7f69df9_3e3965c4",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Can you describe EVPN Type-5 routing in current capabilities instead of ovsdb ?",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ab6fc50_015f0bf7",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Today we do not support mix of PNFs and VNFs and not as part of this feature as well. Can you please clearly highlight this part.",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "829de84c_62b19693",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Actually, label directly maps to a VMI (which maps to a VN)",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "015635e5_24a979cb",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "reword the sentence ?",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a39293f_9ffd0834",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Hmm, routes to/from bgp.* tables are handled by RouteReplicator module, not ServiceChain, right ?",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1403dd87_3926af8b",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "not sure what ingress PE here means. Typically traffic is steered to the vRouter which hosts the left SVI",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "451ec42d_92f4b821",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "s/EVPN/INET[6]/",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3632055_7c3d997b",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "s/80000/8000000+/",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c4eded6a_3fe07d99",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Add a note that ECMP should work here as well, because each ECMP route is carried as a separate evpn type-5 prefix (with different RD)",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d477d12d_c0e1491a",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Config team should add more details here wrt actual work flow/logic being implemented",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "80698729_cec06d72",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-09-16T17:41:10Z",
+      "side": 1,
+      "message": "Ad discussed before, please add actual schema changes here. (i.e LogicalRouter as a new type in network-policy options)",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
