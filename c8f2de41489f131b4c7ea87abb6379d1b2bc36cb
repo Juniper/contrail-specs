@@ -16,6 +16,24 @@
       "revId": "c8f2de41489f131b4c7ea87abb6379d1b2bc36cb",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b6893d3_58400bc6",
+        "filename": "R1910/appformix_flows_config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 49
+      },
+      "writtenOn": "2019-09-17T12:00:57Z",
+      "side": 1,
+      "message": "Sorry, may be my spec is not clear. There was a misunderstanding on interpreting the spec file to be treated to be third party component to be used here.\nThe spec is about creating a new rsyslog container. This rsyslog is being used by contrail-vrouter-agent, only change is make it a container instead of running on host. And that is what I mentioned in the spec file. So it is not about placing private containers into open-source codebase. This discussion is not a new one, historically we were asked to create a new container when we wanted to do some changes in rsyslog config file which runs on host. https://review.opencontrail.org/c/Juniper/contrail-ansible-deployer/+/48611/ was review for that, as part of this review, we were told to configure rsyslog in a new container. It was not done during that time.\n \nThe change in the spec is for that. It is not complete out of box component.\nNew rsyslog container is shared as the config file is being used by contrail-vrouter agent and flow collector. Only when the flow-collector module is installed, then correspondingly there will be config change in rsyslog config file.\nand we cannot have this in any other repo, as the configuration is for sending contrail-flows to flow-collector through syslog messages. So, the config needs to be done in rsyslogd container where contrail-vrouter-agent runs.",
+      "parentUuid": "8a164734_003ffa67",
+      "revId": "c8f2de41489f131b4c7ea87abb6379d1b2bc36cb",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
     }
   ]
 }
