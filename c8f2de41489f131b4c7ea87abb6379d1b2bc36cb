@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a164734_003ffa67",
+        "filename": "R1910/appformix_flows_config.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 445
+      },
+      "writtenOn": "2019-09-17T11:18:17Z",
+      "side": 1,
+      "message": "This change introduces new concept of placing private containers into open-source codebase (contrail-container-builder) of Tungsten Fabric. Besides that it places private code parts into open-source codebase of other modules (ansible-deployer, ...).\nI\u0027m not sure such a change can be accepted by community.\nSukhdev or Carlo could ask about such a change during community workstream meetings. I can also do this if you want.\nArchitecturally I think it would be more clean to separate private commercial parts from public open-source ones everywhere, i.e. put new container into some private container repo (where contrail command lives, for example), and have other private repos hold other pieces like roles for ansible-deployer.\nAs for JuJu, RHOSP and Helm, it is to be decided how to store such changes in them if they are required. So I suggest to resolve this private/public placement problem architecturally first and then proceed with implementation.",
+      "revId": "c8f2de41489f131b4c7ea87abb6379d1b2bc36cb",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
