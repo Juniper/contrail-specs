@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1cb2a020_ec798216",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Just wanted to mention it as background info. Will alter text to say that it has been deprecated.",
+      "parentUuid": "8fb14da1_f63d65ca",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "13d97603_afb43549",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa319efc_c202209d",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "13d97603_afb43549",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "d6ffb974_6cfa01a9",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "456866d4_be5884f0",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dde7e0fd_ecf4b0e7",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -67,6 +121,24 @@
       "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa9757d3_a7c0db48",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "dde7e0fd_ecf4b0e7",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "6f983d75_0af14f68",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fe9fbac0_0d7b6fa3",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ad1e5680_cb413d86",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -101,6 +191,24 @@
       "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "838b8d38_a1a8c502",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Yes but logically speaking it would point to the SVI. Thats why I let it be. Also, this is the text we have online as well.",
+      "parentUuid": "ad1e5680_cb413d86",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "4d64e778_f95a56b9",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "I added a section later in the document outlining what we intend to support in the targeted release.",
+      "parentUuid": "a228572b_ec2db7fe",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4b979a4e_b254ecb3",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -135,6 +261,24 @@
       "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b734d7c4_d9a159f0",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4b979a4e_b254ecb3",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "e5c53505_173d7302",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ab6fc50_015f0bf7",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "829de84c_62b19693",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -186,6 +348,24 @@
       "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c50a99cf_bbcfe7d5",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "829de84c_62b19693",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -206,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "84967958_c15ac304",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "015635e5_24a979cb",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2a39293f_9ffd0834",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -223,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "3cdd4214_8d8892ab",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Yes, this paragraph as indicated by the heading, is explaining the route-replication module and its role in completing the forwarding chain.",
+      "parentUuid": "2a39293f_9ffd0834",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1403dd87_3926af8b",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -234,6 +450,24 @@
       "writtenOn": "2019-09-16T17:41:10Z",
       "side": 1,
       "message": "not sure what ingress PE here means. Typically traffic is steered to the vRouter which hosts the left SVI",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "983c7c5d_a540d445",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "I meant to say that functionally the vRouter connected to the VM originating the traffic acts as an ingress PE.",
+      "parentUuid": "1403dd87_3926af8b",
       "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
@@ -257,6 +491,24 @@
     },
     {
       "key": {
+        "uuid": "5f85ee87_de1d478a",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "451ec42d_92f4b821",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f3632055_7c3d997b",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -271,6 +523,24 @@
       "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f02d4c0_78e8c867",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f3632055_7c3d997b",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -291,6 +561,24 @@
     },
     {
       "key": {
+        "uuid": "bfea3153_5d41df7a",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c4eded6a_3fe07d99",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d477d12d_c0e1491a",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -308,6 +596,24 @@
     },
     {
       "key": {
+        "uuid": "da098110_2182a1a8",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d477d12d_c0e1491a",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "80698729_cec06d72",
         "filename": "bms-service-chaining.md",
         "patchSetId": 2
@@ -322,6 +628,24 @@
       "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cef54fc6_497d35c1",
+        "filename": "bms-service-chaining.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 564
+      },
+      "writtenOn": "2019-09-17T22:58:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "80698729_cec06d72",
+      "revId": "927b77ef238c996eb0f8f66139aed7f84cec68ab",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     }
   ]
 }
