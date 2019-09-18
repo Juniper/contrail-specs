@@ -8,7 +8,9 @@ umbrella.
 
 1. For 1910, we support only out-of-band(OOB) collector provisioning.
 In-Band collector provisioning support will be added in the future release.
-2. Also, we support only sflow targets under telemetry at present. The
+2. The collectors can be provisioned only once and before fabric onboarding.
+3. No new collectors can be added to the cluster after initial provisioning is done.
+4. Also, we support only sflow targets under telemetry at present. The
 current framework can later be extended to include other configurations
 like gRPC or SNMP.
 
