@@ -176,6 +176,28 @@ DVS information will be retrieved from Port Object’s field. VMI creation will 
 
 To perform those actions the application uses vCenter event mechanism. The application shall register for specific events and VM properties.
 
+### Contrail vCenter Fabric Manager (CVFM) synchronization at high level
+Before the plugin starts to work in ‘incremental mode’ by reacting for vCenter events, it has to perform a synchronization. The goal of it is to update VNC API state with brownfield vCenter state after deployment or a downtime.
+
+**Note:** This section describes internal CVFM behavior - the effects of actions listed below are not directly visible to the end user.
+
+1. Calculate list of supported Distributed Virtual Switches (DVS) basing on Port objects in VNC API.
+2. Create mapping from (esxi name, dvs name) to list of physical interfaces that should be connected to VPG with name esxi-name_dvs-name.
+3. Populate local database with all DPGs from vCenter under supported DVSes.
+4. For every DPG under supported DVS create corresponding VN object in VNC if it does not exist.
+5. Populate local database with all VMs from vCenter under datacenter from config file.
+6. Create lacking VPGs in VNC based on collected VMs and DPGs.
+7. Validate all VPGs in VNC in terms of attached Physical Interfaces (PI). If given VPG doesn’t have actual PIs, CVFM will update it to current topology state.
+8. Create lacking VMIs based on collected VMs and DPGs.
+9. Validate all VMIs is VNC in terms of subinterface_vlan_tag value. If this value is not up-to-date, CVFM will recreate such VMI with current VLAN.
+10. Delete stale VMIs from VNC (e.g. VMI esxi-1_dvs-1_dpg-1 is stale when there is no VMs on esxi-1 connected to dpg-1).
+11. Delete stale VPGs from VNC (e.g. VPG esxi-1_dvs-1 is stale when there is no VMs on esxi-1 connected to dvs-1).
+12. Delete stale VNs from VNC (e.g. VN dvs-1_dpg-1 is stale when dpg-1 doesn’t exist under dvs-1).
+
+#### Topology change
+It is possible for the topology of the fabric network to be changed in VNC API during plugin’s runtime. When this happens, it is necessary that the plugin performs the synchronization process to update the list of available switches and physical interfaces. To make this possible, the plugin gets a message via RabbitMQ whenever a change is made in VNC API. Once a topology change is detected, the synchronization process is triggered.
+
+
 # 10. Performance and scaling impact
 
 # 11. Upgrade
