@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cf100f3a_cfa2de92",
+        "filename": "R1910/flow_collector_config.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 49
+      },
+      "writtenOn": "2019-09-19T21:03:50Z",
+      "side": 1,
+      "message": "As per of ansible-deployer, https://github.com/Juniper/contrail-ansible-deployer/blob/master/playbooks/roles/contrail_vrouter/tasks/main.yml#L135 there was a task to create a config file for lbaas, now as part of this, we changed the socket to be in /var/run in stead of /var/log. As this socket path was hard coded in svcmon code, so we had to change the svc mon code to change the path. So, this is required as part of rsyslogd container changes.",
+      "parentUuid": "061d5d10_39556450",
+      "range": {
+        "startLine": 49,
+        "startChar": 10,
+        "endLine": 49,
+        "endChar": 36
+      },
+      "revId": "a449247dcafa5518fb33dba5227a264e5c2d2f25",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "728f5b17_b33dfd19",
         "filename": "R1910/flow_collector_config.md",
         "patchSetId": 4
@@ -36,6 +60,30 @@
       "writtenOn": "2019-09-19T20:24:41Z",
       "side": 1,
       "message": "where are the bugs/tasks for this?",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 107
+      },
+      "revId": "a449247dcafa5518fb33dba5227a264e5c2d2f25",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "90db2a48_f285ba1f",
+        "filename": "R1910/flow_collector_config.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 49
+      },
+      "writtenOn": "2019-09-19T21:03:50Z",
+      "side": 1,
+      "message": "CEM-9095 - Helm, CEM-9096 - Openshift, CEM-9097 - tripleo",
+      "parentUuid": "728f5b17_b33dfd19",
       "range": {
         "startLine": 75,
         "startChar": 0,
