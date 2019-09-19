@@ -215,7 +215,9 @@ if attached to this telemetry profile.
 N/A
 
 # 8. Provisioning changes
-N/A
+During flow collector provisioning stage, the flow collector's details will be
+registered to Contrail API Server. A POST request will be sent from flow collector
+deployer to API Server with collector management and load-balancer IP address.
 
 # 9. Implementation
 The main implementation changes include:
