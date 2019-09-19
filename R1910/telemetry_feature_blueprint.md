@@ -49,6 +49,7 @@ Objects to represent collector parameters such as virtual IP address
 are added to the vnc schema. Telemetry subnets are modelled for supporting
 in-band collector provisioning in future. The schema changes are captured below:
 
+```
 <xsd:element name="flow-node" type="ifmap:IdentityType"/>
 <xsd:element name="global-system-config-flow-node"/>
 <!--#IFMAP-SEMANTICS-IDL
@@ -71,11 +72,12 @@ in-band collector provisioning in future. The schema changes are captured below:
 <!--#IFMAP-SEMANTICS-IDL
          Property('flow-node-load-balancer-ip', 'flow-node', 'required', 'CRUD',
               'IP address of the load balancer node for xflow collectors, set while provisioning.') -->
-
+```
 
 Objects to represent the telemetry profile and the sflow profile are
 added to the fabric schema. The schema changes are captured below:
 
+```
 <xsd:simpleType name="SampleRate">
     <xsd:restriction base="xsd:integer">
         <xsd:minInclusive value="1"/>
@@ -173,8 +175,15 @@ added to the fabric schema. The schema changes are captured below:
 <!--#IFMAP-SEMANTICS-IDL
               Property('sflow-parameters', 'sflow-profile', 'optional', 'CRUD',
                   'Parameters for each sflow profile, such as polling interval, sample rate, list of sflow enabled interfaces, sflow agent ID etc.') -->
+```
 
 # 5. UI changes / User workflow impact
+
+#### - Enable flow collector provisioning wizard
+By default, flow collector provisioning is disabled in provisioning wizard.
+Login to `contrail_command` container. The feature list is defined in
+`/usr/share/contrail/public/feature-list.json`. Set `cluster_user.xflow`
+to `true` to enable flow collector provisioning.
 
 #### - Select Telemetry Profiles from Fabrics (under Infrastructure)
 User selects the 'Telemetry Profiles' option under the fabric option
@@ -215,7 +224,27 @@ if attached to this telemetry profile.
 N/A
 
 # 8. Provisioning changes
-N/A
+During flow collector provisioning stage, the flow collector's details will be
+registered to Contrail API Server. A POST request will be sent from flow collector
+deployer to API Server with collector management and load-balancer IP address.
+POST data format to API Server:
+```
+'flow-node': {
+    'fq_name': ['default-global-system-config', '<flow_collector_fqdn>'],
+    'parent_type': 'global-system-config',
+    'flow_node_ip_address': '<flow_collector_ip>',
+    'flow_node_load_balancer_ip': '<flow_collector_vip_ip>',
+    'display_name': '<flow_collector_fqdn>',
+    'name': '<flow_collector_fqdn>'
+}
+```
+Section [API schema changes](https://github.com/Juniper/contrail-specs/blob/master/R1910/telemetry_feature_blueprint.md#4-api-schema-changes) describes schema changes for this
+
+If `contrail_configuration.AAA_MODE` is set as `cloud-admin` or `rbac`, then
+a request is being sent to keystone with `KEYSTONE_AUTH_ADMIN_USER`,
+`KEYSTONE_AUTH_ADMIN_PASSWORD` and `KEYSTONE_AUTH_ADMIN_TENANT` to receive
+keystone token. This token is then passed in `X-Auth-Token` header to
+communicate with Contrail API SErver from flow collector deployer.
 
 # 9. Implementation
 The main implementation changes include:
