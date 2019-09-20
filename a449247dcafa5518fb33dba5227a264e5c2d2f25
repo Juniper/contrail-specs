@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "0c9948a9_fc3171b6",
+        "filename": "R1910/flow_collector_config.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 382
+      },
+      "writtenOn": "2019-09-20T04:39:21Z",
+      "side": 1,
+      "message": "svcmon is not different node. how it can access the file socket on vrouter?",
+      "parentUuid": "cf100f3a_cfa2de92",
+      "range": {
+        "startLine": 49,
+        "startChar": 10,
+        "endLine": 49,
+        "endChar": 36
+      },
+      "revId": "a449247dcafa5518fb33dba5227a264e5c2d2f25",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "728f5b17_b33dfd19",
         "filename": "R1910/flow_collector_config.md",
         "patchSetId": 4
