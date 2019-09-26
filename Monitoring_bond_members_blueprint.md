@@ -152,8 +152,8 @@ Display Bond members status under Cluster -> Cluster Nodes -> Compute Nodes -> (
 
 ![contrail_bond_members](images/contrail_bond_members.png)
 
-# 7. Deprecations
-N/A
+# 7. Limitations
+1. On multi-node setup, When Master interface goes down in a DPDK(with bond/without bond), WEbUI(contrail command UI) interface status information would be incorrect for that node. When master interface goes down, control-data interface would not be available to provide the updated status to control module(controller).
 
 # 8. Dependencies
 
