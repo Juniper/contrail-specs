@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b73c2630_7935d580",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-09-26T15:11:22Z",
+      "side": 1,
+      "message": "Minor nits to be more specific",
+      "revId": "d0f389e37bda9a5e1577046bd006f10dddcebb0f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bbfb016_c3f6653c",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-09-26T15:11:22Z",
+      "side": 1,
+      "message": "make it \"incorrect for that node\".",
+      "range": {
+        "startLine": 156,
+        "startChar": 154,
+        "endLine": 156,
+        "endChar": 163
+      },
+      "revId": "d0f389e37bda9a5e1577046bd006f10dddcebb0f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4872e557_f748d084",
+        "filename": "Monitoring_bond_members_blueprint.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2019-09-26T15:11:22Z",
+      "side": 1,
+      "message": "make it \"in a DPDK node\"",
+      "range": {
+        "startLine": 156,
+        "startChar": 56,
+        "endLine": 156,
+        "endChar": 63
+      },
+      "revId": "d0f389e37bda9a5e1577046bd006f10dddcebb0f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
