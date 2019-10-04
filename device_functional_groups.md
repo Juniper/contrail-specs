@@ -33,19 +33,27 @@ there will be several default DFGs provided. See details in later sections.
 2) User edits the Device Info file given during ZTP. A new optional per-device attribute
 called "Device Functional Group" can be specified for each device to give
 the name of the DFG to be used during ZTP or RMA activation.
-3) During the early stages of ZTP, the Device Info file is parsed and the
+3) User can also add a "Route-Reflector' flag in the devcice info file if he wants to 
+include Route-Reflector as a rb role for that DFG on the fly.
+4) During the early stages of ZTP, the Device Info file is parsed and the
 DFGs are validated to exist. If any DFG does not exist, an error is thrown.
-4) For each device with a DFG specified in the Device Info file, a reference
+5) For each device with a DFG specified in the Device Info file, a reference
 is drawn between the device's physical-router object and device-functional-group object.
-5) During the image upgrade step of ZTP, if a device has a device-functional-group
+6) During the image upgrade step of ZTP, if a device has a device-functional-group
 reference and a device-functional-group-os-version is specified, and the
 os-version exists for that family,
 then the image is upgraded to that version. Otherwise, the fabric-wide os-version
 is used, or none is used for image upgrade.
-6) As the last step of ZTP, the role assignment job playbook will now be called.
+7) As the last step of ZTP, a new role assignment dfg job playbook will now be called.
 For each device which has device-functional-group->device-functional-group-physical-role
 and/or device-functional-group->device-functional-group-routing-bridging-roles defined,
-the role assignment playbook will be called to assign those roles to the device.
+the new playbook writes data to the role assignment template annotations
+of the fabric. A dictionary consisting information about the device, the physical role
+and the routing bridging role that is user selected based on the dfg specified is written.
+UI will read this dictionary and preapre the device to be assigned the 
+specified roles. After ztp, when the user clicks on role assignment, all those devices 
+for which the use had specified DFGs in the beginning will be auto-populated with 
+physical and rb roles. The user will have the ability to modify them.   
 If the roles are not specified, then the existing behavior is applied where
 the user is given the option to apply roles manually.
 
@@ -74,8 +82,6 @@ onboarding a fabric.
 A new optional per-device attribute called "device_functional_group" can
 be specified for each device to give the name of the DFG to be used during
 ZTP or RMA activation.
-3) If DFGs are specified on all devices, the user will be able to skip the
-role assignment step of the onboarding wizard.
 
 # 5. API schema changes
 
@@ -123,8 +129,8 @@ There will be a new object with the following schema definition:
 # 6. Implementation
 
 - Pre-defined DFGs will be added to predef_payloads.py
-- Use the existing role assignment playbook at the end of the ZTP workflow
 to automatically assign roles to devices if provided in the Device Info file.
+- Design a new playbook to write to the role_assignment template annotations.
 - Use existing per-fabric os-version logic, where possible, to extend to
 using DFG os-version.
 
@@ -155,9 +161,13 @@ and OS version should all be editable. The physical role, routing-bridging roles
 and OS version fields should be pull-down menus.
 
 The user should be able to create new Device Functional Groups from the UI.
+UI needs to create a reference between the physical role and the DFGs for custom
+created DFGs.
 
-The pre-defined DFGs are read-only and should not be allowed to be modified
-(need to verify).
+UI should read the value of the fabric annotations for role assignemnt template 
+and pre-populate the assign roles page with the device list along with physical
+and routing bridging roles.  
+
 
 # 8. Testing
 (Insert link to test plan here)
