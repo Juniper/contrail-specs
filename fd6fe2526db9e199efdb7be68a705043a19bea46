@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4c6117d_313c587b",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "s/VRF-Int/InternalVirtualNetwork/g",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bec24442_31691c7b",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "s/inet/inet[6]/",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c563e73a_28a9f81a",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "Can you please provide hrefs to github for some of these operations which point to appropriate functions in vrouter/agent code for further reference.",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d17397d_6f3185a1",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "what does \"sets the nexthop to encap\" mean ?",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c99c1b1_f25bb3eb",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "can you please reword this to be more clear.",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4dfca58d_7da9ca10",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "In that case, please provide data on the areas that is covered by existing unit tests in this area.",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b1a803d_59262811",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 499,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "Please format.",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85a0c7ba_04f7d9c5",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "Please reword to be clearer",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "da98325f_7e4b383f",
+        "filename": "R1912/bms-service-chaining.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2019-10-07T14:19:43Z",
+      "side": 1,
+      "message": "Isn\u0027t there no implication to\n1. Transparent service chaining\n2. RPF checks\n\nI guess not, Can you please mention that explicitly.\n\nAlso, please add some text wrt advertising router-mac address (vhost mac address) for inet[6] routes if associated table is type-5 routing table (of an LR)",
+      "revId": "fd6fe2526db9e199efdb7be68a705043a19bea46",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
