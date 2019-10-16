@@ -6,8 +6,7 @@ configurations and also have appformix related targets (eg. SNMP
 targets, gRPC collectors and sflow collectors) under this telemetry
 umbrella.
 
-1. For 1910, we support only out-of-band(OOB) collector provisioning.
-In-Band collector provisioning support will be added in the future release.
+1. Both in-band and out-of-band(OOB) collector provisioning are supported.
 2. The collectors can be provisioned only once and before fabric onboarding.
 3. No new collectors can be added to the cluster after initial provisioning is done.
 4. Also, we support only sflow targets under telemetry at present. The
@@ -47,9 +46,15 @@ The following are the accepted values for some of the sflow parameters:
 Each collector server is represenetd as a flow-node object in VNC database.
 Objects to represent collector parameters such as virtual IP address
 are added to the vnc schema. Telemetry subnets are modelled for supporting
-in-band collector provisioning in future. The schema changes are captured below:
+in-band collector provisioning. The schema changes are captured below:
 
 ```
+<xsd:element name="instance-ip-flow-node"/>
+<!--#IFMAP-SEMANTICS-IDL
+     Link('instance-ip-flow-node',
+          'instance-ip', 'flow-node', ['ref'], 'optional', 'CRUD',
+          'Reference to the flow node that this instance ip is assigned to.') -->
+
 <xsd:element name="flow-node" type="ifmap:IdentityType"/>
 <xsd:element name="global-system-config-flow-node"/>
 <!--#IFMAP-SEMANTICS-IDL
@@ -66,12 +71,17 @@ in-band collector provisioning in future. The schema changes are captured below:
 <!--#IFMAP-SEMANTICS-IDL
          Link('flow-node-virtual-network',
              'flow-node', 'virtual-network', ['ref'], 'optional', 'CRUD',
-             'Similar to using virtual-machine to model the bare metal server, we are using virtual-network to model telemetry underlay network. This would allow us to re-use the same IPAM data model and code base to manage the IP auto-assignments for the underlay telemetry networks.') -->
+             'Similar to using virtual-machine to model the bare metal server, we are using virtual-network to model telemetry underlay infra network. This would allow us to re-use the same IPAM data model and code base to manage the IP auto-assignments for the underlay telemetry networks.') -->
 
 <xsd:element name="flow-node-load-balancer-ip" type="IpAddressType"/>
 <!--#IFMAP-SEMANTICS-IDL
          Property('flow-node-load-balancer-ip', 'flow-node', 'required', 'CRUD',
               'IP address of the load balancer node for xflow collectors, set while provisioning.') -->
+
+<xsd:element name="flow-node-inband-interface" type="xsd:string"/>
+<!--#IFMAP-SEMANTICS-IDL
+         Property('flow-node-inband-interface', 'flow-node', 'optional', 'CRUD',
+              'In-Band interface name used for this flow node.') -->
 ```
 
 Objects to represent the telemetry profile and the sflow profile are
@@ -179,11 +189,51 @@ added to the fabric schema. The schema changes are captured below:
 
 # 5. UI changes / User workflow impact
 
+The UI workflow differs in few respects for in-band and out-of-band provisioning.
+
+We can broadly classify these into 3 steps:
+1. Appformix provisioning workflow
+2. Fabric level Sflow/ Telemetry configuration and Telemetry attachment
+3. Configuring Appformix collectors from Contrail
+
+### 1. Appformix Provisioning Workflow
+
+This varies a bit for in-band and out-of-band collector provisioning as detailed
+below.
+
 #### - Enable flow collector provisioning wizard
 By default, flow collector provisioning is disabled in provisioning wizard.
 Login to `contrail_command` container. The feature list is defined in
 `/usr/share/contrail/public/feature-list.json`. Set `cluster_user.xflow`
 to `true` to enable flow collector provisioning.
+
+#### - In-Band Provisioning Workflow
+The following inputs need to be provided for in-band collector provisioning
+during cluster bring up:
+a. CIDR: This is the telemetry subnet for the telemetry infra network.
+b. Vlan-Id: To be used for the telemetry infra network. This will enable access
+to the tor switches on the telemetry subnet.
+c. Management Virtual IP Address: This is for contrail to connect to the api running
+on the xflow node.
+d. Show Advanced Options: User needs to choose specific options from this tab for in-band.
+   - In-Band Virtual IP Address: This is usually defaulted to the third IP address from the
+     CIDR (telemetry subnet). However, the user can choose to edit this as necessary. This
+     is used for the TOR switches in the telemetry subnet.
+e. Available Servers: Choose the server where xflow collectors will be served
+   - In-band Interface: interface name on the server chosen above.
+
+#### - Out-Of-Band Provisioning Workflow
+CEM will use the fabric subnet to configure telemetry subnets in this case.
+The following inputs need to be provided for out-of-band collector provisioning
+during cluster bring up:
+a. Virtual IP Address: This translates to IP address of the load balancer node for
+xflow collectors
+b. Available Servers: Choose the server where xflow collectors will be served
+
+### 2. Fabric level Sflow/ Telemetry configuration and Telemetry attachment to
+physical router
+
+This step is common for both modes of collector provisioning - in-band and OOB.
 
 #### - Select Telemetry Profiles from Fabrics (under Infrastructure)
 User selects the 'Telemetry Profiles' option under the fabric option
@@ -219,6 +269,22 @@ Telemetry Profile' will be enabled. Clicking this button will then display a
 pop-up which will list all existing telemetry profiles. Also hovering over a
 particular telemetry profile will show a side panel displaying the sflow details
 if attached to this telemetry profile.
+
+### 3. Configuring Appformix collectors from Contrail
+
+This step is mainly for in-band collector provisioning. This happens after
+autoconfigure roles.
+
+#### - Device Port Selection
+The following information are pre-populated from the provisioning wizard:
+a. Telemetry CIDR subnet
+b. Virtual IP IpAddress
+c. Hostname (Server name)
+d. Management IP
+e. Interface Name
+
+The user now has to only select which device in the fabric to connect to the configured
+server port. UI Option Device-Port is provided for this operation.
 
 # 7. Notification impact
 N/A
