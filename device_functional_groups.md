@@ -51,11 +51,9 @@ the new playbook writes data to the role assignment template annotations
 of the fabric. A dictionary consisting information about the device, the physical role
 and the routing bridging role that is user selected based on the dfg specified is written.
 UI will read this dictionary and preapre the device to be assigned the 
-specified roles. After ztp, when the user clicks on role assignment, all those devices 
-for which the use had specified DFGs in the beginning will be auto-populated with 
-physical and rb roles. The user will have the ability to modify them.   
-If the roles are not specified, then the existing behavior is applied where
-the user is given the option to apply roles manually.
+specified roles. After ztp, when the user clicks on role assignment, the UI needs to read 
+the dfg references from the physical router and auto populate the physical 
+and routing bridging roles.
 8) If the user performs an image upgrade or role configuration on the device
 after the dfg association, and the data in the dfg no longer matches the device
 details, a dfg_flag is set in the physcial router annotation to help the user understand
@@ -169,9 +167,8 @@ The user should be able to create new Device Functional Groups from the UI.
 UI needs to create a reference between the physical role and the DFGs for custom
 created DFGs.
 
-UI should read the value of the fabric annotations for role assignemnt template 
-and pre-populate the assign roles page with the device list along with physical
-and routing bridging roles.  
+UI should read the dfg references from the physical router object and auto
+populate the physical and rb roles in the role assignment page.   
  
 UI should read the physical router annotation to check for the 'dfg_flag' to be
 set. If set, the UI needs to list that physical router to be no longer completely 
