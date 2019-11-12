@@ -203,12 +203,6 @@ telemetry profiles to devices in the fabric
 This varies a bit for in-band and out-of-band collector provisioning as
 detailed below.
 
-#### - Enable flow collector provisioning wizard
-By default, flow collector provisioning is disabled in provisioning wizard.
-Login to `contrail_command` container. The feature list is defined in
-`/usr/share/contrail/public/feature-list.json`. Set `cluster_user.xflow
-to `true` to enable flow collector provisioning.
-
 #### - In-Band Provisioning Workflow
 The following inputs need to be provided for in-band collector provisioning
 during cluster bring up:
@@ -249,7 +243,12 @@ cluster bring up):
 The user needs to select which device in the fabric to connect to the configured
 server port.
 
-### 3. Creation of telemetry/sflow profiles and attachment of
+### 3. Configuring static routes on Contrail vRouter agent to flow-collectors for in-band
+As for in-band flow-collector provisioning, flow-collectors run on different subnet
+than vRouter, so we need to add a static route in vRouter agent to reach to flow-collectors.
+
+
+### 4. Creation of telemetry/sflow profiles and attachment of
 telemetry profiles to devices in the fabric
 
 This step is common for both modes of collector provisioning - in-band and OOB.
