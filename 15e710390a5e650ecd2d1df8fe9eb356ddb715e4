@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "78f70af0_fead9547",
+        "filename": "R1912/Fabric-MX-ZTP-support-Blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 515
+      },
+      "writtenOn": "2019-11-12T22:48:06Z",
+      "side": 1,
+      "message": "What about Route reflector role? \nAlso, it can act as border leaf with DC-Gateway role with FIP/SNAT",
+      "revId": "15e710390a5e650ecd2d1df8fe9eb356ddb715e4",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4512790e_6a236315",
+        "filename": "R1912/Fabric-MX-ZTP-support-Blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 515
+      },
+      "writtenOn": "2019-11-12T22:48:06Z",
+      "side": 1,
+      "message": "Why is this a limitation ? Did we try image upgrade workflow on MX ?",
+      "revId": "15e710390a5e650ecd2d1df8fe9eb356ddb715e4",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
