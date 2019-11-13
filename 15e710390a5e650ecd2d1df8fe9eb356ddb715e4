@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "71628c08_e08d8d72",
+        "filename": "R1912/Fabric-MX-ZTP-support-Blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 843
+      },
+      "writtenOn": "2019-11-13T12:15:27Z",
+      "side": 1,
+      "message": "As per the scope of the user story we cover the ZTP. If RR role is alreday supported then it will work.\n\nCan you confirm is this Route reflector any one tested on MX?\n\nAlso, it can act as border leaf with DC-Gateway role with FIP/SNAT - is it supported currently? If yes, then it will work.",
+      "parentUuid": "78f70af0_fead9547",
+      "revId": "15e710390a5e650ecd2d1df8fe9eb356ddb715e4",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4512790e_6a236315",
         "filename": "R1912/Fabric-MX-ZTP-support-Blueprint.md",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2019-11-12T22:48:06Z",
       "side": 1,
       "message": "Why is this a limitation ? Did we try image upgrade workflow on MX ?",
+      "revId": "15e710390a5e650ecd2d1df8fe9eb356ddb715e4",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e3ed6ea_426f5b9a",
+        "filename": "R1912/Fabric-MX-ZTP-support-Blueprint.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 843
+      },
+      "writtenOn": "2019-11-13T12:15:27Z",
+      "side": 1,
+      "message": "Logically it should work. We have not tried, so we are not claiming the support.",
+      "parentUuid": "4512790e_6a236315",
       "revId": "15e710390a5e650ecd2d1df8fe9eb356ddb715e4",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
