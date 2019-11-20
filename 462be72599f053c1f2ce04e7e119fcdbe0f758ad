@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d6773fac_62838967",
+        "filename": "agent_ssl_tcp_ports.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2019-11-20T09:18:35Z",
+      "side": 1,
+      "message": "contrail-vcenter-manager container",
+      "range": {
+        "startLine": 52,
+        "startChar": 3,
+        "endLine": 52,
+        "endChar": 5
+      },
+      "revId": "462be72599f053c1f2ce04e7e119fcdbe0f758ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3edf25ae_665999f7",
+        "filename": "agent_ssl_tcp_ports.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2019-11-20T09:18:35Z",
+      "side": 1,
+      "message": "Python (CVM) plugin changes to use either http or https based on configuration.\n\nCVM plugin for reading vRouter ports creates own HTTP session to agent API.\nBut, for creating and deleting ports uses contrail-vrouter-api. That package calls vrouter-port-control which connects to agent API. These two packages needs to be modified to enable TLS\u0027ed connection.",
+      "range": {
+        "startLine": 100,
+        "startChar": 5,
+        "endLine": 100,
+        "endChar": 12
+      },
+      "revId": "462be72599f053c1f2ce04e7e119fcdbe0f758ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b548f25_989ded29",
+        "filename": "agent_ssl_tcp_ports.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2019-11-20T09:18:35Z",
+      "side": 1,
+      "message": "Java plugin (contrail-vcenter-plugin) doesn\u0027t talk with vRouter since R5.0. Sachin, could you confirm?",
+      "range": {
+        "startLine": 101,
+        "startChar": 5,
+        "endLine": 101,
+        "endChar": 75
+      },
+      "revId": "462be72599f053c1f2ce04e7e119fcdbe0f758ad",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
