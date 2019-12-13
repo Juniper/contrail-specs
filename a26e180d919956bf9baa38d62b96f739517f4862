@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfec9447_4b6a2e64",
+        "filename": "R2002/cli_commit_detection.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 510
+      },
+      "writtenOn": "2019-12-13T23:48:10Z",
+      "side": 1,
+      "message": "\"such as role assignment\"",
+      "revId": "a26e180d919956bf9baa38d62b96f739517f4862",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "44c9e4a8_eda96ce4",
+        "filename": "R2002/cli_commit_detection.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 510
+      },
+      "writtenOn": "2019-12-13T23:48:10Z",
+      "side": 1,
+      "message": "\"wil\"",
+      "revId": "a26e180d919956bf9baa38d62b96f739517f4862",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0414b98b_31bdb9cb",
+        "filename": "R2002/cli_commit_detection.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 510
+      },
+      "writtenOn": "2019-12-13T23:48:10Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is going to be the case. Not sure if the user will be prompted or if there will be a bell notification of some sort, or other. I would rephrase this to say something more generic like \"If there are any CLI changes detected in any one of the devices in the fabric, the UI will notify the user in some form\".",
+      "revId": "a26e180d919956bf9baa38d62b96f739517f4862",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8221c09a_2a3a4243",
+        "filename": "R2002/cli_commit_detection.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 510
+      },
+      "writtenOn": "2019-12-13T23:48:10Z",
+      "side": 1,
+      "message": "Saying left side and right side is too specific.",
+      "revId": "a26e180d919956bf9baa38d62b96f739517f4862",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "31e4cc7f_2a891ef1",
+        "filename": "R2002/cli_commit_detection.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 510
+      },
+      "writtenOn": "2019-12-13T23:48:10Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is true. Wait for UX.",
+      "revId": "a26e180d919956bf9baa38d62b96f739517f4862",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
