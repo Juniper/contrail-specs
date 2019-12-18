@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "39a954e9_7daa43c2",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 775
+      },
+      "writtenOn": "2019-12-18T11:58:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ca3ab594_29862909",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ebe37c1b_7e0f22c0",
         "filename": "R2002/ui-multiple-modals-support-blueprint.md",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1b6b10ab_5a08365e",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 775
+      },
+      "writtenOn": "2019-12-18T11:58:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ebe37c1b_7e0f22c0",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "358de4a5_bb169ea4",
         "filename": "R2002/ui-multiple-modals-support-blueprint.md",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2019-12-18T11:09:03Z",
       "side": 1,
       "message": "Actually you can not open a second modal before closing the opened one",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e741e68f_eb85c0d4",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 775
+      },
+      "writtenOn": "2019-12-18T11:58:00Z",
+      "side": 1,
+      "message": "I encountered a scenario when I had a _Filters_ modal open, I clicked the _Remove_ button.\n\nThe _Remove_ modal opened for a brief moment while the _Filters_ modal was being closed. After that, the _Remove_ modal closed automatically. But it does not mean you cannot open the _Remove_ modal. You can, but it will be closed in a moment :D\n\nI would leave it as is for now.",
+      "parentUuid": "358de4a5_bb169ea4",
       "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "0805d386_c2d6e552",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 775
+      },
+      "writtenOn": "2019-12-18T11:58:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfe04ba1_bf8a49c1",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "268c341b_208eab42",
         "filename": "R2002/ui-multiple-modals-support-blueprint.md",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2019-12-18T10:57:08Z",
       "side": 1,
       "message": "Modal with a mask cannot open another modal with a mask. This pattern will be understood as the wrong UX design?",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9a855f6d_b9202fe4",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 775
+      },
+      "writtenOn": "2019-12-18T11:58:00Z",
+      "side": 1,
+      "message": "I have added a paragraph that says no more than 1 modal with mask can be opened",
+      "parentUuid": "268c341b_208eab42",
       "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
