@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8fbab19e_307211c6",
+        "filename": "contrail_query_engine_lite.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 752
+      },
+      "writtenOn": "2019-12-18T08:39:19Z",
+      "side": 1,
+      "message": "Can we use analytics_database role in instance.yaml to decide this ? If analytics_database role is not configured and \u0027n\u0027 is non-zero in instance.yaml then we switch to lite mode where analytics-api will be responsible to serve stats queries.",
+      "revId": "94efea233d069637afce36dda60f5381e9a61c5a",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "872f6a40_43fd5dc6",
+        "filename": "contrail_query_engine_lite.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 752
+      },
+      "writtenOn": "2019-12-18T08:39:19Z",
+      "side": 1,
+      "message": "Can we add an example how an object log will be converted to UVE",
+      "revId": "94efea233d069637afce36dda60f5381e9a61c5a",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c92d3f1_fedbcfd0",
+        "filename": "contrail_query_engine_lite.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 752
+      },
+      "writtenOn": "2019-12-18T08:39:19Z",
+      "side": 1,
+      "message": "Can we add an example how will sample stats query look like ? As I understand GET \"/analytics/tables\" api doesn\u0027t work if analytics_database role is not defined.",
+      "revId": "94efea233d069637afce36dda60f5381e9a61c5a",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
