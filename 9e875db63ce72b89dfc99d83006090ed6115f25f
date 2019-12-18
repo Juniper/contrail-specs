@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "268c341b_208eab42",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 882
+      },
+      "writtenOn": "2019-12-18T10:57:08Z",
+      "side": 1,
+      "message": "Modal with a mask cannot open another modal with a mask. This pattern will be understood as the wrong UX design?",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
