@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "ca3ab594_29862909",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2019-12-18T11:09:03Z",
+      "side": 1,
+      "message": "Some repeating of words: \"table view that opens\" and \"opens\" in the next line. Does table view open filter modal automatically? It should probable be \"table view that has an ability to open..\"",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ebe37c1b_7e0f22c0",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2019-12-18T11:09:03Z",
+      "side": 1,
+      "message": "Add to the end: \"modal with mask\"",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "358de4a5_bb169ea4",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2019-12-18T11:09:03Z",
+      "side": 1,
+      "message": "Actually you can not open a second modal before closing the opened one",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfe04ba1_bf8a49c1",
+        "filename": "R2002/ui-multiple-modals-support-blueprint.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 883
+      },
+      "writtenOn": "2019-12-18T11:09:03Z",
+      "side": 1,
+      "message": "Could be rewritten as: focusing modal in the background makes it a topmost modal",
+      "revId": "9e875db63ce72b89dfc99d83006090ed6115f25f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "268c341b_208eab42",
         "filename": "R2002/ui-multiple-modals-support-blueprint.md",
         "patchSetId": 1
