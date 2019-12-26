@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e5a0bbd5_bf31970c",
+        "filename": "Zookeeper TLSv1.2 Support.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:53:08Z",
+      "side": 1,
+      "message": "Nit: threat*",
+      "range": {
+        "startLine": 8,
+        "startChar": 9,
+        "endLine": 8,
+        "endChar": 17
+      },
+      "revId": "afdbbc9a74c177253a5ebae1d672013e8f11b393",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0c31153_68b8e7ac",
+        "filename": "Zookeeper TLSv1.2 Support.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:53:08Z",
+      "side": 1,
+      "message": "what about redis?\nAlso, does rabbitmq talk to zookeeper?",
+      "range": {
+        "startLine": 15,
+        "startChar": 3,
+        "endLine": 15,
+        "endChar": 13
+      },
+      "revId": "afdbbc9a74c177253a5ebae1d672013e8f11b393",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "643468bb_ead91f58",
+        "filename": "Zookeeper TLSv1.2 Support.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:53:08Z",
+      "side": 1,
+      "message": "we\u0027ll need to change all the modules also to use these parameters, right?",
+      "range": {
+        "startLine": 28,
+        "startChar": 14,
+        "endLine": 28,
+        "endChar": 122
+      },
+      "revId": "afdbbc9a74c177253a5ebae1d672013e8f11b393",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f0042f9c_41ed8c63",
+        "filename": "Zookeeper TLSv1.2 Support.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:53:08Z",
+      "side": 1,
+      "message": "Is this required to enable ssl support? Can it work without?",
+      "range": {
+        "startLine": 29,
+        "startChar": 3,
+        "endLine": 29,
+        "endChar": 114
+      },
+      "revId": "afdbbc9a74c177253a5ebae1d672013e8f11b393",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0a74505_74dfc1ea",
+        "filename": "Zookeeper TLSv1.2 Support.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:53:08Z",
+      "side": 1,
+      "message": "so are we ok with unreleased code? that too when the code became available few weeks back only. This looks risky to me.",
+      "range": {
+        "startLine": 102,
+        "startChar": 119,
+        "endLine": 102,
+        "endChar": 223
+      },
+      "revId": "afdbbc9a74c177253a5ebae1d672013e8f11b393",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e8f1fe67_73e4f8fe",
+        "filename": "Zookeeper TLSv1.2 Support.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:53:08Z",
+      "side": 1,
+      "message": "Is there alternate to upgrade? Or we have to make sure that ssl is disabled globally before upgrade?",
+      "range": {
+        "startLine": 125,
+        "startChar": 35,
+        "endLine": 125,
+        "endChar": 135
+      },
+      "revId": "afdbbc9a74c177253a5ebae1d672013e8f11b393",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ce389f2_e5194ba5",
+        "filename": "Zookeeper TLSv1.2 Support.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:53:08Z",
+      "side": 1,
+      "message": "can we add more details here on the tests you are referring to?",
+      "range": {
+        "startLine": 137,
+        "startChar": 3,
+        "endLine": 137,
+        "endChar": 16
+      },
+      "revId": "afdbbc9a74c177253a5ebae1d672013e8f11b393",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
