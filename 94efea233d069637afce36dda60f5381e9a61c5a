@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "cb4d6be0_30a08333",
+        "filename": "contrail_query_engine_lite.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:59:34Z",
+      "side": 1,
+      "message": "yes, that is what I was also thinking that \u0027n\u0027 (will change it to some meaningful name in next iteration) will be populated to default value if database is not provisioned.",
+      "parentUuid": "8fbab19e_307211c6",
+      "revId": "94efea233d069637afce36dda60f5381e9a61c5a",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "872f6a40_43fd5dc6",
         "filename": "contrail_query_engine_lite.md",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "a00559cb_a1ba8520",
+        "filename": "contrail_query_engine_lite.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:59:34Z",
+      "side": 1,
+      "message": "ok its just changing the type in Sandesh file, will add an example for the same.",
+      "parentUuid": "872f6a40_43fd5dc6",
+      "revId": "94efea233d069637afce36dda60f5381e9a61c5a",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1c92d3f1_fedbcfd0",
         "filename": "contrail_query_engine_lite.md",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2019-12-18T08:39:19Z",
       "side": 1,
       "message": "Can we add an example how will sample stats query look like ? As I understand GET \"/analytics/tables\" api doesn\u0027t work if analytics_database role is not defined.",
+      "revId": "94efea233d069637afce36dda60f5381e9a61c5a",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f55bde7a_8daa29df",
+        "filename": "contrail_query_engine_lite.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2019-12-26T06:59:34Z",
+      "side": 1,
+      "message": "/analytics/tables does not come from DB. observer has a static list of tables and on top of that it gets other tables from redis only. I\u0027ll be adding more details on how exactly it will work out with example of specific table",
+      "parentUuid": "1c92d3f1_fedbcfd0",
       "revId": "94efea233d069637afce36dda60f5381e9a61c5a",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
