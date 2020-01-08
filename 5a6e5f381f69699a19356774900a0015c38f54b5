@@ -1,0 +1,257 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "45494967_bb5585f5",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 2,
+        "startChar": 25,
+        "endLine": 2,
+        "endChar": 34
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "083d0e0d_dd4d9e54",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": "Contrail Config API",
+      "range": {
+        "startLine": 11,
+        "startChar": 36,
+        "endLine": 11,
+        "endChar": 48
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a8e8ff9e_954d20a0",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": "if any BMS has been added or deleted.",
+      "range": {
+        "startLine": 11,
+        "startChar": 63,
+        "endLine": 11,
+        "endChar": 79
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81234aff_3c2ba8fe",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": ". If so,",
+      "range": {
+        "startLine": 12,
+        "startChar": 7,
+        "endLine": 12,
+        "endChar": 19
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d420a9a8_6612026f",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 14,
+        "startChar": 38,
+        "endLine": 14,
+        "endChar": 46
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dfe48bb_f60b43ca",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": "Contrail Config API",
+      "range": {
+        "startLine": 43,
+        "startChar": 32,
+        "endLine": 43,
+        "endChar": 44
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "914b3041_c53b3332",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": ". If",
+      "range": {
+        "startLine": 45,
+        "startChar": 57,
+        "endLine": 45,
+        "endChar": 65
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4afa368b_27bfad0b",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": "workflows",
+      "range": {
+        "startLine": 49,
+        "startChar": 53,
+        "endLine": 49,
+        "endChar": 62
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "289d19d6_65afaec3",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 52,
+        "startChar": 22,
+        "endLine": 52,
+        "endChar": 32
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "208c4ebb_df153b63",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 53,
+        "startChar": 35,
+        "endLine": 53,
+        "endChar": 41
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7dbf312d_9f3e1772",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 257
+      },
+      "writtenOn": "2020-01-08T00:38:29Z",
+      "side": 1,
+      "message": ". We get",
+      "range": {
+        "startLine": 55,
+        "startChar": 39,
+        "endLine": 55,
+        "endChar": 41
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
