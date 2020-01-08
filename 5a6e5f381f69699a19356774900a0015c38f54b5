@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f9996334_9f4c9820",
+        "filename": "R2002/telemetry_bms_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 49
+      },
+      "writtenOn": "2020-01-08T00:54:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "45494967_bb5585f5",
+      "range": {
+        "startLine": 2,
+        "startChar": 25,
+        "endLine": 2,
+        "endChar": 34
+      },
+      "revId": "5a6e5f381f69699a19356774900a0015c38f54b5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "083d0e0d_dd4d9e54",
         "filename": "R2002/telemetry_bms_discovery.md",
         "patchSetId": 1
