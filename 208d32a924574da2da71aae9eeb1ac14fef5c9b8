@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c927ac72_c8d4b1a2",
+        "filename": "R2002/cli_commit_detection.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 510
+      },
+      "writtenOn": "2020-01-09T01:20:18Z",
+      "side": 1,
+      "message": "Has this been decided yet?",
+      "revId": "208d32a924574da2da71aae9eeb1ac14fef5c9b8",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "243dfb57_1219e684",
+        "filename": "R2002/cli_commit_detection.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 510
+      },
+      "writtenOn": "2020-01-09T01:20:18Z",
+      "side": 1,
+      "message": "Should be __cli_contrail_group__",
+      "revId": "208d32a924574da2da71aae9eeb1ac14fef5c9b8",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
