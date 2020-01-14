@@ -130,6 +130,9 @@ N/A
 N/A
 
 # 14. Dependencies
+Below fixes needs to be availalbe in MX image we use for ZTP,
+https://gnats.juniper.net/web/default/1473801
+https://gnats.juniper.net/web/default/1436327
 
 # 15. Testing
 Below is the link to the test plan,
@@ -142,3 +145,11 @@ It will be documented as part of release documentation by the doc team.
 JIRA Story: https://contrail-jws.atlassian.net/browse/CEM-5406
 Zero Touch Provisioning: https://www.juniper.net/documentation/en_US/junos/topics/topic-map/zero-touch-provision.html
 Zero Touch Provisioning support by Juniper devices with OS version: https://apps.juniper.net/feature-explorer/parent-feature-info.html?pFName=Zero%20Touch%20Provisioning%20(EZ%20Touchless%20Provisioning%20using%20DHCP)
+
+# 18. Caveats or Known issues
+1. Known issues related MX DC-GW:
+  https://contrail-jws.atlassian.net/browse/CEM-7424
+  https://contrail-jws.atlassian.net/browse/CEM-6570
+
+2. LR is not supported on the MX for the DC-GW functionality. DC-GW functionality is used to test the ZTP functionality. As LR (Logical Router) is not supported extending the public VN (Virtual Network) directly to the router.
+
