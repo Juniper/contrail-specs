@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6c0b509f_fbbaa8ee",
+        "filename": "R2002/agent_tcp_ports.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-01-20T04:45:00Z",
+      "side": 0,
+      "message": "Rather than removing it completely, do you think it makes sense to add why we are not doing it? If question to support this port with SSL comes again in future, we would have the data available somewhere. If you think it is overkill then its fine.",
+      "range": {
+        "startLine": 19,
+        "startChar": 7,
+        "endLine": 25,
+        "endChar": 11
+      },
+      "revId": "6a42fec61a404b5d49b1709d87fe9e738b405a9c",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
