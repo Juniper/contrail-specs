@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4710ba5_a5d46b94",
+        "filename": "evpn_t1_global_rtarget.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2020-01-22T20:35:11Z",
+      "side": 1,
+      "message": "should be \u0027optional\u0027 with default as 7999999",
+      "revId": "39ae280e0a6da9f6bb3aed14abf84e2678371b5b",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2b958d8_088e2918",
+        "filename": "evpn_t1_global_rtarget.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5
+      },
+      "writtenOn": "2020-01-22T20:35:11Z",
+      "side": 1,
+      "message": "Can you please add a section for provisioning changes to add this option to provision_control.py when global asn, etc. are setup ?",
+      "revId": "39ae280e0a6da9f6bb3aed14abf84e2678371b5b",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
