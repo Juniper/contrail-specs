@@ -1,0 +1,152 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a3accdca_1773f738",
+        "filename": "isolcpu_cli.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-01-27T13:38:44Z",
+      "side": 1,
+      "message": "Can you please provide more details on each of the points? What it means and what is it used for?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 40
+      },
+      "revId": "68f899b2b23ea336455cca19f64edf11d7ae2cb5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25e1e94a_5189bb32",
+        "filename": "isolcpu_cli.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-01-27T13:38:44Z",
+      "side": 1,
+      "message": "Can you provide an example on how to configure these new CLI options and what would be the default values in each case if something is not configured?",
+      "revId": "68f899b2b23ea336455cca19f64edf11d7ae2cb5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0995b1fb_fb9f8e0e",
+        "filename": "isolcpu_cli.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-01-27T13:38:44Z",
+      "side": 1,
+      "message": "We should also include a link to the document containing guidelines on how to set the new CLI options. Do we have such a document?",
+      "revId": "68f899b2b23ea336455cca19f64edf11d7ae2cb5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3094b0db_913820cb",
+        "filename": "isolcpu_cli.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-01-27T13:38:44Z",
+      "side": 1,
+      "message": "Can we capture more details on this on what needs to be provisioned ?",
+      "revId": "68f899b2b23ea336455cca19f64edf11d7ae2cb5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a5c510e1_f5b38758",
+        "filename": "isolcpu_cli.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-01-27T13:38:44Z",
+      "side": 1,
+      "message": "Can you explain the changes? Are you saying the changes are required in the DPDK library?",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 39
+      },
+      "revId": "68f899b2b23ea336455cca19f64edf11d7ae2cb5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e55b9d25_23787c88",
+        "filename": "isolcpu_cli.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-01-27T13:38:44Z",
+      "side": 1,
+      "message": "I believe we are providing these options for performance tuning. So we would give details on how the CLI options impact performance.",
+      "revId": "68f899b2b23ea336455cca19f64edf11d7ae2cb5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f18ef244_52b280f9",
+        "filename": "isolcpu_cli.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-01-27T13:38:44Z",
+      "side": 1,
+      "message": "What about documentation section? Can we add a section on it so that documentation team can update the documentation?",
+      "revId": "68f899b2b23ea336455cca19f64edf11d7ae2cb5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4bf0cf1e_9d241b69",
+        "filename": "isolcpu_cli.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-01-27T13:38:44Z",
+      "side": 1,
+      "message": "Can you add the list of test cases covered as part of UT and feature testing?\nWhat should be covered as part of solution testing?",
+      "revId": "68f899b2b23ea336455cca19f64edf11d7ae2cb5",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
