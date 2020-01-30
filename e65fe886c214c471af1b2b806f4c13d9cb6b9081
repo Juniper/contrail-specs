@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ecba4fb2_7c3da0c9",
+        "filename": "R2003/ztp_underay_lag.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 515
+      },
+      "writtenOn": "2020-01-30T18:37:33Z",
+      "side": 1,
+      "message": "Its logical interface and no logical router",
+      "revId": "e65fe886c214c471af1b2b806f4c13d9cb6b9081",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f25d145_a7604e7e",
+        "filename": "R2003/ztp_underay_lag.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 515
+      },
+      "writtenOn": "2020-01-30T18:37:33Z",
+      "side": 1,
+      "message": "Same, its logical interface",
+      "revId": "e65fe886c214c471af1b2b806f4c13d9cb6b9081",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
