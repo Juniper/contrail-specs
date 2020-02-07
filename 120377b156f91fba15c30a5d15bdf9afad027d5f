@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "8560ef4f_b1768bb7",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-02-07T07:59:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "77540a2d_23e31cff",
+      "range": {
+        "startLine": 32,
+        "startChar": 43,
+        "endLine": 32,
+        "endChar": 122
+      },
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f8a8058_a62092bd",
         "filename": "full_cpu_partitioning_support.md",
         "patchSetId": 4
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "52c4b433_f1d43cb2",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-02-07T07:59:28Z",
+      "side": 1,
+      "message": "We were yielding earlier to conserve CPU.",
+      "parentUuid": "7f8a8058_a62092bd",
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d22ba091_66da372a",
         "filename": "full_cpu_partitioning_support.md",
         "patchSetId": 4
@@ -53,6 +95,30 @@
       "writtenOn": "2020-02-06T17:59:08Z",
       "side": 1,
       "message": "Are these changes only wrt to RHEL/CENTOS? What is the impact on platforms not supporting tuned? In those platforms only isolcpu is used?",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 64
+      },
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5854dfce_d41dc109",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-02-07T07:59:28Z",
+      "side": 1,
+      "message": "Even though CLI changes are platform independent, but tuned is only redhat specific. \nisolcpu is kernel parameter which is supported by all distributions (centos/ubuntu).",
+      "parentUuid": "d22ba091_66da372a",
       "range": {
         "startLine": 53,
         "startChar": 0,
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "f5396226_647d8583",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-02-07T07:59:28Z",
+      "side": 1,
+      "message": "This is really solution specific. Eg: if more flows/sec is required, they can use more cores.\nBut yes, we can give some recommendations.",
+      "parentUuid": "bff1d147_0317ad8c",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 57
+      },
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88080721_1b79104f",
         "filename": "full_cpu_partitioning_support.md",
         "patchSetId": 4
@@ -111,6 +201,30 @@
     },
     {
       "key": {
+        "uuid": "526c9b6a_41d059cc",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-02-07T07:59:28Z",
+      "side": 1,
+      "message": "Customers can choose to enable yield to conserve CPU. For non realtime VNFs (Like ATT Nimbus), they can choose to use yield. Hence we made it configurable.",
+      "parentUuid": "88080721_1b79104f",
+      "range": {
+        "startLine": 83,
+        "startChar": 1,
+        "endLine": 83,
+        "endChar": 24
+      },
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aecae4d0_7d5c72f4",
         "filename": "full_cpu_partitioning_support.md",
         "patchSetId": 4
@@ -122,6 +236,24 @@
       "writtenOn": "2020-02-06T17:59:08Z",
       "side": 1,
       "message": "Can you add the list of test cases covered as part of UT and feature testing?\nWhat should be covered as part of solution testing?",
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a4899f31_e2009f14",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-02-07T07:59:28Z",
+      "side": 1,
+      "message": "ok, we will add this a bit later.",
+      "parentUuid": "aecae4d0_7d5c72f4",
       "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
