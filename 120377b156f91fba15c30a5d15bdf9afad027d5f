@@ -291,6 +291,30 @@
     },
     {
       "key": {
+        "uuid": "891dc092_e3b89555",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-02-07T15:36:41Z",
+      "side": 1,
+      "message": "The other parameters will be added as part of DPDK_COMMAND_ADDITIONAL_ARGS in the container. This is what we agreed upon with the account team. I will add this note in Provisioning changes below.",
+      "parentUuid": "8fae07d8_d146694d",
+      "range": {
+        "startLine": 83,
+        "startChar": 1,
+        "endLine": 83,
+        "endChar": 24
+      },
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aecae4d0_7d5c72f4",
         "filename": "full_cpu_partitioning_support.md",
         "patchSetId": 4
