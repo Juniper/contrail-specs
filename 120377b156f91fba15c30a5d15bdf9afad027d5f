@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "f136c015_52a887fb",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-07T15:31:48Z",
+      "side": 1,
+      "message": "Ok.",
+      "parentUuid": "52c4b433_f1d43cb2",
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d22ba091_66da372a",
         "filename": "full_cpu_partitioning_support.md",
         "patchSetId": 4
@@ -178,6 +196,30 @@
     },
     {
       "key": {
+        "uuid": "e6c35dfd_85729688",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-07T15:31:48Z",
+      "side": 1,
+      "message": "Thanks. Please do add the recommendations.",
+      "parentUuid": "f5396226_647d8583",
+      "range": {
+        "startLine": 75,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 57
+      },
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "88080721_1b79104f",
         "filename": "full_cpu_partitioning_support.md",
         "patchSetId": 4
@@ -225,6 +267,30 @@
     },
     {
       "key": {
+        "uuid": "8fae07d8_d146694d",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-07T15:31:48Z",
+      "side": 1,
+      "message": "I don\u0027t see any corresponding parameter defined in provisioning changes. Can you add the parameter details in Provisioning changes? Similar to SERVICE_CORE_MASK..",
+      "parentUuid": "526c9b6a_41d059cc",
+      "range": {
+        "startLine": 83,
+        "startChar": 1,
+        "endLine": 83,
+        "endChar": 24
+      },
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aecae4d0_7d5c72f4",
         "filename": "full_cpu_partitioning_support.md",
         "patchSetId": 4
@@ -254,6 +320,24 @@
       "side": 1,
       "message": "ok, we will add this a bit later.",
       "parentUuid": "aecae4d0_7d5c72f4",
+      "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6835cb8c_4c640cbe",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-07T15:31:48Z",
+      "side": 1,
+      "message": "Ok. Please do add.",
+      "parentUuid": "a4899f31_e2009f14",
       "revId": "120377b156f91fba15c30a5d15bdf9afad027d5f",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
