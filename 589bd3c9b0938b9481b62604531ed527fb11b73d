@@ -1,0 +1,234 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34fd6502_36e96160",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "problem statement is not clear. Also, it sounds like solution rather than a problem.",
+      "range": {
+        "startLine": 5,
+        "startChar": 3,
+        "endLine": 6,
+        "endChar": 9
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e5d87df_7a2f4a6d",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "Nit: too many sub-cluster in this statement, this one is not needed.",
+      "range": {
+        "startLine": 9,
+        "startChar": 15,
+        "endLine": 9,
+        "endChar": 26
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ba7a431_6f62047e",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "I dont see any explanation of where it is coming from, please add that.",
+      "range": {
+        "startLine": 9,
+        "startChar": 172,
+        "endLine": 9,
+        "endChar": 187
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "df0a76f1_752a25cb",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "i think we should talk about the format of this extended community, how it is encoded.",
+      "range": {
+        "startLine": 10,
+        "startChar": 5,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e0fbe052_297d1ca7",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "Nit: that*",
+      "range": {
+        "startLine": 13,
+        "startChar": 109,
+        "endLine": 13,
+        "endChar": 113
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc6ce3cd_791d2de9",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "lets add few lines about id also which would be coming from schema.",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 19
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "841754b3_3670e235",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "Nit: attribute*",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 21
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f052bdb8_6c6bd32a",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "In the below code, how are we getting \"self sub-cluster id\"? one is coming from route and other one is coming from path which is also associated with the route. Maybe I am confused a little bit?",
+      "range": {
+        "startLine": 70,
+        "startChar": 39,
+        "endLine": 70,
+        "endChar": 140
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d17efbf_84b35f59",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "This is way too abstract, FromString and ToString are couple of functions. We should talk about implementing community. Also, we already allow configuring any extended community in policy, so not sure what else is needed there.",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 54
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c1561b8_c2a13532",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 213
+      },
+      "writtenOn": "2020-02-10T03:27:38Z",
+      "side": 1,
+      "message": "Can you please be more clear on what is the change?",
+      "range": {
+        "startLine": 95,
+        "startChar": 15,
+        "endLine": 95,
+        "endChar": 21
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
