@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b68d9414_7b37745b",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "34fd6502_36e96160",
+      "range": {
+        "startLine": 5,
+        "startChar": 3,
+        "endLine": 6,
+        "endChar": 9
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7e5d87df_7a2f4a6d",
         "filename": "R2004/inter_sub_cluster_route_filtering.md",
         "patchSetId": 3
@@ -71,6 +95,54 @@
     },
     {
       "key": {
+        "uuid": "0b956989_abb9225b",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e5d87df_7a2f4a6d",
+      "range": {
+        "startLine": 9,
+        "startChar": 15,
+        "endLine": 9,
+        "endChar": 26
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e04f232_e543df55",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Added.",
+      "parentUuid": "0ba7a431_6f62047e",
+      "range": {
+        "startLine": 9,
+        "startChar": 172,
+        "endLine": 9,
+        "endChar": 187
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df0a76f1_752a25cb",
         "filename": "R2004/inter_sub_cluster_route_filtering.md",
         "patchSetId": 3
@@ -91,6 +163,30 @@
       "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "00beb5bb_fd13c938",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df0a76f1_752a25cb",
+      "range": {
+        "startLine": 10,
+        "startChar": 5,
+        "endLine": 10,
+        "endChar": 18
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "1e37a180_72d3c85f",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0fbe052_297d1ca7",
+      "range": {
+        "startLine": 13,
+        "startChar": 109,
+        "endLine": 13,
+        "endChar": 113
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cc6ce3cd_791d2de9",
         "filename": "R2004/inter_sub_cluster_route_filtering.md",
         "patchSetId": 3
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "97319152_762e0867",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc6ce3cd_791d2de9",
+      "range": {
+        "startLine": 31,
+        "startChar": 8,
+        "endLine": 31,
+        "endChar": 19
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "841754b3_3670e235",
         "filename": "R2004/inter_sub_cluster_route_filtering.md",
         "patchSetId": 3
@@ -160,6 +304,30 @@
       "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37263298_6a3b1cc9",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "841754b3_3670e235",
+      "range": {
+        "startLine": 34,
+        "startChar": 12,
+        "endLine": 34,
+        "endChar": 21
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
@@ -209,6 +377,30 @@
     },
     {
       "key": {
+        "uuid": "d513d420_6b4e834e",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Yes, Allow user to configure this in a routing-policy match or action is not needed. I just copied this from the task. Hence removing it.",
+      "parentUuid": "1d17efbf_84b35f59",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 54
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c1561b8_c2a13532",
         "filename": "R2004/inter_sub_cluster_route_filtering.md",
         "patchSetId": 3
@@ -229,6 +421,30 @@
       "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb684bc0_a3cba114",
+        "filename": "R2004/inter_sub_cluster_route_filtering.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 705
+      },
+      "writtenOn": "2020-02-12T16:49:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5c1561b8_c2a13532",
+      "range": {
+        "startLine": 95,
+        "startChar": 15,
+        "endLine": 95,
+        "endChar": 21
+      },
+      "revId": "589bd3c9b0938b9481b62604531ed527fb11b73d",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     }
   ]
 }
