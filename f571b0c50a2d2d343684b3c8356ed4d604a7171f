@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d2108b5d_5c361071",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 437
+      },
+      "writtenOn": "2020-02-26T12:19:49Z",
+      "side": 1,
+      "message": "Is it the name of new section in config file?",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 13
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d22b3d7d_e7cae439",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 437
+      },
+      "writtenOn": "2020-02-26T12:19:49Z",
+      "side": 1,
+      "message": "Whats is default? My understanding that default behaviour is \u0027without hugepages\u0027 ?",
+      "range": {
+        "startLine": 101,
+        "startChar": 5,
+        "endLine": 101,
+        "endChar": 17
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "901b279f_7ee29e59",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 437
+      },
+      "writtenOn": "2020-02-26T12:19:49Z",
+      "side": 1,
+      "message": "Do I understand it correctly that in case if options for both 1M and 1G pages are set then in agent config have both lines, otherwise one of them?",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 51
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b1cde4a3_dbd1ce91",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 437
+      },
+      "writtenOn": "2020-02-26T12:19:49Z",
+      "side": 1,
+      "message": "Not sure it is provisioning duty to create it.. tlbfs is not a regular FS.. afaik, it is not possible \u0027just create a file\u0027 there..  Is it worth to have agent that allocates pages according to the provided config options  huge_page_1G in  huge_page_2M?  Provisioning can configure OS for HP reservation (according to options and availability of 1M/1G pages) and preparing the config. Then agent will be able allocate pages there which are actually looks like a files under  /dev/hugepages. ?",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 65
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84d4285d_f6bc7144",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 437
+      },
+      "writtenOn": "2020-02-26T12:19:49Z",
+      "side": 1,
+      "message": "It is hardly possible. Deployment process is not an interactive process... there is no way to ask user.  An error might be permanent - then the node be rebooted again and again. Some  orchestrator may not tolerate auto reboot of nodes during deploy, say, they may allow it but after deployment is done (e.g. as a maintenance operation). Some orchestrators just run containers and dont even wait any results (like pure k8s manifests or openshift i suppose) - and it is up to admin to go and check status of contrail.\n\nFrom my view in case of errors agent container be just restarted till error disappear (like it is now).  If reboot is needed to fix error - then it should be covered for each orchestrator individually.\nE.g. in rhosp hugepages options are set in kernel boot time parameters and reboot of the node is done automatically and a bootstrap node step. So no other reboots are needed at later deployemnt steps.",
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
