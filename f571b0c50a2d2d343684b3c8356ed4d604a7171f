@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "77ad6c54_d2f7a98b",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-28T11:16:54Z",
+      "side": 1,
+      "message": "No, this section already exists I believe.",
+      "parentUuid": "d2108b5d_5c361071",
+      "range": {
+        "startLine": 97,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 13
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d22b3d7d_e7cae439",
         "filename": "ziu_vrouter_huge_pages_support.md",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2020-02-26T12:19:49Z",
       "side": 1,
       "message": "Whats is default? My understanding that default behaviour is \u0027without hugepages\u0027 ?",
+      "range": {
+        "startLine": 101,
+        "startChar": 5,
+        "endLine": 101,
+        "endChar": 17
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd16d386_efc5fb98",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-28T11:16:54Z",
+      "side": 1,
+      "message": "Good question. This requires some thought. I think default should be with hugepages so that upgrades can be supported in future.",
+      "parentUuid": "d22b3d7d_e7cae439",
       "range": {
         "startLine": 101,
         "startChar": 5,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "c3fa4907_721d5358",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-28T11:16:54Z",
+      "side": 1,
+      "message": "No. The current plan is we should configure only either 2MB or 1GB pages (not both) in the agent config file. Will update you if any change in this.",
+      "parentUuid": "901b279f_7ee29e59",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 51
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b1cde4a3_dbd1ce91",
         "filename": "ziu_vrouter_huge_pages_support.md",
         "patchSetId": 1
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "9580055a_91cf1174",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-28T11:16:54Z",
+      "side": 1,
+      "message": "Yes, it should be possible to do it in agent. Let me check this and get back.",
+      "parentUuid": "b1cde4a3_dbd1ce91",
+      "range": {
+        "startLine": 131,
+        "startChar": 0,
+        "endLine": 131,
+        "endChar": 65
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "84d4285d_f6bc7144",
         "filename": "ziu_vrouter_huge_pages_support.md",
         "patchSetId": 1
@@ -105,6 +201,24 @@
       "writtenOn": "2020-02-26T12:19:49Z",
       "side": 1,
       "message": "It is hardly possible. Deployment process is not an interactive process... there is no way to ask user.  An error might be permanent - then the node be rebooted again and again. Some  orchestrator may not tolerate auto reboot of nodes during deploy, say, they may allow it but after deployment is done (e.g. as a maintenance operation). Some orchestrators just run containers and dont even wait any results (like pure k8s manifests or openshift i suppose) - and it is up to admin to go and check status of contrail.\n\nFrom my view in case of errors agent container be just restarted till error disappear (like it is now).  If reboot is needed to fix error - then it should be covered for each orchestrator individually.\nE.g. in rhosp hugepages options are set in kernel boot time parameters and reboot of the node is done automatically and a bootstrap node step. So no other reboots are needed at later deployemnt steps.",
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa670e33_ba96ec4d",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 631
+      },
+      "writtenOn": "2020-02-28T11:16:54Z",
+      "side": 1,
+      "message": "Basically then we need a way to propagate error to the orchestrator. How is it done today? May be we can follow the same. From vrouter/agent side, we will log the error message in contrail-vrouter-agent.log file and dmesg. But deployer/orchestrator needs to know that an error has occurred and act accordingly (either restart the containers/reboot the node).",
+      "parentUuid": "84d4285d_f6bc7144",
       "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
