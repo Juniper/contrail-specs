@@ -16,6 +16,24 @@
       "revId": "0441aacd8033fbd9e10db233f2fcdcf0ba601d52",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b8be783_423097c6",
+        "filename": "R2005/cfm-dci-gw-role-MX.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 843
+      },
+      "writtenOn": "2020-03-04T07:12:13Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ea0c3c0f_937934b8",
+      "revId": "0441aacd8033fbd9e10db233f2fcdcf0ba601d52",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     }
   ]
 }
