@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "b13ac450_bf8d093e",
+        "filename": "ziu_vrouter_huge_pages_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-03-04T05:41:48Z",
+      "side": 1,
+      "message": "How about the other htables/btables? NH, MPLS, Frag etc.? Now we increased the NH limit to 1Million, so it would require more memory? Would also be good to provide huge memory backing for log buffers (which is in CI).",
+      "range": {
+        "startLine": 49,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 62
+      },
+      "revId": "f571b0c50a2d2d343684b3c8356ed4d604a7171f",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "d2108b5d_5c361071",
         "filename": "ziu_vrouter_huge_pages_support.md",
         "patchSetId": 1
