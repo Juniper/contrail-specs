@@ -34,6 +34,7 @@ Greenfield fabric discovery page-
 
 job request -
 /execute-job
+```json
 {
 	"job_template_fq_name": ["default-global-system-config", "fabric_onboard_template"],
 	"input": {
@@ -70,6 +71,7 @@ job request -
 		"os_version": "18.1R3"
 	}
 }
+```
 
 # 7. Notification impact
 Three new device states will be added, "IMAGE_UPGRADING", "IMAGE_UPGRADE_SUCCESSFUL", "IMAGE_UPGRADE_FAILED"
@@ -81,6 +83,7 @@ None
 GREENFIELD-
 Schema-
 Fabric onboard input schema to accomodate OS version input.
+```json
 {
   "input_schema": {
     "title": "fabric info",
@@ -293,6 +296,7 @@ Fabric onboard input schema to accomodate OS version input.
       }
     }
   }
+```
 
 Fabric onboarding Workflow-
 Current tasks:
@@ -308,9 +312,9 @@ Device discovery spits out a list of devices that have been created, with all th
 Image upgrade task will find the image associated to the device s platform, and if the input OS version and the image OS version match, it will upgrade the device.
 
 Per device states are updated appropriately:
-"IMAGE_UPGRADING" - When the task is in progress
-"IMAGE_UPGRADE_SUCCESSFUL" - If image upgrade is successful
-"IMAGE_UPGRADE_FAILED" - If image upgrade failed
+- "IMAGE_UPGRADING" - When the task is in progress
+- "IMAGE_UPGRADE_SUCCESSFUL" - If image upgrade is successful
+- "IMAGE_UPGRADE_FAILED" - If image upgrade failed
 
 On failure, the same is indicated in the job logs and UVEs. Mark the device state and continue with the workflow.
 
