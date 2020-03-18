@@ -167,7 +167,7 @@ You can also mention the network.
 
 Setup is done in two parts DCOS installation and contrail installation. For DCOS setup you can
 follow this website : https://dcos.io/install/.
-For contrail installation follow : https://github.com/Juniper/contrail-ansible-deployer. Make sure
+For contrail installation follow : https://github.com/tungstenfabric/tf-ansible-deployer. Make sure
 you fill out inventory file and set orchestrator as mesos.
 
 Master Nodes consist of :
@@ -760,7 +760,7 @@ installed through contrail ansible.
 ### Prereq:
 ```bash
 yum install -y ansible-2.4.2.0 git vim
-git clone http://github.com/Juniper/contrail-ansible-deployer
+git clone http://github.com/tungstenfabric/tf-ansible-deployer
 cd contrail-ansible-deployer
 ssh-copy-id <all-nodes>
 ```
