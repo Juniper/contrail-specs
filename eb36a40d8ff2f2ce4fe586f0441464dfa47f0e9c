@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aaa27ccf_55575103",
+        "filename": "R2005/leak-routes-lr-same-fabric.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 854
+      },
+      "writtenOn": "2020-03-19T15:29:59Z",
+      "side": 1,
+      "message": "- Drop-down box allowing to select single Fabric (applies to both source and destination)\n- Source LR table will have following properties\n  - Drop-down box to select single Logical Router (filter by previous Fabric selection)\n  - Radio button to select one option from: Routing Policy or Virtual Networks.\n  - Upon on radio button selection, following details will be provided to user:\n        - Select one or more Routing Policy. Or\n        - Search and select one, or more Tenant virtual networks. These are the list of\n\t  tenant virtual networks which are already existed in selected source LR.as there can be \n          large number of vlan, do not use drop-down but search/select window on left , assign/remove\n          button in middle with final selection window on right. See existing, Fabrics-\u003eTelemetry Profiles\n          -\u003eCreate-\u003eCreate new-\u003e custom \n- Destination table: User should allow to add one or more destination LR and their information.\n   - Select single Logical router as destination LR\n   - Select one or multiple physical routers existed in this selected destination LR. These are the list of physical router user will select on which leak routes configuration will be pushed to import routes from source LR.\n\n + Add link to add more destination LR.",
+      "revId": "eb36a40d8ff2f2ce4fe586f0441464dfa47f0e9c",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
