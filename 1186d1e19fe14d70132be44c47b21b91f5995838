@@ -19,6 +19,74 @@
     },
     {
       "key": {
+        "uuid": "95577a97_0703fd15",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2020-03-31T20:02:50Z",
+      "side": 1,
+      "message": "This is not a compute discovery instead we are only trying to discover its connection. computes are already discovered if they are computes.",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a3ff14a_a2ccfa0b",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2020-03-31T20:02:50Z",
+      "side": 1,
+      "message": "By default LLDP packets are not sent by servers. It requires an extra service to be run on server to send LLDP packets.\nI am not sure if switch will be able to identify bonding/multi-home connections.",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77df1564_749171f4",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2020-03-31T20:02:50Z",
+      "side": 1,
+      "message": "This is adding too many requirements on computes for discovery. Instead it will be better if we have a solution that discovers switch connections from servers side.\nIf a datacenter have 100+ computes, then these requirements becomes cumbersome.",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f7a6a65_136f4ced",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2020-03-31T20:02:50Z",
+      "side": 1,
+      "message": "LLDP has only 3 required parameters (chassis-id, port-id, ttl) . if a server is sending minimum params, it becomes difficult to map this info from switch side.\n\nBut same info on server side is enough for fabric/command-ui to make connections as we already have fabric info.",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b867ee0f_c4bfe608",
         "filename": "os_computes_discovery.md",
         "patchSetId": 1
@@ -30,6 +98,24 @@
       "writtenOn": "2020-03-31T19:09:50Z",
       "side": 1,
       "message": "How do you get this information? Please describe it here",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a52d5cf4_4c537c95",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 79
+      },
+      "writtenOn": "2020-03-31T20:02:50Z",
+      "side": 1,
+      "message": "If compute is already deployed, then certain its info should already be with openstack and more info can available with orchestration system.",
+      "parentUuid": "b867ee0f_c4bfe608",
       "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
