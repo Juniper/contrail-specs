@@ -159,15 +159,89 @@ is backported
 2) Changes for this story are patched on top of this
 3) We will upstream the changes to DPDK library
 
-12. Support deployments
+12. Hardware Specifications
+---------------------------
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                40
+On-line CPU(s) list:   0-39
+Thread(s) per core:    2
+Core(s) per socket:    10
+Socket(s):             2
+NUMA node(s):          2
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) Silver 4210 CPU @ 2.20GHz
+Stepping:              7
+CPU MHz:               2201.000
+CPU max MHz:           2201.0000
+CPU min MHz:           1000.0000
+BogoMIPS:              4400.00
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              14080K
+NUMA node0 CPU(s):     0-9,20-29
+NUMA node1 CPU(s):     10-19,30-39
+
+13. Template changes while Deploying
+------------------------------------
+The following parameters must be configured under ContrailDpdkParameters in
+contrail-services.yaml file to specify the division of cores as per requirement
+KernelArgs: “default_hugepagesz=1GB hugepagesz=1G hugepages=32 iommu=pt 
+             intel_iommu=on isolcpus=1-9,11-19,21-29,31-39”
+NovaVcpuPinSet: ‘6-9,11-19,25-29,31-39’
+TunedProfileName: “cpu-partitioning”
+IsolCpusList: “1-9,11-19,21-29,31-39”
+
+14. Verification of deployment with IsolCPUs enabled
+----------------------------------------------------
+1) Check for /etc/tuned/cpu-partitioning-variables.conf file for system
+   parameters
+   # Examples:
+   # isolated_cores=2,4-7
+   # isolated_cores=2-23
+   #
+   # To disable the kernel load balancing in certain isolated CPUs:
+   # no_balance_cores=5-10
+2) Check for '/etc/systemd/system.conf' file for CPU Affinity
+   CPUAffinity=0 10 20 30
+3) Check for '/etc/sysconfig/network-scripts/ifcfg-vhost0' file for Isolated
+   CPU list
+   CPU_LIST=1,2,3,4,21,22,23,24
+4) Check '/proc/cmdline' for IsolCPU output
+   BOOT_IMAGE=/boot/vmlinuz-3.10.0-1062.9.1.el7.x86_64
+   root=UUID=228c59ea-82f0-4ee8-9d03-5620e5f0fafb ro console=tty0
+   console=ttyS0,115200n8 crashkernel=auto rhgb quiet iommu=pt intel_iommu=on
+   isolcpus=1-9,11-19,21-29,31-39 default_hugepagesz=1GB hugepagesz=1G
+   hugepages=128 hugepagesz=2M hugepages=2048 skew_tick=1 nohz=on
+   nohz_full=1-9,11-19,21-29,31-39 rcu_nocbs=1-9,11-19,21-29,31-39
+   tuned.non_isolcpus=40100401 intel_pstate=disable nosoftlockup
+
+15. Performance Tests Results
+-----------------------------
+--------------------------------------------------------------
+|           case           |     ixia      |       prox      |
+--------------------------------------------------------------
+|   No CPU Partitioning    |   2.256Mpps   |     2.505Mpps   |
+--------------------------------------------------------------
+| Partial CPU Partitioning |   0.165Mpps   |     0.0525Mpps  |
+--------------------------------------------------------------
+|  Full CPU Partitioning   |   2.294Mpps   |     2.534Mpps   |
+--------------------------------------------------------------
+
+16. Support deployments
 -----------------------
 RHEL (TripleO)
 
-13. UI impact
+17. UI impact
 -------------
 None
 
-14. Feature Testcases
+18. Feature Testcases
 ---------------------
 TBD
 ```
