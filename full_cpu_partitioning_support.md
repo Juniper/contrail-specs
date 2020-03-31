@@ -159,15 +159,53 @@ is backported
 2) Changes for this story are patched on top of this
 3) We will upstream the changes to DPDK library
 
-12. Support deployments
+12. Template changes while Deploying
+------------------------------------
+The following parameters must be configured under ContrailDpdkParameters in
+contrail-services.yaml file to specify the division of cores as per requirement
+KernelArgs: “default_hugepagesz=1GB hugepagesz=1G hugepages=32 iommu=pt 
+             intel_iommu=on isolcpus=1-9,11-19,21-29,31-39”
+NovaVcpuPinSet: ‘6-9,11-19,25-29,31-39’
+TunedProfileName: “cpu-partitioning”
+IsolCpusList: “1-9,11-19,21-29,31-39”
+
+13. Verification of deployment with IsolCPUs enabled
+----------------------------------------------------
+1) Check for /etc/tuned/cpu-partitioning-variables.conf file for system
+   parameters
+   # Examples:
+   # isolated_cores=2,4-7
+   # isolated_cores=2-23
+   #
+   # To disable the kernel load balancing in certain isolated CPUs:
+   # no_balance_cores=5-10
+2) Check for '/etc/systemd/system.conf' file for CPU Affinity
+   CPUAffinity=0 10 20 30
+3) Check for '/etc/sysconfig/network-scripts/ifcfg-vhost0' file for Isolated
+   CPU list
+   CPU_LIST=1,2,3,4,21,22,23,24
+
+14. Performance Tests Results
+-----------------------------
+--------------------------------------------------------------
+|           case           |     ixia      |       prox      |
+--------------------------------------------------------------
+|   No CPU Partitioning    |   2.256Mpps   |     2.505Mpps   |
+--------------------------------------------------------------
+| Partial CPU Partitioning |   0.165Mpps   |     0.0525Mpps  |
+--------------------------------------------------------------
+|  Full CPU Partitioning   |   2.294Mpps   |     2.534Mpps   |
+--------------------------------------------------------------
+
+15. Support deployments
 -----------------------
 RHEL (TripleO)
 
-13. UI impact
+16. UI impact
 -------------
 None
 
-14. Feature Testcases
+17. Feature Testcases
 ---------------------
 TBD
 ```
