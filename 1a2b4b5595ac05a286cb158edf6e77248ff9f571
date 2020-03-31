@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0901ba77_bc5e9233",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 232
+      },
+      "writtenOn": "2020-03-31T14:38:23Z",
+      "side": 1,
+      "message": "Pl put the hardware spec and maybe lscpu output",
+      "revId": "1a2b4b5595ac05a286cb158edf6e77248ff9f571",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    }
+  ]
+}
