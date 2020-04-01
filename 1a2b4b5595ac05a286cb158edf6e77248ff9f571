@@ -16,6 +16,24 @@
       "revId": "1a2b4b5595ac05a286cb158edf6e77248ff9f571",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "399ef678_ce6cdd27",
+        "filename": "full_cpu_partitioning_support.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 744
+      },
+      "writtenOn": "2020-04-01T09:11:27Z",
+      "side": 1,
+      "message": "Added IsolCPU output as part of section 13",
+      "parentUuid": "0901ba77_bc5e9233",
+      "revId": "1a2b4b5595ac05a286cb158edf6e77248ff9f571",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
     }
   ]
 }
