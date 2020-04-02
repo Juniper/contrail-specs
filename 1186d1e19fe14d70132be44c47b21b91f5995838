@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "203b1ddc_6f045da9",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2020-04-02T10:49:18Z",
+      "side": 1,
+      "message": "If you meant that computes are already discovered because orchestrator (e.g.OpenStack) knows its computes. Then Contrail can connect to orchestrator and pull that compute data. I don\u0027t think that is a case because the main idea behind this job is a generic tool (leaf switches are only source of truth) creation for servers onboarding, what causes that we cannot connect to orchestrator. Of course, ML2 plugin will be first consumer of such solution, but in the future it can be extended for new types of computes not necessarly under Openstack management.",
+      "parentUuid": "95577a97_0703fd15",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a3ff14a_a2ccfa0b",
         "filename": "os_computes_discovery.md",
         "patchSetId": 1
@@ -65,6 +83,24 @@
       "writtenOn": "2020-03-31T20:02:50Z",
       "side": 1,
       "message": "By default LLDP packets are not sent by servers. It requires an extra service to be run on server to send LLDP packets.\nI am not sure if switch will be able to identify bonding/multi-home connections.",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd193e08_4c4dff9f",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2020-04-02T10:49:18Z",
+      "side": 1,
+      "message": "The role of the job is populate computes - fabric connections into Config API. The link aggregation can be handled by orchestrator specific plugin/code. At this moment if compute has more than one data plane interfaces, ML2 plugin assumes that they are in bond.",
+      "parentUuid": "2a3ff14a_a2ccfa0b",
       "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "4820d06e_3b919dee",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2020-04-02T10:49:18Z",
+      "side": 1,
+      "message": "When Contrail is used only for fabric management we might not be able to gain ssh access into compute node, because they are not under Contrail management.",
+      "parentUuid": "77df1564_749171f4",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1f7a6a65_136f4ced",
         "filename": "os_computes_discovery.md",
         "patchSetId": 1
@@ -99,6 +153,24 @@
       "writtenOn": "2020-03-31T20:02:50Z",
       "side": 1,
       "message": "LLDP has only 3 required parameters (chassis-id, port-id, ttl) . if a server is sending minimum params, it becomes difficult to map this info from switch side.\n\nBut same info on server side is enough for fabric/command-ui to make connections as we already have fabric info.",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e28fc7e_135726a7",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2020-04-02T10:49:18Z",
+      "side": 1,
+      "message": "Still ML2 plugin requires Node object with name in Config API as given compute has in Openstack. Not sure if we can match host from neutron\u0027s event basing only on chassis",
+      "parentUuid": "1f7a6a65_136f4ced",
       "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
@@ -137,6 +209,24 @@
       "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6f0f026d_266c43b8",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2020-04-02T10:49:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a52d5cf4_4c537c95",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": false
     },
     {
       "key": {
