@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "6746ec90_c9131278",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 616
+      },
+      "writtenOn": "2020-04-02T16:41:53Z",
+      "side": 1,
+      "message": "I agree that by default we don\u0027t get all this requirements fulfilled.\nBut,to make this job work fine with ML2 plugin these requirements needs to be fulfilled and be part of documentation.",
+      "parentUuid": "3e28fc7e_135726a7",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b867ee0f_c4bfe608",
         "filename": "os_computes_discovery.md",
         "patchSetId": 1
