@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "113638dd_47773445",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 314
+      },
+      "writtenOn": "2020-04-03T18:29:28Z",
+      "side": 1,
+      "message": "@Dheeraj, Yes, that is the intent - to get the local_link_information - to determine which host is connected to which TOR port.",
+      "parentUuid": "203b1ddc_6f045da9",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a3ff14a_a2ccfa0b",
         "filename": "os_computes_discovery.md",
         "patchSetId": 1
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "0466c4d5_8458270f",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 314
+      },
+      "writtenOn": "2020-04-03T18:29:28Z",
+      "side": 1,
+      "message": "@Dheeraj, Two points - \n1) As a part of this deployment, we require that user have appropriate LLDP service running on the servers. \n2) You are right, the switch will not be able to tell if it a bonded interface. The reconciliation of this information will done when node profile and port profiles are filled in",
+      "parentUuid": "2a3ff14a_a2ccfa0b",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "77df1564_749171f4",
         "filename": "os_computes_discovery.md",
         "patchSetId": 1
@@ -135,6 +171,24 @@
       "writtenOn": "2020-04-02T10:49:18Z",
       "side": 1,
       "message": "When Contrail is used only for fabric management we might not be able to gain ssh access into compute node, because they are not under Contrail management.",
+      "parentUuid": "77df1564_749171f4",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "635433ae_a6bdbae1",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 314
+      },
+      "writtenOn": "2020-04-03T18:29:28Z",
+      "side": 1,
+      "message": "@Dheeraj, We do not own, manage, or control the compute nodes. We only own switches. So, we need to start from the switch and discover who is connected to all the interfaces. Note, as a part of this solution, we do not own or manage Bare metal machines. We are only providing the networking part",
       "parentUuid": "77df1564_749171f4",
       "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
@@ -189,6 +243,24 @@
       "side": 1,
       "message": "I agree that by default we don\u0027t get all this requirements fulfilled.\nBut,to make this job work fine with ML2 plugin these requirements needs to be fulfilled and be part of documentation.",
       "parentUuid": "3e28fc7e_135726a7",
+      "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
+      "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fb50c9d_18e6878c",
+        "filename": "os_computes_discovery.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 314
+      },
+      "writtenOn": "2020-04-03T18:29:28Z",
+      "side": 1,
+      "message": "Yes, as a part of the deployment guidelines, we need to specify the LLDP option that needs to be enabled to make this work. Even Arista\u0027s solution works like that - we can provide automation only if we get appropriate information. Since we do not own or control the servers, we have to rely on the customer to meet certain requirements",
+      "parentUuid": "6746ec90_c9131278",
       "revId": "1186d1e19fe14d70132be44c47b21b91f5995838",
       "serverId": "c72cd27d-1743-4a55-84a4-cd13b8400c52",
       "unresolved": true
