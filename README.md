@@ -1,2 +1,1 @@
-# contrail-specs
-Repository for docs and specs
+Content was moved to https://github.com/tungstenfabric/tf-specs
