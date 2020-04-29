@@ -74,22 +74,24 @@ New protocols are added in routed-virtual-network-properties to include OSPF and
     <xsd:all>
         <xsd:element name='peer-autonomous-system' type='xsd:integer' required='true'
          description='Peer autonomous system number for this eBGP session.'/>
-        <xsd:element name='peer-ip-address' type='smi:IpAddress' required='true' maxOccurs="unbounded"
-             description='Peer ip addresses used for this eBGP session.'/>
-        <xsd:element name='hold-time' type='BgpHoldTime' default='0' required='optional'
-             description='BGP hold time in seconds [0-65535], Max time to detect liveliness to peer. Value 0 will result in default value of 90 seconds'/>
-        <xsd:element name='auth-data' type='AuthenticationData' required='optional'
-             description='Authentication related configuration like type, keys etc.'/>
-        <xsd:element name='local-autonomous-system' type='xsd:integer' required='optional'
-             description='BgpRouter specific Autonomous System number if different from global AS number.'/>
-        <xsd:element name='multihop-ttl' type='xsd:integer' required='optional'
-             description='time-to-live (TTL) value in the BGP packets to control how far they propagate.'/>    ---> To define multihop BGP TTL value
+    <xsd:element name='peer-ip-address' type='smi:IpAddress' required='optional'
+         description='Peer ip address used for this eBGP session.'/>
+    <xsd:element name='peer-ip-address-list' type='smi:IpAddress' required='true' maxOccurs="unbounded"
+         description='Peer ip address list used for this eBGP session.'/>
+    <xsd:element name='hold-time' type='BgpHoldTime' default='0' required='optional'
+         description='BGP hold time in seconds [0-65535], Max time to detect liveliness to peer. Value 0 will result in default value of 90 seconds'/>
+    <xsd:element name='auth-data' type='AuthenticationData' required='optional'
+         description='Authentication related configuration like type, keys etc.'/>
+    <xsd:element name='local-autonomous-system' type='xsd:integer' required='optional'
+         description='BgpRouter specific Autonomous System number if different from global AS number.'/>
+    <xsd:element name='multihop-ttl' type='xsd:integer' required='optional'
+         description='time-to-live (TTL) value in the BGP packets to control how far they propagate.'/>    ---> To define multihop BGP TTL value
     </xsd:all>
 </xsd:complexType>
 
 <xsd:complexType name="PimParameters">     ---> PIM parameters
     <xsd:all>
-        <xsd:element name='rp-ip-address' type='smi:IpAddress' required='true'
+        <xsd:element name='rp-ip-address' type='smi:IpAddress' required='true' maxOccurs="unbounded"
              description='Static rendezvous point IP address.'/>
         <xsd:element name='mode' type='PimMode' default='sparse' required='optional'
              description='Pim mode.'/>
@@ -115,22 +117,22 @@ New protocols are added in routed-virtual-network-properties to include OSPF and
     </xsd:restriction>
 </xsd:simpleType>
 
-<xsd:complexType name="OspfParameters">   ---> OSPF parameters
+<xsd:complexType name="OspfParameters">
     <xsd:all>
-        <xsd:element name='auth-data' type='AuthenticationData' required='optional'
-             description='Authentication related configuration like type, keys etc.'/>
-        <xsd:element name='hello-interval' type='xsd:integer' default='10' required='optional'
-             description='Specifies the length of time, in seconds, before the routing device sends a hello packet out of an interface.'/>
-        <xsd:element name='dead-interval' type='xsd:integer' default='40' required='optional'
-             description='Specifies how long OSPF waits before declaring that a neighboring routing device is unavailable'/>
-        <xsd:element name='area-id' type='smi:IpAddress' required='true'
-             description='OSPF area ID'/>
-        <xsd:element name='area-type' type='OspfAreaType' required='true'
-             description='OSPF area type'/>
-        <xsd:elememt name='advertise-loopback' type='xsd:boolean' required='optional'
-             description='Boolean to enable advertising loopback address.'/>
-        <xsd:elememt name='orignate-summary-lsa' type='xsd:boolean' required='optional'
-             description='Boolean to enable originating summary LSA.'/>
+       <xsd:element name='auth-data' type='AuthenticationData' required='optional'
+          description='Authentication related configuration like type, keys etc.'/>
+       <xsd:element name='hello-interval' type='xsd:integer' default='10' required='optional'
+          description='Specifies the length of time, in seconds, before the routing device sends a hello packet out of an interface.'/>
+       <xsd:element name='dead-interval' type='xsd:integer' default='40' required='optional'
+          description='Specifies how long OSPF waits before declaring that a neighboring routing device is unavailable'/>
+       <xsd:element name='area-id' type='smi:IpAddress' required='true'
+          description='OSPF area ID'/>
+       <xsd:element name='area-type' type='OspfAreaType' required='true'
+          description='OSPF area type'/>
+       <xsd:element name='advertise-loopback' type='xsd:boolean' required='optional'
+          description='Boolean to enable advertising loopback address.'/>
+       <xsd:element name='orignate-summary-lsa' type='xsd:boolean' required='optional'
+          description='Boolean to enable originating summary LSA.'/>
     </xsd:all>
 </xsd:complexType>
 
